@@ -1,0 +1,8 @@
+# Ignore Related Work folder completely
+Related Work/
+Thesis/DFU_Paper/ndfu_application.ipynb
+datasets/Merged-LLMs/merged_tables.xlsx
+datasets/Merged-LLMs/merged_tables.xlsx
+datasets/Merged-LLMs/merged_tables_LLMs.xlsx
+datasets/Merged-LLMs/merged_tables_LLMs_average.xlsx
+Thesis/Code/attitudes_embedded.xlsx
