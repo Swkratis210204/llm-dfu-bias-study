@@ -12,3 +12,5 @@ OCI_Keys.zip
 text.txt
 survey
 surveystudy.ipynb
+.env
+*.pem
