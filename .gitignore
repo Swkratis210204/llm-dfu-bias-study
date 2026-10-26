@@ -14,3 +14,9 @@ survey
 surveystudy.ipynb
 .env
 *.pem
+datasets/kumar/
+datasets/dices/
+datasets/popquorn/
+datasets/kumar/
+datasets/dices/
+datasets/popquorn/
