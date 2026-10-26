@@ -1,0 +1,14 @@
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+seaborn
+openpyxl
+tqdm
+ipykernel
+nbconvert
+groq
+openai
+google-genai
+oci
