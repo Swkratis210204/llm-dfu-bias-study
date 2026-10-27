@@ -27,7 +27,8 @@ from .datasets import SPECS
 from .models import DEFAULT_CONFIGS, Model
 from .prompts import ScoringPrompt
 
-__all__ = ["annotate", "ensemble", "load_model_inputs", "progress", "inspect_run", "collect_runs", "AnnotationError"]
+__all__ = ["annotate", "ensemble", "load_model_inputs", "progress", "inspect_run", "collect_runs", "sample_inputs", "compare_runs",
+           "AnnotationError"]
 
 ENSEMBLE_FILE = "all_models.csv"
 MODEL_ORDER = list(DEFAULT_CONFIGS)                  # the order of the models in all_models.csv; other names follow alphabetically
@@ -201,6 +202,38 @@ def inspect_run(out_dir: Path, model: str, run: str = "baseline") -> pd.DataFram
         row["batches not parsed"] = sum(1 for r in records if r["status"] == "unparseable")
         rows[csv_path.parent.parent.name] = row
     return pd.DataFrame(rows).T if rows else pd.DataFrame()
+
+
+def sample_inputs(inputs: Dict[str, pd.DataFrame], n: int, seed: int = 42) -> Dict[str, pd.DataFrame]:
+    """``n`` random texts of every dataset (all of them when a dataset has fewer), in the order of the input. The same ``n`` and
+    ``seed`` always give the same texts, so every prompt and every model sees the same subset."""
+    return {name: table.sample(n=min(n, len(table)), random_state=seed).sort_index().reset_index(drop=True)
+            for name, table in inputs.items()}
+
+
+def compare_runs(out_dir: Path, runs: Iterable[str], reference: str = "baseline", models: Optional[Iterable[str]] = None,
+                 datasets: Optional[Iterable[str]] = None) -> pd.DataFrame:
+    """How much the scores of each run in ``runs`` differ from those of ``reference``, on the texts both have, per dataset and model.
+
+    Columns: ``texts``, ``same score %``, ``same label %``, ``mean abs diff`` (of the scores), ``mean diff`` (run minus reference;
+    above 0 means the run scored higher). A run that was made on a subset is compared on that subset only.
+    """
+    ref = collect_runs(out_dir, reference)
+    keys = ["dataset", "model", "item_id"]
+    rows = []
+    for run in runs:
+        merged = collect_runs(out_dir, run).merge(ref, on=keys, suffixes=("", "_ref"))
+        if models is not None:
+            merged = merged[merged["model"].isin(list(models))]
+        if datasets is not None:
+            merged = merged[merged["dataset"].isin(list(datasets))]
+        for (dataset, model), g in merged.groupby(["dataset", "model"], sort=False):
+            diff = g["score"] - g["score_ref"]
+            rows.append({"run": run, "dataset": dataset, "model": model, "texts": len(g),
+                         "same score %": round(100 * float((diff == 0).mean())), "same label %": round(100 * float((g["label"] == g["label_ref"]).mean())),
+                         "mean abs diff": round(float(diff.abs().mean()), 2), "mean diff": round(float(diff.mean()), 2)})
+    columns = ["run", "dataset", "model", "texts", "same score %", "same label %", "mean abs diff", "mean diff"]
+    return pd.DataFrame(rows, columns=columns).set_index(["run", "dataset", "model"])
 
 
 def collect_runs(out_dir: Path, run: str = "baseline") -> pd.DataFrame:

@@ -1,5 +1,6 @@
 """A-posteriori unimodality (AU) of annotator subgroups, and the language models used to audit it."""
-from .annotation import AnnotationError, annotate, collect_runs, ensemble, inspect_run, load_model_inputs, progress
+from .annotation import (AnnotationError, annotate, collect_runs, compare_runs, ensemble, inspect_run, load_model_inputs, progress,
+                         sample_inputs)
 from .datasets import SPECS, get_spec
 from .env import Env
 from .export import csv_ready, sample_per_dimension, save_au_tables
@@ -18,4 +19,5 @@ __all__ = ["Unimodality", "PrunedAU", "dfu_of_hist",
            "save_au_tables", "csv_ready", "sample_per_dimension", "minimal_cover", "cover_per_dimension", "find_root", "read_au_csv",
            "Env", "Model", "ModelConfig", "ModelHub", "ModelError", "DEFAULT_CONFIGS",
            "ScoringPrompt", "PersonaPrompt", "label_from_score", "score_texts", "score_personas",
-           "annotate", "ensemble", "load_model_inputs", "progress", "inspect_run", "collect_runs", "AnnotationError"]
+           "annotate", "ensemble", "load_model_inputs", "progress", "inspect_run", "collect_runs", "sample_inputs", "compare_runs",
+           "AnnotationError"]
