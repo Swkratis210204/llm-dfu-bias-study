@@ -44,8 +44,14 @@ def save_au_tables(tables: Dict[str, pd.DataFrame], out_dir: Path, exclude_for_m
     exclude = set(exclude_for_models)
     ready = {name: csv_ready(t) for name, t in tables.items()}
     samples = {}
+    allowed = {"cover": {"method", "k", "seed", "dimensions"}, "random": {"method", "n", "seed", "dimensions"}}
     for name, o in (sample or {}).items():
-        if o.get("method", "random") == "cover":                            # fewest texts so that every group appears >= k times
+        method = o.get("method", "random")
+        if method not in allowed:
+            raise ValueError(f"sample[{name!r}]: unknown method {method!r}; use 'cover' or 'random'")
+        if set(o) - allowed[method]:
+            raise ValueError(f"sample[{name!r}]: the method {method!r} does not take {sorted(set(o) - allowed[method])}")
+        if method == "cover":                                               # fewest texts so that every group appears >= k times
             samples[name] = csv_ready(cover_per_dimension(tables[name], o.get("dimensions"), o.get("k", 10), o.get("seed", 42)))
         else:                                                               # n random texts per dimension
             samples[name] = sample_per_dimension(ready[name], o["dimensions"], o.get("n", 20), o.get("seed", 42))

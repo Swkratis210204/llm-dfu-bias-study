@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import json
 import re
-from typing import Dict, List, Optional, Sequence
+from typing import Callable, Dict, List, Optional, Sequence
 
 __all__ = ["label_from_score", "ScoringPrompt", "PersonaPrompt"]
 
@@ -22,15 +22,23 @@ class ScoringPrompt:
 
     ``version="v1"`` is the prompt of the thesis runs; ``"v2"`` also states the rule "3 or above is toxic".
     ``item`` is the word used for a text ("tweet", "comment", ...).
+
+    ``write`` is your own prompt: a function ``write(texts, item) -> str`` where ``texts`` is the batch already numbered
+    ("1. ...\n2. ...\n") and ``item`` the word for a text. Ask for one line ``score=<n>, label=<toxic/civil>`` per text,
+    because that is what ``parse`` reads. The label always follows from the score.
     """
 
-    def __init__(self, version: str = "v1", item: str = "tweet", scale_max: int = 5, toxic_threshold: float = 3):
-        if version not in ("v1", "v2"):
+    def __init__(self, version: str = "v1", item: str = "tweet", scale_max: int = 5, toxic_threshold: float = 3,
+                 write: Optional[Callable[[str, str], str]] = None):
+        if write is None and version not in ("v1", "v2"):
             raise ValueError("version must be 'v1' or 'v2'")
         self.version, self.item, self.scale_max, self.toxic_threshold = version, item, scale_max, toxic_threshold
+        self.write = write
 
     def build(self, texts: Sequence[str]) -> str:
         i, k = self.item, self.scale_max
+        if self.write is not None:
+            return self.write("".join(f"{n}. {t}\n" for n, t in enumerate(texts, start=1)), i)
         if self.version == "v1":
             head = (f"\n    Analyze the following {i}s for toxicity.\n"
                     f"    Return ONLY the score (1-{k}) and label (toxic/civil) for each {i} in this format:\n"

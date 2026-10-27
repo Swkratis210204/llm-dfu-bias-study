@@ -1,5 +1,6 @@
 """Tests of the saving of AU tables, with small made-up tables."""
 import pandas as pd
+import pytest
 
 from perspective_audit import read_au_csv, save_au_tables
 
@@ -25,6 +26,15 @@ def test_models_file_has_the_sample_of_the_excluded_dataset(tmp_path):
     assert len(read_au_csv(tmp_path / "aposteriori_all.csv")) == 6 + 80   # everything, not the sample
     assert len(read_au_csv(tmp_path / "big" / "big_au_sample.csv")) == 10
     assert {"aposteriori_all.csv", "aposteriori_for_models.csv", "big/big_au.csv", "big/big_au_sample.csv"} <= set(saved.index)
+
+
+def test_unknown_sample_settings_are_refused_not_ignored(tmp_path):
+    tables = {"big": au_table("big", 40)}
+    for options in ({"method": "covr", "dimensions": ["gender"]},                     # misspelt method
+                    {"method": "cover", "n": 20, "dimensions": ["gender"]},            # 'n' belongs to the random method
+                    {"k": 10, "dimensions": ["gender"]}):                              # 'k' without method 'cover' (the old code would ignore it)
+        with pytest.raises(ValueError):
+            save_au_tables(tables, tmp_path, exclude_for_models=("big",), sample={"big": options})
 
 
 def test_sample_is_reproducible_and_json_columns_come_back(tmp_path):

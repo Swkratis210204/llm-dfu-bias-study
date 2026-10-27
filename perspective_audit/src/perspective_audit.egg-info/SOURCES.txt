@@ -1,10 +1,12 @@
 pyproject.toml
 src/perspective_audit/__init__.py
+src/perspective_audit/annotation.py
 src/perspective_audit/env.py
 src/perspective_audit/export.py
 src/perspective_audit/models.py
 src/perspective_audit/pipeline.py
 src/perspective_audit/prompts.py
+src/perspective_audit/sampling.py
 src/perspective_audit/scoring.py
 src/perspective_audit/spec.py
 src/perspective_audit/unimodality.py
@@ -20,6 +22,8 @@ src/perspective_audit/datasets/groups.py
 src/perspective_audit/datasets/kumar.py
 src/perspective_audit/datasets/mhs.py
 src/perspective_audit/datasets/popquorn.py
+tests/test_annotation.py
 tests/test_export.py
 tests/test_models.py
+tests/test_sampling.py
 tests/test_unimodality.py
