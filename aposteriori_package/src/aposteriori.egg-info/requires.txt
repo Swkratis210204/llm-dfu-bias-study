@@ -1,6 +1,0 @@
-numpy
-pandas
-ndfu<1,>=0.9.3
-
-[test]
-pytest

@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: perspective-audit
+Version: 0.3.0
+Summary: A-posteriori unimodality (AU) of annotator subgroups, built on the normalized distance from unimodality (ndfu)
+Requires-Python: >=3.9
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: ndfu<1,>=0.9.3
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Provides-Extra: openai
+Requires-Dist: openai; extra == "openai"
+Provides-Extra: gemini
+Requires-Dist: google-genai; extra == "gemini"
+Provides-Extra: oci
+Requires-Dist: oci; extra == "oci"
+Provides-Extra: all-models
+Requires-Dist: openai; extra == "all-models"
+Requires-Dist: google-genai; extra == "all-models"
+Requires-Dist: oci; extra == "all-models"
