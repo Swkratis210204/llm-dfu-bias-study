@@ -8,7 +8,9 @@ Tools to audit **whose perspective** a toxicity rating reflects, in two parts th
    politics, ...), not by noise. The unimodality test is the normalized distance from unimodality (`ndfu`).
 2. **Annotating those texts with language models.** Send the AU texts to several models (ChatGPT, DeepSeek, Mistral, Gemini,
    Llama, ...) with a prompt you write, and save one rating and one label per text and model, so the models' answers can be
-   compared with the groups of human annotators.
+   compared with the groups of human annotators. Three conditions are supported: a **baseline** (no persona), a **prompt
+   sensitivity** check (the same texts, the question reworded) and **sociodemographic (SCD) prompting** (the model answers as
+   a person of each annotator group).
 
 Everything is a Python package (`src/perspective_audit`) plus one notebook (`notebooks/Datasets.ipynb`) that calls it.
 
@@ -440,6 +442,58 @@ annotate(model, subset, out_dir, prompt=other_prompt, run="prompt_sensitivity") 
 The baseline is not asked again: its file already has these texts. This is section 6.2 of the notebook, where each dataset ends up with a
 `baseline/`, a `prompt_sensitivity/` and a `prompt_sensitivity_2/` folder (two rewordings), and figures and tables compare them. The exact prompts are written to `new_results/prompts.md`.
 
+### Sociodemographic (SCD) prompting
+
+An AU text comes with the groups of one dimension (gender: man, woman). The model is asked **once per (text, dimension)** to rate the text as
+a person of **each** of those groups, and the answers are kept together. The same text under two dimensions (gender and age) is two
+separate calls, each with only the groups of its own dimension.
+
+```python
+from perspective_audit import annotate_personas, load_persona_inputs, inspect_personas, collect_persona_runs, sample_inputs
+
+scd_inputs = load_persona_inputs("new_results/aposteriori_for_models.csv")   # {dataset: one row per (text, dimension) with its groups}
+scd_inputs = sample_inputs(scd_inputs, 20, seed=42)                          # optional: a random pilot of 20 rows per dataset
+annotate_personas(model, scd_inputs, out_dir, prompt=scd_prompt, run="scd_pilot", seed=42, datasets=["popquorn"])
+```
+
+| argument | meaning |
+|---|---|
+| `prompt` | your function `prompt(text, item, dimension, groups) -> str`; `groups` are the groups in the order to show them |
+| `run` | the condition, e.g. `scd`; the group is a column of the results, not a folder. Use another name for a pilot or a changed prompt |
+| `seed` | fixes the order in which the groups of a text are listed (a seeded shuffle that depends only on the seed and the text) |
+| `limit`, `datasets` | as in `annotate` |
+| `max_attempts`, `first_max_tokens` | a reply without a valid score for every group is asked again with a larger token budget (200, 400, ...) |
+
+**The reply** must be JSON with one key per group, written exactly as shown, and a score from 1 to 5 for each, e.g.
+`{"woman": {"score": 4, "label": "toxic"}, "man": {"score": 2, "label": "civil"}}`. Code fences around it are accepted. The label always follows
+from the score (1-2 civil, 3-5 toxic). After `max_attempts` the run stops with an `AnnotationError` and the reply stays in the raw file.
+
+**What is saved**, in `<dataset>/<run>/`:
+
+| file | content |
+|---|---|
+| `<model>.csv` | one row per (text, dimension): `dataset, item_id, dimension, text, model, run, personas` |
+| `raw/<model>.raw.jsonl` | one line per call: the prompt, the order of the groups, the reply, the parsed answer, the attempts, a timestamp |
+
+`personas` is a JSON list in the order the groups were shown: `[{"as": "woman", "score": 4, "label": "toxic"}, {"as": "man", "score": 2, "label": "civil"}]`.
+`as` is the group exactly as written in the input (`kept_groups`). Nothing from the human annotators is written here.
+
+**Long form, for the comparisons.** `collect_persona_runs(out_dir, "scd")` (or `persona_long(table)`) gives one row per dataset, model, text,
+dimension and group (`group`, `position` = place in the prompt, `score`, `label`). Join it to:
+
+- the **baseline** on `item_id` (and `model`): `baseline/<model>.csv`;
+- the **human group labels** on `(dataset, item_id, dimension, group)`: `group_label` in `aposteriori_for_models.csv` (a JSON `{group: label}`).
+
+Within one dimension, the agreement of the human groups with the model personas is a group-by-group matrix (human man / human woman against
+SCD man / SCD woman); the diagonal says whether a persona reproduces its own group.
+
+**Checking a model.** `inspect_personas(out_dir, "chatgpt", "scd")` shows per dataset the texts, the groups rated, the mean score, the share called
+toxic, and the calls asked again or not complete. A run that stops carries on where it stopped; if the seed (and so the order) changed, it
+refuses and asks for a new run name.
+
+**A limit to keep in mind.** Because the groups are rated in one answer, the ratings can influence each other (a model may give the same score
+to both groups). This is a property of the design; a single-persona prompt on a subset is the way to measure it.
+
 **Agreement between two sets of ratings.** Three measures, for any two sets of ratings of the same texts (two prompts of one model, two
 models, a model and a group of people). 1 means perfect agreement, 0 means no more than chance, and a missing value is left out:
 
@@ -451,7 +505,9 @@ cohen_kappa(labels_a, labels_b)           # labels such as "toxic" / "civil", co
 spearman(scores_a, scores_b)              # do the two sets put the texts in the same order?
 ```
 
-Prefer the kappas to the plain share of equal labels: when almost everything is toxic (as in MHS), most pairs agree by chance.
+Report the plain share of equal labels next to the label kappa, and use the weighted kappa and `spearman` for scores. On a small sample where
+almost every text has the same label (as in MHS), the label kappa can fall to 0 even when 95% of the labels agree, because chance agreement is
+already very high.
 
 What to check after a model finishes: `texts` is what you expect, `mean score` and `toxic %` are plausible (all 1s or all 5s means the model
 is not following the prompt), and `batches asked again` and `batches not parsed` are 0 or small.
@@ -471,7 +527,8 @@ These are in `perspective_audit.scoring` and are independent of `annotate`.
 `text_index`, `text`, `score`, `label`). It uses a `ScoringPrompt`, which has the thesis wording (`"v1"`) and a variant that also states the
 threshold (`"v2"`).
 
-**`score_personas(model, items, persona_map, prompt=None)`** asks the model to answer *as* each group of one dimension (persona
+**`score_personas(model, items, persona_map, prompt=None)`** (an earlier, simpler form of persona prompting that does not save files; the
+thesis runs use `annotate_personas`, above) asks the model to answer *as* each group of one dimension (persona
 prompting). `items` has the columns `text` and `dimension`; `persona_map` gives the personas of each dimension, for example
 `{"gender": ["man", "woman"]}`. The reply is JSON keyed by persona. It returns one row per item and persona (`row`, `dimension`, `persona`,
 `label`, `score`). A reply is accepted only when every persona has a valid score; otherwise the call is repeated with a larger token budget
@@ -490,6 +547,9 @@ wording (`"v1"`) and a short one (`"compact"`).
 - **The CSV is rebuilt from the saved batches**, never from the current input, so it always matches what was asked.
 - **Temperature 0 by default**, but a hosted model can still give different answers on different days; the raw files are the record of
   what you got.
+- **The prompts are written down.** The notebook writes the exact wording of the baseline and of both rewordings to `new_results/prompts.md`,
+  and of the SCD prompt to `new_results/prompts_scd.md`, so they can be quoted.
+- **The order of the groups in SCD is seeded** (`seed`, default 42) and saved with every answer, so it can be reproduced and audited.
 - **Do not mix prompts in one run.** The run name is the condition, so when you change the prompt, delete the run's folder and run it
   again. Every batch in the raw file keeps its exact prompt.
 - Pin your environment (`pip freeze > requirements.txt`) if you need to reproduce numbers exactly.
@@ -506,6 +566,8 @@ wording (`"v1"`) and a short one (`"compact"`).
 | `FileNotFoundError: Could not find a folder containing 'datasets'` | run from inside the repository, or set `THESIS_ROOT` |
 | `AnnotationError: ... expected 10 scores, received 9` | the model's reply did not have one `score=<n>` line per text. Open the reply in `raw/<model>.raw.jsonl`; usually the prompt needs to be stricter, or the model adds text around the scores |
 | `AnnotationError: saved batch N holds other texts than the input` | the input changed since this run was started. Use a new `run` name |
+| `AnnotationError: ... no valid score for every group of [...]` (SCD) | the reply was cut off, not JSON, or missed or renamed a group. Open it in `raw/<model>.raw.jsonl`; the prompt must ask for the groups exactly as written |
+| `AnnotationError: the saved groups of ... are in another order` (SCD) | the seed (or the groups) changed since the run was started. Use the same seed, or a new `run` name |
 | Llama is very slow, or a request ends with HTTP 500 | the model does not fit in GPU memory, or a refusal is being retried, or you stopped the cell (Ollama logs a stopped client as a 500). Watch the progress bar: about 10 texts every few seconds is normal |
 | Ollama connection refused | start Ollama and `ollama pull llama3:8b` |
 | a model's results look odd (all 5s) | read its raw replies; it may not be following the prompt. The scores are saved as the model gave them |
@@ -528,7 +590,9 @@ perspective_audit/
     models.py                   ModelConfig, Model, ModelHub, DEFAULT_CONFIGS and the providers
     prompts.py                  ScoringPrompt, PersonaPrompt and the parsers of their answers
     scoring.py                  score_texts, score_personas
-    annotation.py               annotate, ensemble, inspect_run, progress, collect_runs, load_model_inputs
+    annotation.py               annotate, ensemble, inspect_run, progress, collect_runs, load_model_inputs, sample_inputs
+    persona_annotation.py       SCD prompting: annotate_personas, load_persona_inputs, persona_long, collect_persona_runs, inspect_personas
+    agreement.py                cohen_kappa, weighted_kappa, spearman
     utils.py                    find_root, read_au_csv and small helpers
   tests/                        tests with stand-in models (no keys, network or credits)
 ```
@@ -541,7 +605,8 @@ pytest
 ```
 
 The tests use stand-in models, so they need no keys, no network and cost nothing. They cover the AU rule, the sampling, the export format,
-the models (retries, key handling, parsing), and `annotate` (the files it writes, resuming, unparseable replies, custom prompts, the run log).
+the models (retries, key handling, parsing), `annotate` (the files it writes, resuming, unparseable replies, custom prompts, the run log),
+the agreement measures, and `annotate_personas` (one call per text and dimension, the saved form, the seeded order, resuming, incomplete replies).
 
 ## Known limits
 
@@ -549,6 +614,7 @@ the models (retries, key handling, parsing), and `annotate` (the files it writes
 - **The labels are `toxic` and `civil`.** The rest of the package (summaries, the ensemble table) depends on those two strings.
 - **`annotate` runs one model on one dataset at a time**, on purpose, so a problem shows where it happens. Loop over `hub` to run all.
 - **Key variable names** (`chat_api`, `gemini_key`, ...) are the ones of the thesis. Rename them with `<NAME>_API_KEY_ENV`.
-- **Persona prompting** (`score_personas`) takes a `PersonaPrompt` object, not a function like `annotate`.
+- **SCD prompting** (`annotate_personas`) rates all the groups of a dimension in one call, so the personas can influence each other, and its
+  reply format is fixed (JSON keyed by group). The older `score_personas` takes a `PersonaPrompt` object and saves no files.
 - **The Attitudes loader reads a pickle** from a fixed location (or `PERSPECTIVE_AUDIT_ATTITUDES_FILE`); the other loaders need the files
   of the [Data](#data) section in place.

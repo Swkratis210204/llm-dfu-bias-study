@@ -6,6 +6,8 @@ from .datasets import SPECS, get_spec
 from .env import Env
 from .export import csv_ready, sample_per_dimension, save_au_tables
 from .models import DEFAULT_CONFIGS, Model, ModelConfig, ModelError, ModelHub
+from .persona_annotation import (annotate_personas, collect_persona_runs, group_order, inspect_personas, load_persona_inputs,
+                                 persona_long)
 from .pipeline import DatasetResult, clean, make_tool, run_dataset
 from .prompts import PersonaPrompt, ScoringPrompt, label_from_score
 from .sampling import cover_per_dimension, minimal_cover
@@ -21,4 +23,5 @@ __all__ = ["Unimodality", "PrunedAU", "dfu_of_hist",
            "Env", "Model", "ModelConfig", "ModelHub", "ModelError", "DEFAULT_CONFIGS",
            "ScoringPrompt", "PersonaPrompt", "label_from_score", "score_texts", "score_personas",
            "annotate", "ensemble", "load_model_inputs", "progress", "inspect_run", "collect_runs", "sample_inputs",
-           "AnnotationError", "cohen_kappa", "weighted_kappa", "spearman"]
+           "AnnotationError", "cohen_kappa", "weighted_kappa", "spearman",
+           "annotate_personas", "load_persona_inputs", "persona_long", "collect_persona_runs", "inspect_personas", "group_order"]
