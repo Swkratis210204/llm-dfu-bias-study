@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: aposteriori
+Version: 0.1.0
+Summary: A-posteriori unimodality (AU) of annotator subgroups, built on the normalized distance from unimodality (ndfu)
+Requires-Python: >=3.9
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: ndfu<1,>=0.9.3
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"

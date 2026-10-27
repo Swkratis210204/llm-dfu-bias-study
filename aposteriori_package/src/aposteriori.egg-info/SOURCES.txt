@@ -1,0 +1,9 @@
+pyproject.toml
+src/aposteriori/__init__.py
+src/aposteriori/unimodality.py
+src/aposteriori.egg-info/PKG-INFO
+src/aposteriori.egg-info/SOURCES.txt
+src/aposteriori.egg-info/dependency_links.txt
+src/aposteriori.egg-info/requires.txt
+src/aposteriori.egg-info/top_level.txt
+tests/test_unimodality.py

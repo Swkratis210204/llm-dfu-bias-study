@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aposteriori"
+version = "0.3.0"
+description = "A-posteriori unimodality (AU) of annotator subgroups, built on the normalized distance from unimodality (ndfu)"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "pandas",
+    "ndfu>=0.9.3,<1",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+openai = ["openai"]            # ChatGPT, Mistral, DeepSeek, Ollama (Llama)
+gemini = ["google-genai"]
+oci = ["oci"]                  # Grok on Oracle OCI
+all-models = ["openai", "google-genai", "oci"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
