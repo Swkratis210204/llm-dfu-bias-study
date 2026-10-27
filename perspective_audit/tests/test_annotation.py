@@ -5,7 +5,7 @@ import pandas as pd
 import pytest
 
 from perspective_audit import Env, Model, ModelConfig, ModelError
-from perspective_audit.annotation import (AnnotationError, annotate as _annotate, collect_runs, compare_runs, load_model_inputs, progress,
+from perspective_audit.annotation import (AnnotationError, annotate as _annotate, collect_runs, load_model_inputs, progress,
                                           sample_inputs)
 
 
@@ -162,7 +162,7 @@ def test_each_dataset_folder_has_one_file_per_model_and_one_with_all_of_them(tmp
     assert ensemble(tmp_path, "popquorn", "baseline").shape == both.shape and ensemble(tmp_path, "nothing").empty
 
 
-def test_a_subset_is_reproducible_and_runs_are_compared_on_it(tmp_path):
+def test_a_subset_is_reproducible_and_saved_next_to_the_baseline(tmp_path):
     full = inputs(25, 7)
     subset = sample_inputs(full, 10, seed=1)
     assert {k: len(v) for k, v in subset.items()} == {"popquorn": 10, "kumar": 7}                    # a smaller dataset is kept whole
@@ -170,12 +170,7 @@ def test_a_subset_is_reproducible_and_runs_are_compared_on_it(tmp_path):
     assert set(subset["popquorn"]["item_id"]) <= set(full["popquorn"]["item_id"])
 
     annotate(model(Scorer(score=4)), full, tmp_path)                                                  # baseline on everything
-    annotate(model(Scorer(score=2)), subset, tmp_path, run="other")                                   # another prompt, on the subset
-    table = compare_runs(tmp_path, ["other"])
-    row = table.loc[("other", "popquorn", "stub")]
-    assert row["texts"] == 10 and row["same score %"] == 0 and row["same label %"] == 0 and row["mean diff"] == -2 and row["mean abs diff"] == 2
-    assert table.loc[("other", "kumar", "stub"), "texts"] == 7
-    same = compare_runs(tmp_path, ["baseline"])
-    assert (same["same score %"] == 100).all() and (same["mean diff"] == 0).all()
-    assert compare_runs(tmp_path, ["other"], datasets=["kumar"]).index.get_level_values("dataset").unique().tolist() == ["kumar"]
-    assert compare_runs(tmp_path, ["nothing"]).empty
+    annotate(model(Scorer(score=2)), subset, tmp_path, run="prompt_sensitivity")                      # another prompt, on the subset
+    other = pd.read_csv(tmp_path / "popquorn" / "prompt_sensitivity" / "stub.csv", dtype={"item_id": str})
+    base = pd.read_csv(tmp_path / "popquorn" / "baseline" / "stub.csv", dtype={"item_id": str})
+    assert len(other) == 10 and len(base) == 25 and set(other["item_id"]) <= set(base["item_id"])    # the subset is part of the baseline

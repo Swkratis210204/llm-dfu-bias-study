@@ -427,21 +427,31 @@ progress(inputs, out_dir, hub.names, run="baseline")   # texts with a saved scor
 collect_runs(out_dir, "baseline")                 # every saved row of a run, in one table
 ```
 
-**Prompt sensitivity on a subset.** To see whether the answers depend on the wording, annotate the same random subset with other prompts,
-each in its own run, and compare with the baseline on those texts:
+**Prompt sensitivity on a subset.** To see whether the answers depend on the wording, annotate the same random subset with another prompt,
+in its own run, and compare it with the baseline answers for the same texts:
 
 ```python
-from perspective_audit import compare_runs, sample_inputs
+from perspective_audit import sample_inputs
 
-subset = sample_inputs(inputs, 20, seed=42)        # 20 random texts per dataset; the same n and seed give the same texts
-for run, prompt in {"prompt_a": prompt_a, "prompt_b": prompt_b}.items():
-    annotate(model, subset, out_dir, prompt=prompt, run=run)
-
-compare_runs(out_dir, ["prompt_a", "prompt_b"], reference="baseline")
-# per run, dataset and model: texts, same score %, same label %, mean abs diff, mean diff (run minus reference)
+subset = sample_inputs(inputs, 50, seed=42)        # 50 random texts per dataset; the same n and seed give the same texts
+annotate(model, subset, out_dir, prompt=other_prompt, run="prompt_sensitivity")      # -> <dataset>/prompt_sensitivity/, next to <dataset>/baseline/
 ```
 
-The baseline is not asked again: `compare_runs` uses only the texts both runs have. This is section 6.2 of the notebook.
+The baseline is not asked again: its file already has these texts. This is section 6.2 of the notebook, where each dataset ends up with a
+`baseline/`, a `prompt_sensitivity/` and a `prompt_sensitivity_2/` folder (two rewordings), and figures and tables compare them. The exact prompts are written to `new_results/prompts.md`.
+
+**Agreement between two sets of ratings.** Three measures, for any two sets of ratings of the same texts (two prompts of one model, two
+models, a model and a group of people). 1 means perfect agreement, 0 means no more than chance, and a missing value is left out:
+
+```python
+from perspective_audit import cohen_kappa, weighted_kappa, spearman
+
+weighted_kappa(scores_a, scores_b)        # scores 1-5: a big disagreement counts more than a small one (quadratic weights)
+cohen_kappa(labels_a, labels_b)           # labels such as "toxic" / "civil", corrected for the agreement chance alone would give
+spearman(scores_a, scores_b)              # do the two sets put the texts in the same order?
+```
+
+Prefer the kappas to the plain share of equal labels: when almost everything is toxic (as in MHS), most pairs agree by chance.
 
 What to check after a model finishes: `texts` is what you expect, `mean score` and `toxic %` are plausible (all 1s or all 5s means the model
 is not following the prompt), and `batches asked again` and `batches not parsed` are 0 or small.
