@@ -148,3 +148,31 @@ fits "participants rated batches of 20 comments". That gives 5,381 x 5 = 26,905 
 (450,160 / 20; a slot is kept or removed as a whole because the attributes do not change inside a batch). These are rating sessions, not people: nothing
 in the project says whether the same participant appears in several batches, so no annotator count is reported and no pseudo-ids were created.
 Where: dataset description (batch structure; annotator counts not available). Source for the numbers: the raw file, checked with a one-off script.
+
+## Ratings per text after the preprocessing (added 2026-10-29)
+
+**24. Many texts end up with fewer than four ratings, and cannot be AU.**
+A text needs four ratings to be AU (two groups of at least two). After the cleaning (which also drops ratings with an excluded group value), the
+share of texts below four ratings is: popquorn 2 of 1,500 (0.1%), attitudes 41 of 625 (6.6%), MHS 919 of 5,990 (15.3%), Kumar 20,660 of 107,620
+(19.2%). Ratings per text after the cleaning (min / median / max): popquorn 3 / 8 / 10, attitudes 2 / 6 / 11, MHS 2 / 4 / 777 (the 70 anchor comments, see
+entry 2), Kumar 1 / 4 / 5. Those texts stay in the "all texts" columns of the EDA but are never in the AU set, which is one reason the AU share is
+small. Source: `new_results/total_eda/ratings_per_text.csv` and `.txt`. Where: dataset descriptions.
+
+**25. Share of toxic ratings differs a lot between datasets (after the cleaning).**
+Ratings at or above the toxic threshold (3): popquorn 26.4%, attitudes 54.0%, MHS 42.4% (only "Yes" counts), Kumar 29.7%. Attitudes is also the only
+dataset with a U-shaped distribution (31.1% rate 1 and 29.2% rate 5). Source: `new_results/total_eda/toxicity.csv`, `rating_distribution.csv`.
+
+## Toxicity per group across datasets (added 2026-10-29)
+
+**26. Group names were harmonized for the combined figures and table, which is a choice to state.**
+`new_results/total_eda/toxicity_by_group.csv` and the two `toxicity_by_dimension_*.png` figures put the datasets side by side. Spellings are harmonized
+(Man / male / Male -> man; Woman / female / Female -> woman; white / White -> White; black / Black / Black or African American -> Black) and the table
+keeps the original names. The political dimensions are pooled as `politics` (attitudes `politics` left / center / right, Kumar `politics` liberal /
+independent / conservative, MHS `ideology` liberal / neutral / conservative -> left / liberal, center / neutral / independent, right / conservative).
+This treats three different measures as one: attitudes uses a numeric score cut at -0.25 and 0.25, Kumar a self-reported affiliation, MHS a seven-point
+ideology collapsed to three. Education, occupation, religion and traditionalism exist in one dataset each, so they have no comparison.
+
+**27. In the AU figure, many bars rest on few ratings.**
+`AU ratings` per group (same csv): attitudes 11-41 for every group (e.g. gender: man 29, woman 24; politics center 11 and removed from the AU analysis),
+popquorn 10-192, MHS 26-88, Kumar 272-3,434. Differences between groups in attitudes and popquorn are therefore noisy; do not read small gaps. Groups
+removed from the AU analysis are left out of the AU figure (their all-texts numbers stay in the other figure and in the csv).

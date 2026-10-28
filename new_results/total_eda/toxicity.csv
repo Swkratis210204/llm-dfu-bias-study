@@ -1,0 +1,9 @@
+dataset,label,ratings,%,toxic is a rating >=
+popquorn,civil,8353,73.6,3
+popquorn,toxic,2999,26.4,3
+attitudes,civil,1544,46.0,3
+attitudes,toxic,1810,54.0,3
+mhs,civil,37081,57.6,3
+mhs,toxic,27242,42.4,3
+kumar,civil,316393,70.3,3
+kumar,toxic,133767,29.7,3

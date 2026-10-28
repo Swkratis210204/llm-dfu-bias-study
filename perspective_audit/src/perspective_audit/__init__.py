@@ -5,6 +5,8 @@ from .annotation import (AnnotationError, annotate, collect_runs, ensemble, insp
 from .datasets import SPECS, get_spec
 from .eda import eda_figures, eda_tables, save_eda
 from .eda_dataset import dataset_tables, eda_overview_all, save_dataset_eda
+from .eda_total import (read_group_tables, ratings_per_text, save_appendix_figures, save_toxicity_by_dimension, save_total_eda,
+                        toxicity_by_group)
 from .env import Env
 from .export import csv_ready, sample_per_dimension, save_au_tables
 from .models import DEFAULT_CONFIGS, Model, ModelConfig, ModelError, ModelHub
@@ -26,5 +28,6 @@ __all__ = ["Unimodality", "PrunedAU", "dfu_of_hist",
            "ScoringPrompt", "PersonaPrompt", "label_from_score", "score_texts", "score_personas",
            "annotate", "ensemble", "load_model_inputs", "progress", "inspect_run", "collect_runs", "sample_inputs",
            "AnnotationError", "cohen_kappa", "weighted_kappa", "spearman",
-           "eda_tables", "eda_figures", "save_eda", "dataset_tables", "save_dataset_eda", "eda_overview_all", "save_prompts",
+           "eda_tables", "eda_figures", "save_eda", "dataset_tables", "save_dataset_eda", "eda_overview_all", "ratings_per_text", "save_total_eda",
+           "read_group_tables", "toxicity_by_group", "save_toxicity_by_dimension", "save_appendix_figures", "save_prompts",
            "annotate_personas", "load_persona_inputs", "persona_long", "collect_persona_runs", "inspect_personas", "group_order"]

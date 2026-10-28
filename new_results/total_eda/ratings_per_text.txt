@@ -1,0 +1,4 @@
+popquorn: ratings per text min 3, median 8, max 10; 2 of 1,500 texts (0.1%) have fewer than 4 ratings
+attitudes: ratings per text min 2, median 6, max 11; 41 of 625 texts (6.6%) have fewer than 4 ratings
+mhs: ratings per text min 2, median 4, max 777; 919 of 5,990 texts (15.3%) have fewer than 4 ratings
+kumar: ratings per text min 1, median 4, max 5; 20,660 of 107,620 texts (19.2%) have fewer than 4 ratings

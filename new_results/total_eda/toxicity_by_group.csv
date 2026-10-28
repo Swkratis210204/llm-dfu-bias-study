@@ -1,0 +1,51 @@
+dataset,dimension,group,group (as in the dataset),dimension (as in the dataset),ratings,toxic %,AU ratings,AU toxic %,kept in AU analysis
+attitudes,gender,man,man,gender,1893,51.4,29,62.1,True
+kumar,gender,man,Male,gender,215220,31.7,2740,61.5,True
+mhs,gender,man,male,gender,27840,41.9,87,29.9,True
+popquorn,gender,man,Man,gender,5526,27.6,50,46.0,True
+attitudes,gender,woman,woman,gender,1461,57.3,24,58.3,True
+kumar,gender,woman,Female,gender,234940,27.9,2769,40.5,True
+mhs,gender,woman,female,gender,36483,42.7,88,69.3,True
+popquorn,gender,woman,Woman,gender,5826,25.3,48,47.9,True
+attitudes,race,White,white,race,2223,51.2,41,46.3,True
+kumar,race,White,White,race,359580,27.4,1554,17.4,True
+popquorn,race,White,White,race,8918,24.8,59,22.0,True
+attitudes,race,Black,black,race,1131,59.3,28,89.3,True
+kumar,race,Black,Black,race,61720,44.5,1249,86.9,True
+popquorn,race,Black,Black or African American,race,1535,35.8,31,90.3,True
+kumar,race,Asian,Asian,race,28860,26.9,272,47.4,True
+popquorn,race,Asian,Asian,race,899,26.5,10,40.0,False
+attitudes,age,gen z,gen z,age,4,75.0,0,,True
+kumar,age,gen z,gen z,age,46580,25.5,829,43.4,True
+mhs,age,gen z,gen z,age,5544,39.6,0,,False
+popquorn,age,gen z,gen z,age,1345,26.5,72,58.3,False
+attitudes,age,millenial,millenial,age,2541,53.3,18,72.2,True
+kumar,age,millenial,millenial,age,292300,31.1,2142,45.0,True
+mhs,age,millenial,millenial,age,42877,41.6,60,26.7,True
+popquorn,age,millenial,millenial,age,4681,23.6,172,18.0,True
+attitudes,age,gen x+,gen x+,age,809,55.9,15,40.0,True
+kumar,age,gen x+,gen x+,age,111280,28.0,1927,45.7,True
+mhs,age,gen x+,gen x+,age,15902,45.3,60,73.3,True
+popquorn,age,gen x+,gen x+,age,5326,28.9,178,32.6,True
+attitudes,politics,left / liberal,left,politics,1741,52.3,30,60.0,True
+kumar,politics,left / liberal,liberal,politics,192800,28.0,3434,34.6,True
+mhs,politics,left / liberal,liberal,ideology,35826,42.1,59,42.4,True
+attitudes,politics,center / neutral / independent,center,politics,460,52.8,11,63.6,False
+kumar,politics,center / neutral / independent,independent,politics,125120,26.5,2717,32.4,True
+mhs,politics,center / neutral / independent,neutral,ideology,11456,42.1,26,23.1,True
+attitudes,politics,right / conservative,right,politics,1153,56.9,25,72.0,True
+kumar,politics,right / conservative,conservative,politics,132240,35.3,3063,61.1,True
+mhs,politics,right / conservative,conservative,ideology,17041,43.1,45,71.1,True
+kumar,religion,high,high,religion,146040,39.4,2635,85.7,True
+kumar,religion,not_high,not_high,religion,304120,25.0,2976,16.9,True
+popquorn,education,College degree,College degree,education,5537,24.7,178,24.7,True
+popquorn,education,Graduate degree,Graduate degree,education,2381,30.9,62,67.7,True
+popquorn,education,High school diploma or equivalent,High school diploma or equivalent,education,3434,26.1,111,25.2,True
+popquorn,occupation,Employed,Employed,occupation,5826,26.4,192,31.8,True
+popquorn,occupation,Homemaker,Homemaker,occupation,494,26.5,16,56.2,False
+popquorn,occupation,Retired,Retired,occupation,1346,31.5,47,44.7,True
+popquorn,occupation,Self-employed,Self-employed,occupation,1593,23.8,79,11.4,True
+popquorn,occupation,Student,Student,occupation,846,31.2,42,47.6,True
+popquorn,occupation,Unemployed,Unemployed,occupation,1247,21.3,44,27.3,True
+attitudes,traditionalism,high,high,traditionalism,2088,55.9,25,68.0,True
+attitudes,traditionalism,not_high,not_high,traditionalism,1266,50.8,25,64.0,True

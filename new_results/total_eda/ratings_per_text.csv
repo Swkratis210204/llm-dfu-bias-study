@@ -1,0 +1,5 @@
+dataset,texts,min,median,max,texts with fewer than 4 ratings,% of texts
+popquorn,1500,3,8,10,2,0.1
+attitudes,625,2,6,11,41,6.6
+mhs,5990,2,4,777,919,15.3
+kumar,107620,1,4,5,20660,19.2
