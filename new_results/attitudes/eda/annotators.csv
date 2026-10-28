@@ -1,0 +1,5 @@
+metric,raw,after prefilter,clean
+annotators,not available,not available,not available
+ratings,3463,3460,3354
+ratings per annotator (min / median / max),not available,not available,not available
+note,the data has no annotator id: the raters are known only by the attributes that come with each rating,,

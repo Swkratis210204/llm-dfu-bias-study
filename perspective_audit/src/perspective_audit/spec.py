@@ -26,3 +26,5 @@ class DatasetSpec:
     prefilter: Optional[Callable[[pd.DataFrame], pd.DataFrame]] = None     # applied to the raw table before the cleaning
     item_word: str = "tweet"                        # how a text is called in prompts ("tweet", "comment", ...)
     description: str = ""
+    annotator_column: Optional[str] = None          # the column of the loaded table with the annotator id; None when the data has no annotator id
+    rating_column: str = "rating"                   # the name of the rating in the original data (the loaded table calls it "rating")

@@ -1,0 +1,5 @@
+dataset,texts (raw / clean),ratings (raw / clean),annotators (raw / clean),ratings per text (median),scale,demographic dimensions,non-demographic dimensions
+popquorn,"1,500 / 1,500","13,036 / 11,352",262 / 228,8.0,1 to 5,"gender, race, age","education, occupation"
+attitudes,626 / 625,"3,463 / 3,354",not available,6.0,1 to 5,"gender, race, age","politics, traditionalism"
+mhs,"39,565 / 5,990","135,556 / 64,323","7,912 / 7,577",4.0,1 to 3,"gender, age",ideology
+kumar,"107,620 / 107,620","538,100 / 450,160",not available,4.0,1 to 5,"gender, race, age","politics, religion"

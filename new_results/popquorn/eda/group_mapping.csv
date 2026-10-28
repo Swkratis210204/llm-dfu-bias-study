@@ -1,0 +1,33 @@
+dimension,raw value,mapped group,status,reason,ratings (raw),annotators (raw)
+gender,Man,Man,kept,,6166,124
+gender,Woman,Woman,kept,,6520,131
+gender,Non-binary,,excluded,not part of the group definition of the dataset,350,7
+race,White,White,kept,,9804,197
+race,Black or African American,Black or African American,kept,,1685,34
+race,Asian,Asian,"kept in the cleaning, removed from the AU analysis",in fewer than 10 AU texts,949,19
+race,Arab American,,excluded,not part of the group definition of the dataset,49,1
+race,Native American,,excluded,not part of the group definition of the dataset,299,6
+race,Hispanic or Latino,,excluded,not part of the group definition of the dataset,250,5
+age,35-39,millenial,kept,,1547,31
+age,50-54,gen x+,kept,,997,20
+age,18-24,gen z,"kept in the cleaning, removed from the AU analysis",in fewer than 10 AU texts,1545,31
+age,40-44,millenial,kept,,1142,23
+age,30-34,millenial,kept,,1494,30
+age,45-49,gen x+,kept,,1091,22
+age,25-29,millenial,kept,,1236,25
+age,54-59,gen x+,kept,,1793,36
+age,60-64,gen x+,kept,,747,15
+age,>65,gen x+,kept,,1444,29
+education,High school diploma or equivalent,High school diploma or equivalent,kept,,3984,80
+education,College degree,College degree,kept,,6036,121
+education,Less than a high school diploma,,excluded,not part of the group definition of the dataset,237,5
+education,Other,,excluded,"other, unknown or no opinion",298,6
+education,Graduate degree,Graduate degree,kept,,2481,50
+occupation,Unemployed,Unemployed,kept,,1684,34
+occupation,Self-employed,Self-employed,kept,,1692,34
+occupation,Employed,Employed,kept,,6325,127
+occupation,Student,Student,kept,,995,20
+occupation,Homemaker,Homemaker,"kept in the cleaning, removed from the AU analysis",in fewer than 10 AU texts,594,12
+occupation,Retired,Retired,kept,,1446,29
+occupation,Other,,excluded,"other, unknown or no opinion",250,5
+occupation,Prefer not to disclose,,excluded,prefer not to say,50,1

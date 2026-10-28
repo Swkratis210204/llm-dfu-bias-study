@@ -65,4 +65,5 @@ SPEC = DatasetSpec(
     prefilter=_more_than_three_ratings,
     item_word="tweet",
     description="Attitudes, 1-5 `toyou` ratings",
+    rating_column="toyou",                       # no annotator id in the data
 )

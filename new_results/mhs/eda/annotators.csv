@@ -1,0 +1,8 @@
+metric,raw,after prefilter,clean
+annotators,7912,7912,7577
+ratings,135556,67121,64323
+ratings per annotator (min / median / max),,,1 / 8 / 21
+annotators with more than one value of gender (raw),0,,
+annotators with more than one value of age (raw),0,,
+annotators with more than one value of ideology (raw),0,,
+"repeated (annotator, text) pairs (raw)",0,,

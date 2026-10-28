@@ -1,0 +1,82 @@
+dimension,raw value,mapped group,status,reason,ratings (raw),annotators (raw)
+gender,Male,Male,kept,,250220,not available
+gender,Female,Female,kept,,281020,not available
+gender,Unknown,,excluded,"other, unknown or no opinion",3920,not available
+gender,Nonbinary,,excluded,not part of the group definition of the dataset,2940,not available
+race,White,White,kept,,383540,not available
+race,Black or African American,Black,kept,,66540,not available
+race,Prefer not to say,,excluded,prefer not to say,6020,not available
+race,Asian,Asian,kept,,31900,not available
+race,"White,Black or African American",,excluded,not part of the group definition of the dataset,4160,not available
+race,American Indian or Alaska Native,,excluded,not part of the group definition of the dataset,4460,not available
+race,"White,Black or African American,American Indian or Alaska Native",,excluded,not part of the group definition of the dataset,620,not available
+race,Hispanic,,excluded,not part of the group definition of the dataset,14880,not available
+race,"White,Asian",,excluded,not part of the group definition of the dataset,3880,not available
+race,"Black or African American,American Indian or Alaska Native,Asian",,excluded,not part of the group definition of the dataset,40,not available
+race,"White,Other",,excluded,not part of the group definition of the dataset,1560,not available
+race,Other,,excluded,"other, unknown or no opinion",4000,not available
+race,"American Indian or Alaska Native,Asian",,excluded,not part of the group definition of the dataset,200,not available
+race,"White,Asian,Native Hawaiian or Pacific Islander",,excluded,not part of the group definition of the dataset,240,not available
+race,"White,American Indian or Alaska Native",,excluded,not part of the group definition of the dataset,3480,not available
+race,Native Hawaiian or Pacific Islander,,excluded,not part of the group definition of the dataset,1320,not available
+race,"Black or African American,Asian",,excluded,not part of the group definition of the dataset,240,not available
+race,"White,Native Hawaiian or Pacific Islander",,excluded,not part of the group definition of the dataset,520,not available
+race,"Black or African American,American Indian or Alaska Native",,excluded,not part of the group definition of the dataset,580,not available
+race,"Asian,Native Hawaiian or Pacific Islander",,excluded,not part of the group definition of the dataset,240,not available
+race,"Black or African American,Other",,excluded,not part of the group definition of the dataset,220,not available
+race,"White,Black or African American,Asian",,excluded,not part of the group definition of the dataset,160,not available
+race,"White,Prefer not to say",,excluded,prefer not to say,40,not available
+race,"White,Asian,Other",,excluded,not part of the group definition of the dataset,60,not available
+race,"American Indian or Alaska Native,Native Hawaiian or Pacific Islander",,excluded,not part of the group definition of the dataset,20,not available
+race,"White,Black or African American,American Indian or Alaska Native,Asian",,excluded,not part of the group definition of the dataset,180,not available
+race,"White,American Indian or Alaska Native,Other",,excluded,not part of the group definition of the dataset,100,not available
+race,"Asian,Prefer not to say",,excluded,prefer not to say,40,not available
+race,"Asian,Other",,excluded,not part of the group definition of the dataset,100,not available
+race,"White,Black or African American,Native Hawaiian or Pacific Islander",,excluded,not part of the group definition of the dataset,60,not available
+race,"White,Native Hawaiian or Pacific Islander,Other",,excluded,not part of the group definition of the dataset,40,not available
+race,"Black or African American,American Indian or Alaska Native,Native Hawaiian or Pacific Islander",,excluded,not part of the group definition of the dataset,40,not available
+race,"White,American Indian or Alaska Native,Asian,Native Hawaiian or Pacific Islander",,excluded,not part of the group definition of the dataset,20,not available
+race,"White,Black or African American,Other",,excluded,not part of the group definition of the dataset,60,not available
+race,"White,American Indian or Alaska Native,Asian",,excluded,not part of the group definition of the dataset,100,not available
+race,"White,Black or African American,American Indian or Alaska Native,Other",,excluded,not part of the group definition of the dataset,40,not available
+race,"Prefer not to say,Other",,excluded,prefer not to say,40,not available
+race,"White,Hispanic",,excluded,not part of the group definition of the dataset,4880,not available
+race,"Asian,Hispanic",,excluded,not part of the group definition of the dataset,300,not available
+race,"Black or African American,Hispanic",,excluded,not part of the group definition of the dataset,620,not available
+race,"White,American Indian or Alaska Native,Hispanic",,excluded,not part of the group definition of the dataset,120,not available
+race,"White,Black or African American,Hispanic",,excluded,not part of the group definition of the dataset,120,not available
+race,"White,Black or African American,Hispanic,Prefer not to say",,excluded,prefer not to say,20,not available
+race,"White,Black or African American,Asian,Native Hawaiian or Pacific Islander,Hispanic",,excluded,not part of the group definition of the dataset,20,not available
+race,"White,Native Hawaiian or Pacific Islander,Hispanic",,excluded,not part of the group definition of the dataset,20,not available
+race,"Black or African American,Asian,Hispanic",,excluded,not part of the group definition of the dataset,20,not available
+race,"American Indian or Alaska Native,Hispanic",,excluded,not part of the group definition of the dataset,160,not available
+race,"Black or African American,American Indian or Alaska Native,Hispanic",,excluded,not part of the group definition of the dataset,60,not available
+race,"Hispanic,Other",,excluded,not part of the group definition of the dataset,20,not available
+race,"White,Asian,Hispanic",,excluded,not part of the group definition of the dataset,120,not available
+race,"Black or African American,American Indian or Alaska Native,Other",,excluded,not part of the group definition of the dataset,20,not available
+race,"White,Black or African American,American Indian or Alaska Native,Hispanic",,excluded,not part of the group definition of the dataset,60,not available
+race,"White,Black or African American,American Indian or Alaska Native,Asian,Hispanic",,excluded,not part of the group definition of the dataset,100,not available
+race,"Black or African American,Native Hawaiian or Pacific Islander",,excluded,not part of the group definition of the dataset,60,not available
+race,"Native Hawaiian or Pacific Islander,Hispanic",,excluded,not part of the group definition of the dataset,20,not available
+race,"Black or African American,Hispanic,Other",,excluded,not part of the group definition of the dataset,20,not available
+race,"White,Asian,Native Hawaiian or Pacific Islander,Hispanic",,excluded,not part of the group definition of the dataset,20,not available
+race,"Black or African American,American Indian or Alaska Native,Prefer not to say",,excluded,prefer not to say,20,not available
+race,(missing),,excluded,missing,1560,not available
+age,45 - 54,gen x+,kept,,69800,not available
+age,25 - 34,millenial,kept,,214600,not available
+age,55 - 64,gen x+,kept,,39580,not available
+age,35 - 44,millenial,kept,,133800,not available
+age,18 - 24,gen z,kept,,62480,not available
+age,65 or older,gen x+,kept,,16580,not available
+age,Prefer not to say,,excluded,prefer not to say,1140,not available
+age,Under 18,gen z,kept,,120,not available
+politics,Conservative,conservative,kept,,142960,not available
+politics,Liberal,liberal,kept,,216580,not available
+politics,Prefer not to say,,excluded,prefer not to say,22100,not available
+politics,Independent,independent,kept,,144560,not available
+politics,Other,,excluded,"other, unknown or no opinion",11900,not available
+religion,Very important,high,kept,,169020,not available
+religion,Not important,not_high,kept,,171440,not available
+religion,Not too important,not_high,kept,,64560,not available
+religion,Somewhat important,not_high,kept,,125680,not available
+religion,Prefer not to say,,excluded,prefer not to say,7400,not available

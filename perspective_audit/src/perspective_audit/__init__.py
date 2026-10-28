@@ -4,6 +4,7 @@ from .annotation import (AnnotationError, annotate, collect_runs, ensemble, insp
                          sample_inputs)
 from .datasets import SPECS, get_spec
 from .eda import eda_figures, eda_tables, save_eda
+from .eda_dataset import dataset_tables, eda_overview_all, save_dataset_eda
 from .env import Env
 from .export import csv_ready, sample_per_dimension, save_au_tables
 from .models import DEFAULT_CONFIGS, Model, ModelConfig, ModelError, ModelHub
@@ -25,5 +26,5 @@ __all__ = ["Unimodality", "PrunedAU", "dfu_of_hist",
            "ScoringPrompt", "PersonaPrompt", "label_from_score", "score_texts", "score_personas",
            "annotate", "ensemble", "load_model_inputs", "progress", "inspect_run", "collect_runs", "sample_inputs",
            "AnnotationError", "cohen_kappa", "weighted_kappa", "spearman",
-           "eda_tables", "eda_figures", "save_eda", "save_prompts",
+           "eda_tables", "eda_figures", "save_eda", "dataset_tables", "save_dataset_eda", "eda_overview_all", "save_prompts",
            "annotate_personas", "load_persona_inputs", "persona_long", "collect_persona_runs", "inspect_personas", "group_order"]

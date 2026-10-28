@@ -1,0 +1,18 @@
+dimension,group,ratings,annotators,kept in AU analysis
+gender,Man,5526,111,True
+gender,Woman,5826,117,True
+race,Asian,899,18,False
+race,Black or African American,1535,31,True
+race,White,8918,179,True
+age,gen x+,5326,107,True
+age,gen z,1345,27,False
+age,millenial,4681,94,True
+education,College degree,5537,111,True
+education,Graduate degree,2381,48,True
+education,High school diploma or equivalent,3434,69,True
+occupation,Employed,5826,117,True
+occupation,Homemaker,494,10,False
+occupation,Retired,1346,27,True
+occupation,Self-employed,1593,32,True
+occupation,Student,846,17,True
+occupation,Unemployed,1247,25,True

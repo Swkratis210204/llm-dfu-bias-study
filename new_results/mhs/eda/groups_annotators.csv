@@ -1,0 +1,9 @@
+dimension,group,ratings,annotators,kept in AU analysis
+gender,female,36483,4259,True
+gender,male,27840,3318,True
+age,gen x+,15902,1863,True
+age,gen z,5544,678,False
+age,millenial,42877,5036,True
+ideology,conservative,17041,2012,True
+ideology,liberal,35826,4210,True
+ideology,neutral,11456,1355,True

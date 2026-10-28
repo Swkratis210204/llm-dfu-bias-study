@@ -1,0 +1,14 @@
+field,value,where it comes from
+dataset,kumar,dataset definition
+description,"Kumar, toxic_score + 1 (1-5)",dataset definition
+source of the texts,TODO,to write
+task,TODO,to write
+rating column used,toxic_score,dataset definition
+"observed rating values (analyzed scale), with their counts","1: 281,511, 2: 99,973, 3: 71,347, 4: 50,300, 5: 34,969",read from the data
+scale analyzed,1 to 5,dataset definition
+meaning of each value of the scale,TODO,to write
+ratings counted as toxic,rating >= 3,dataset definition
+annotator id,not available,dataset definition
+dimensions,"gender, race, age, politics, religion",dataset definition
+a group is removed from the AU analysis when it is in fewer AU texts than,10,dataset definition
+DFU tolerance for polarization and unimodality,0.0,dataset definition

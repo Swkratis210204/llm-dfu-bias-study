@@ -1,0 +1,14 @@
+dimension,group,ratings,annotators,kept in AU analysis
+gender,Female,234940,not available,True
+gender,Male,215220,not available,True
+race,Asian,28860,not available,True
+race,Black,61720,not available,True
+race,White,359580,not available,True
+age,gen x+,111280,not available,True
+age,gen z,46580,not available,True
+age,millenial,292300,not available,True
+politics,conservative,132240,not available,True
+politics,independent,125120,not available,True
+politics,liberal,192800,not available,True
+religion,high,146040,not available,True
+religion,not_high,304120,not available,True

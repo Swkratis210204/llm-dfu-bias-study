@@ -83,3 +83,68 @@ mean rating. Comparing model scores with human scores needs those means joined f
 
 **15. Group names are written as in each dataset.** The same group is "Man", "male" or "Male" depending on the dataset; the persona prompts use the
 dataset's own string, so joins are exact but pooled tables across datasets need a mapping.
+
+## Annotators and group definitions (added 2026-10-28)
+
+Source for this whole section: `new_results/<dataset>/eda/annotators.csv`, `groups_annotators.csv`, `group_mapping.csv` and `new_results/eda_overview_all.csv`.
+
+**16. Only popquorn and MHS have an annotator id.**
+Attitudes and Kumar have none (the raters are known only by the attributes attached to each rating), so annotator counts and ratings per annotator are
+"not available" for them. Popquorn: 262 annotators in the raw data, 228 after the cleaning (34 lost); each remaining annotator has 45-50 ratings
+(median 50). MHS: 7,912 annotators raw, 7,577 clean (335 lost); ratings per annotator after the cleaning: 1 / 8 / 21 (min / median / max).
+Where: dataset descriptions; do not report annotator numbers for attitudes and Kumar.
+
+**17. Checks that came out clean (popquorn and MHS).**
+No annotator has more than one value of any attribute (gender, race, age, education, occupation; gender, age, ideology), and no (annotator, text)
+pair is repeated. Not checkable for attitudes and Kumar (no annotator id).
+
+**18. Kumar: race is multi-select, and most raw values are excluded.**
+The raw `race` column has 58 distinct values, plus missing (a rater can tick several races). Only White, Black or African American and Asian alone are used; every
+combination ("White,Asian", "White,Hispanic", ...) is excluded, and so is Hispanic on its own (14,880 ratings). Hispanic raters are therefore absent from
+Kumar's race groups, as Hispanic or Latino and Native American are in popquorn and `hisp` / `native` in attitudes. Race has 56,120 excluded ratings
+(10.4% of the raw ratings). Where: group definitions; limitation on who is represented.
+
+**19. Group mapping choices a reader may question.**
+- Kumar `Under 18` (120 ratings, minors) is mapped to gen z together with 18-24.
+- Popquorn age bands are used as in the file, including the band spelled `54-59`; attitudes `age` is a number (18, 25, ..., 65) and 18 gives gen z with
+  only 4 ratings (and 41 ratings have no age).
+- MHS age is in years and is cut at 25 and 45 (gen z 18-24, millenial 25-44, gen x+ 45-81).
+- Attitudes `politics` and `traditionalism` are scores cut into groups (politics: left up to -0.25, center above -0.25 up to 0.25, right above 0.25;
+  traditionalism: not_high 1-3, high 4-5). Politics `center` has only 467 ratings and is removed from the AU analysis.
+- The "reason" column of `group_mapping.csv` is a simple rule on the raw text ("missing", "prefer not to say", "other, unknown or no opinion",
+  otherwise "not part of the group definition of the dataset"); the real reasons are the modelling choices described in the dataset sections.
+
+**20. Spelling.** The group is spelled `millenial` in all the results (as in the code); plot labels use American spelling ("polarization"), but the csv
+column names and some notebook text still say "polarised".
+
+**21. `dataset_info.csv` has TODO fields.** Source of the texts, task and the meaning of each scale value cannot be read from the data and are to be
+filled in by hand (or from the dataset papers).
+
+## Annotator identifiers in Attitudes and Kumar (checked 2026-10-28)
+
+Source: the raw files `Thesis/Code/attitudes_embedded.csv` (a pickled DataFrame) and `datasets/kumar/toxicity_ratings.json`, and the paper
+`Related Work/sapattitudes.pdf` (Sap et al., "Annotators with Attitudes"). The project has no documentation of the Kumar data other than the one-line
+`datasets/README.md`; the statement that Kumar's participants rated batches of 20 comments comes from the Kumar paper, which is not in the project.
+
+**22. Attitudes: annotators identifiable: NO.**
+The raw file has 16 columns and no id, worker or session column: `tweet` (626 distinct) and 15 list columns parallel to the 3,463 ratings (`toyou`,
+`toany`, `intent`, `racism`, `racist`, `freeSpeech`, `harmHateSpeech`, `lingPurism`, `traditionalism`, `annotatorPolitics`, `annotatorRace`,
+`annotatorAge`, `annotatorGender`, `annotatorMinority` (free text, 39 distinct strings), `bert` (one 768-number vector per tweet)). The paper says the study
+data are anonymized ("please contact the authors", footnote 2) and describes the breadth-of-posts study as 173 annotators, 571 posts and 6 ratings per
+post (two from white conservative, two from white liberal and two from Black participants). The file does not match that: 626 tweets, 3-12 ratings per
+tweet (450 tweets with 6, 122 with 4, 52 with 5, one with 3 and one with 12). The number of distinct combinations of the annotator-level columns is
+248 (10 columns), 182 (6 columns) or 156 (the 5 columns used by the AU analysis); none equals the 173 annotators of the paper, so these combinations are
+not annotator ids and none was built. Annotator counts stay "not available". Open: where the 626 tweets come from, since the paper reports 571 posts.
+
+**23. Kumar: no annotator id, but a batch structure is visible (NOT used as an id).**
+The raw file has comment-level keys `comment`, `source` (3 values), `perspective_score`, `comment_id` (unique) and `ratings`, and 25 keys per rating:
+`toxic_score` (0-4), five `is_*` flags, `fine_to_see_online`, `remove_from_online`, and 17 rater attributes (gender, race, age_range, education,
+political_affilation, religion_important, lgbtq_status, is_parent, identify_as_transgender, technology_impact, toxic_comments_problem, four `uses_media_*`
+and two `personally_*`). No id, worker, session or hash. The pipeline reads only 6 of the 25 (the rating and five attributes).
+`comment_id` is `<batch>_<position>`: 5,381 batches of exactly 20 comments each, position values 1 and 5-23 (positions 2, 3 and 4 never occur; cause not
+known). Every comment has 5 ratings, and in all 5,381 batches the 20 comments have the same 5 rater profiles (all 17 attributes) in the same order, with
+5 distinct profiles per batch. So within a batch, rating position k was given by the same rater (or at least the same profile) for all 20 comments, which
+fits "participants rated batches of 20 comments". That gives 5,381 x 5 = 26,905 rater slots raw (538,100 ratings / 20) and 22,508 after the cleaning
+(450,160 / 20; a slot is kept or removed as a whole because the attributes do not change inside a batch). These are rating sessions, not people: nothing
+in the project says whether the same participant appears in several batches, so no annotator count is reported and no pseudo-ids were created.
+Where: dataset description (batch structure; annotator counts not available). Source for the numbers: the raw file, checked with a one-off script.

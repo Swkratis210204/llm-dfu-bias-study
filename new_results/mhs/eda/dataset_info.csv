@@ -1,0 +1,14 @@
+field,value,where it comes from
+dataset,mhs,dataset definition
+description,"Measuring Hate Speech, `hatespeech` item (1 = No, 2 = Unclear, 3 = Yes)",dataset definition
+source of the texts,TODO,to write
+task,TODO,to write
+rating column used,hatespeech,dataset definition
+"observed rating values (analyzed scale), with their counts","1: 80,624, 2: 8,911, 3: 46,021",read from the data
+scale analyzed,1 to 3,dataset definition
+meaning of each value of the scale,TODO,to write
+ratings counted as toxic,rating >= 3,dataset definition
+annotator id,annotator_id,dataset definition
+dimensions,"gender, age, ideology",dataset definition
+a group is removed from the AU analysis when it is in fewer AU texts than,10,dataset definition
+DFU tolerance for polarization and unimodality,0.0,dataset definition

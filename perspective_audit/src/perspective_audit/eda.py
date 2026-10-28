@@ -1,33 +1,42 @@
-"""A first description of one dataset (a ``DatasetResult``), for the paper: all its texts next to its AU texts. Nothing here asks a model for anything.
+"""A first description of one dataset (a ``DatasetResult``), for the paper: all its texts and its AU texts, together and apart. Nothing here asks
+a model for anything.
 
 ``eda_tables(result)`` returns the tables as a dict, ``eda_figures(result, folder)`` draws the figures (it needs matplotlib) and
-``save_eda(result, folder)`` writes both: every table as a csv and every figure as a png. "AU texts" are the texts that are AU in at
-least one dimension (in ``groups`` and ``au_labels`` the texts that are AU in that dimension). The tables:
+``save_eda(result, folder)`` writes both: every table as a csv and every figure as a png. "AU texts" are the texts that are AU in at least one
+dimension (in ``groups``, per dimension: the texts that are AU in that dimension). The tables:
 
     preprocessing        what the cleaning removed: ratings and texts before and after, ratings with an excluded group value per dimension
-    overview             all texts against AU texts: texts, ratings, ratings per text (and the texts rated far more than usual), mean rating,
+    overview             all texts and AU texts: texts, ratings, ratings per text (and the texts rated far more than usual), mean rating,
                          share of toxic ratings, polarisation, words
-    rating_distribution  how many ratings (and which share) each score got, in all texts and in the AU texts
+    rating_distribution  how many ratings (and which share) each score got, for all texts and AU texts
     funnel               per dimension: how many texts are not polarised, have too few groups, have a group that is not unimodal, or are AU
-    groups               per dimension and group: ratings, mean rating and share of toxic ratings in all texts and in the AU texts of that dimension
+    groups               per dimension and group: ratings, mean rating and share of toxic ratings, for all texts and for the AU texts of that dimension
     au_labels            per dimension: the AU texts, and how many have groups with different labels (the texts that tell perspectives apart)
-    text_length          words per text, all texts against the AU texts
+    text_length          words per text, for all texts and AU texts
+
+The figures: ``ratings.png`` (the ratings), ``dfu.png`` (the polarisation) and ``groups.png`` (toxic ratings per group) put all texts and AU texts
+side by side, and the ``_all`` and ``_au`` versions (e.g. ``dfu_au.png``) show each of them alone; ``funnel.png`` and ``au_labels.png`` describe the step from one to the other.
 """
 from __future__ import annotations
 
+import math
 from pathlib import Path
 from typing import Dict, List
 
 import numpy as np
 import pandas as pd
 
+from .eda_dataset import save_dataset_eda
 from .pipeline import DatasetResult
 
 __all__ = ["eda_tables", "eda_figures", "save_eda"]
 
-REASONS = ["not polarised", "too few groups", "a group is not unimodal", "AU"]       # the order of the funnel
+REASONS = ["not polarised", "too few groups", "a group is not unimodal", "AU"]       # the order of the funnel (and the columns of funnel.csv)
+PLOT_LABEL = {"not polarised": "not polarized"}                                        # American spelling in the plots; the csv columns stay as they are
 ALL, AU = "all texts", "AU texts"
 HEAVY = 3                                  # a text with more than HEAVY times the median number of ratings is flagged in the overview
+TOXIC_COLUMN = {ALL: "toxic %", AU: "AU toxic %"}          # the columns of the groups table that the figures draw
+COLORS = {ALL: "#4C72B0", AU: "#DD8452"}
 
 
 def _reason(text: str) -> str:
@@ -106,12 +115,14 @@ def eda_tables(result: DatasetResult) -> Dict[str, pd.DataFrame]:
 
     rows = []
     for dimension, pr in result.pruned.items():
-        au_here = clean[clean["item_id"].isin(set(pr.result.loc[pr.result["au"], "item_id"]))]
+        is_au = clean["item_id"].isin(set(pr.result.loc[pr.result["au"], "item_id"]))           # AU in THIS dimension
         for group, ratings in clean.groupby(dimension)["rating"]:
-            au_ratings = au_here.loc[au_here[dimension] == group, "rating"]
-            rows.append({"dimension": dimension, "group": group, "ratings": len(ratings), "mean rating": _mean(ratings),
-                         "toxic %": _toxic_pct(ratings, threshold), "AU ratings": len(au_ratings), "AU mean rating": _mean(au_ratings),
-                         "AU toxic %": _toxic_pct(au_ratings, threshold), "kept in AU analysis": group in pr.counts})
+            row = {"dimension": dimension, "group": group, "ratings": len(ratings), "mean rating": _mean(ratings),
+                   "toxic %": _toxic_pct(ratings, threshold)}
+            part = clean.loc[is_au & (clean[dimension] == group), "rating"]
+            row.update({"AU ratings": len(part), "AU mean rating": _mean(part), "AU toxic %": _toxic_pct(part, threshold)})
+            row["kept in AU analysis"] = group in pr.counts
+            rows.append(row)
     groups = pd.DataFrame(rows).set_index(["dimension", "group"])
 
     rows = {}
@@ -128,17 +139,70 @@ def eda_tables(result: DatasetResult) -> Dict[str, pd.DataFrame]:
             "groups": groups, "au_labels": au_labels, "text_length": text_length}
 
 
+def _ratings_figure(plt, tables: Dict[str, pd.DataFrame], title: str, populations: List[str]):
+    """How often each rating was given, for all texts, the AU texts, or both side by side."""
+    fig, ax = plt.subplots(figsize=(7, 4))
+    dist = tables["rating_distribution"]
+    x, width = np.arange(len(dist)), 0.8 / len(populations)
+    for i, name in enumerate(populations):
+        ax.bar(x + (i - (len(populations) - 1) / 2) * width, dist[f"{name}: %"], width=width, color=COLORS[name],
+               label=f"{name} ({int(dist[f'{name}: ratings'].sum()):,} ratings)")
+    ax.set_xticks(x)
+    ax.set_xticklabels(dist.index.astype(int))
+    ax.set(xlabel="rating", ylabel="% of ratings", title=title)
+    ax.legend()
+    return fig
+
+
+def _dfu_figure(plt, texts: pd.DataFrame, title: str, populations: List[str]):
+    """The polarisation (DFU) of the texts, for all texts, the AU texts, or both side by side."""
+    fig, ax = plt.subplots(figsize=(7, 4))
+    bins = np.linspace(0, 1, 21)
+    for name in populations:
+        part = texts[texts["au"]] if name == AU else texts
+        ax.hist(part["dfu"], bins=bins, weights=np.full(len(part), 100 / max(len(part), 1)), alpha=0.6 if len(populations) > 1 else 0.9,
+                color=COLORS[name], label=f"{name} ({len(part):,} texts)")
+    ax.set(xlabel="DFU of the text (0 = unimodal)", ylabel="% of texts", title=title)
+    ax.legend()
+    return fig
+
+
+def _groups_figure(plt, tables: Dict[str, pd.DataFrame], title: str, populations: List[str]):
+    """The share of toxic ratings of every group, one panel per dimension, for all texts, the AU texts, or both side by side."""
+    groups = tables["groups"].reset_index()
+    dimensions = list(dict.fromkeys(groups["dimension"]))
+    rows = math.ceil(len(dimensions) / 2)
+    fig, axes = plt.subplots(rows, 2, figsize=(11, 2.4 * rows + 0.8), squeeze=False)
+    height = 0.8 / len(populations)
+    for ax, dimension in zip(axes.flatten(), dimensions):
+        part = groups[groups["dimension"] == dimension].reset_index(drop=True)
+        y = np.arange(len(part))
+        for i, name in enumerate(populations):
+            ax.barh(y + (i - (len(populations) - 1) / 2) * height, part[TOXIC_COLUMN[name]], height=height, color=COLORS[name], label=name)
+        ax.set_yticks(y)
+        ax.set_yticklabels(part["group"].astype(str) + part["kept in AU analysis"].map({True: "", False: " (removed)"}))
+        ax.invert_yaxis()
+        ax.set_xlim(0, 100)
+        ax.set_title(dimension)
+    for ax in axes.flatten()[len(dimensions):]:
+        ax.axis("off")
+    for ax in axes[-1]:
+        ax.set_xlabel("% of ratings called toxic")
+    fig.legend(*axes[0][0].get_legend_handles_labels(), loc="lower center", ncol=len(populations))
+    fig.suptitle(title, fontweight="bold")
+    return fig
+
+
 def eda_figures(result: DatasetResult, folder: Path) -> List[Path]:
-    """Draw the figures of the description into ``folder`` and return their paths:
-    ``ratings.png`` (the ratings and the polarisation of all texts and of the AU texts), ``groups.png`` (the share of toxic ratings of every
-    group, in all texts and in the AU texts), ``funnel.png`` (what happens to the texts of every dimension) and ``au_labels.png`` (the AU
-    texts: do the groups agree?)."""
+    """Draw the figures of the description into ``folder`` and return their paths: ``ratings.png`` (how often each rating was given), ``dfu.png``
+    (the polarisation of the texts) and ``groups.png`` (the share of toxic ratings of every group), each with all texts and AU texts side by side,
+    and for each alone (``_all`` and ``_au``, e.g. ``ratings_au.png``); ``funnel.png`` (what happens to the texts of every dimension) and
+    ``au_labels.png`` (the AU texts: do the groups agree?). The ratings and the DFU are separate figures: they measure different things."""
     import matplotlib.pyplot as plt
 
     folder = Path(folder)
     folder.mkdir(parents=True, exist_ok=True)
     tables, texts, name = eda_tables(result), _texts(result), result.spec.name
-    colors = {ALL: "#4C72B0", AU: "#DD8452"}
     paths = []
 
     def finish(fig, file):
@@ -147,42 +211,18 @@ def eda_figures(result: DatasetResult, folder: Path) -> List[Path]:
         plt.close(fig)
         paths.append(folder / file)
 
-    fig, axes = plt.subplots(1, 2, figsize=(12, 4))
-    dist, x = tables["rating_distribution"], np.arange(len(tables["rating_distribution"]))
-    for shift, group in zip((-0.2, 0.2), (ALL, AU)):
-        axes[0].bar(x + shift, dist[f"{group}: %"], width=0.4, color=colors[group], label=f"{group} ({int(dist[f'{group}: ratings'].sum()):,} ratings)")
-    axes[0].set_xticks(x)
-    axes[0].set_xticklabels(dist.index.astype(int))
-    axes[0].set(xlabel="rating", ylabel="% of ratings", title="Ratings")
-    axes[0].legend()
-    bins = np.linspace(0, 1, 21)
-    for group, part in ((ALL, texts), (AU, texts[texts["au"]])):
-        axes[1].hist(part["dfu"], bins=bins, weights=np.full(len(part), 100 / max(len(part), 1)), alpha=0.6, color=colors[group],
-                     label=f"{group} ({len(part):,})")
-    axes[1].set(xlabel="DFU of the text (0 = unimodal)", ylabel="% of texts", title="Polarisation of the texts")
-    axes[1].legend()
-    fig.suptitle(f"{name}: all texts against the AU texts", fontweight="bold")
-    finish(fig, "ratings.png")
-
-    groups = tables["groups"].reset_index()
-    labels = groups["dimension"] + ": " + groups["group"].astype(str) + groups["kept in AU analysis"].map({True: "", False: " (removed)"})
-    y = np.arange(len(groups))
-    fig, ax = plt.subplots(figsize=(8, 0.5 * len(groups) + 1.5))
-    ax.barh(y - 0.2, groups["toxic %"], height=0.4, color=colors[ALL], label=ALL)
-    ax.barh(y + 0.2, groups["AU toxic %"], height=0.4, color=colors[AU], label=AU)
-    ax.set_yticks(y)
-    ax.set_yticklabels(labels)
-    ax.invert_yaxis()
-    ax.set(xlabel="% of ratings called toxic", title=f"{name}: toxic ratings per group")
-    ax.legend()
-    finish(fig, "groups.png")
+    for suffix, populations in (("", [ALL, AU]), ("_all", [ALL]), ("_au", [AU])):
+        label = " against ".join(populations)
+        finish(_ratings_figure(plt, tables, f"{name}: the ratings, {label}", populations), f"ratings{suffix}.png")
+        finish(_dfu_figure(plt, texts, f"{name}: polarization of the texts, {label}", populations), f"dfu{suffix}.png")
+        finish(_groups_figure(plt, tables, f"{name}: toxic ratings per group, {label}", populations), f"groups{suffix}.png")
 
     funnel = tables["funnel"]
     fig, ax = plt.subplots(figsize=(8, 0.6 * len(funnel) + 2))
     left = pd.Series(0.0, index=funnel.index)
-    for reason, color in zip(REASONS, ["#DDDDDD", "#BBBBBB", "#888888", colors[ALL]]):
+    for reason, color in zip(REASONS, ["#DDDDDD", "#BBBBBB", "#888888", COLORS[AU]]):
         share = 100 * funnel[reason] / funnel["texts"]
-        ax.barh(funnel.index, share, left=left, label=reason, color=color)
+        ax.barh(funnel.index, share, left=left, label=PLOT_LABEL.get(reason, reason), color=color)
         left += share
     ax.invert_yaxis()
     ax.set(xlabel="% of texts", title=f"{name}: what happens to the texts of every dimension")
@@ -192,7 +232,7 @@ def eda_figures(result: DatasetResult, folder: Path) -> List[Path]:
     au_labels = tables["au_labels"]
     fig, ax = plt.subplots(figsize=(8, 0.6 * len(au_labels) + 2))
     left = pd.Series(0.0, index=au_labels.index)
-    for column, color in zip(["groups disagree", "all toxic", "all civil"], [colors[AU], "#C44E52", colors[ALL]]):
+    for column, color in zip(["groups disagree", "all toxic", "all civil"], [COLORS[AU], "#C44E52", COLORS[ALL]]):
         ax.barh(au_labels.index, au_labels[column], left=left, label=column, color=color)
         left += au_labels[column]
     ax.invert_yaxis()
@@ -212,4 +252,7 @@ def save_eda(result: DatasetResult, folder: Path) -> Dict[str, Path]:
         table.to_csv(folder / f"{name}.csv", encoding="utf-8")
         paths.append(folder / f"{name}.csv")
     paths += eda_figures(result, folder)
-    return {path.name: path for path in paths}
+    written = {path.name: path for path in paths}
+    if result.raw is not None:                       # the description of the dataset itself (annotators, group mapping, dataset info)
+        written.update(save_dataset_eda(result, folder))
+    return written

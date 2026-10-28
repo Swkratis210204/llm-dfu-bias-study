@@ -1,0 +1,13 @@
+dimension,group,ratings,annotators,kept in AU analysis
+gender,man,1893,not available,True
+gender,woman,1461,not available,True
+race,black,1131,not available,True
+race,white,2223,not available,True
+age,gen x+,809,not available,True
+age,gen z,4,not available,True
+age,millenial,2541,not available,True
+politics,center,460,not available,False
+politics,left,1741,not available,True
+politics,right,1153,not available,True
+traditionalism,high,2088,not available,True
+traditionalism,not_high,1266,not available,True

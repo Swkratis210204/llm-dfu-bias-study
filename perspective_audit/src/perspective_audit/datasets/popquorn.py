@@ -34,4 +34,6 @@ SPEC = DatasetSpec(
     },
     item_word="text",
     description="POPQUORN, 1-5 offensiveness",
+    annotator_column="user_id",
+    rating_column="offensiveness",
 )

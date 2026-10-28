@@ -1,0 +1,33 @@
+dimension,raw value,mapped group,status,reason,ratings (raw),annotators (raw)
+gender,man,man,kept,,1934,not available
+gender,woman,woman,kept,,1464,not available
+gender,nonBinary,,excluded,not part of the group definition of the dataset,26,not available
+gender,na,,excluded,"other, unknown or no opinion",39,not available
+race,black,black,kept,,1133,not available
+race,white,white,kept,,2250,not available
+race,hisp,,excluded,not part of the group definition of the dataset,32,not available
+race,na,,excluded,"other, unknown or no opinion",41,not available
+race,other,,excluded,"other, unknown or no opinion",5,not available
+race,native,,excluded,not part of the group definition of the dataset,1,not available
+race,middleEastern,,excluded,not part of the group definition of the dataset,1,not available
+age,25.0,millenial,kept,,267,not available
+age,35.0,millenial,kept,,862,not available
+age,50.0,gen x+,kept,,154,not available
+age,40.0,millenial,kept,,640,not available
+age,30.0,millenial,kept,,834,not available
+age,45.0,gen x+,kept,,539,not available
+age,60.0,gen x+,kept,,59,not available
+age,65.0,gen x+,kept,,54,not available
+age,55.0,gen x+,kept,,9,not available
+age,18.0,gen z,kept,,4,not available
+age,(missing),,excluded,missing,41,not available
+politics,-1.0,left,kept,,626,not available
+politics,1.0,right,kept,,304,not available
+politics,0.5,right,kept,,883,not available
+politics,-0.5,left,kept,,1183,not available
+politics,0.0,center,"kept in the cleaning, removed from the AU analysis",in fewer than 10 AU texts,467,not available
+traditionalism,3,not_high,kept,,956,not available
+traditionalism,1,not_high,kept,,126,not available
+traditionalism,5,high,kept,,1268,not available
+traditionalism,4,high,kept,,861,not available
+traditionalism,2,not_high,kept,,252,not available

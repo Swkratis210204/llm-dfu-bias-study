@@ -1,0 +1,19 @@
+dimension,raw value,mapped group,status,reason,ratings (raw),annotators (raw)
+gender,male,male,kept,,57582,3392
+gender,female,female,kept,,76370,4426
+gender,prefer_not_to_say,,excluded,prefer not to say,500,29
+gender,non-binary,,excluded,not part of the group definition of the dataset,985,59
+gender,self-describe,,excluded,"other, unknown or no opinion",119,6
+age,45 to 81,gen x+,kept,,34676,1906
+age,18 to 24,gen z,"kept in the cleaning, removed from the AU analysis",in fewer than 10 AU texts,11660,717
+age,25 to 44,millenial,kept,,89115,5284
+age,(missing),,excluded,missing,105,5
+ideology,neutral,neutral,kept,,23112,1367
+ideology,slightly_conservative,conservative,kept,,15101,860
+ideology,extremely_liberal,liberal,kept,,17944,1065
+ideology,extremely_conservative,conservative,kept,,4544,264
+ideology,liberal,liberal,kept,,33812,1968
+ideology,conservative,conservative,kept,,15628,895
+ideology,slightly_liberal,liberal,kept,,21333,1242
+ideology,no_opinion,,excluded,"other, unknown or no opinion",4055,249
+ideology,(missing),,excluded,missing,27,2

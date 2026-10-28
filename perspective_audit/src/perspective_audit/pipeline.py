@@ -1,6 +1,7 @@
 """From a dataset description to its AU texts: clean, find the AU texts of every dimension, remove thin groups, summarise."""
 from __future__ import annotations
 
+import pickle
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Optional
@@ -50,6 +51,7 @@ class DatasetResult:
     report: dict
     pruned: Dict[str, PrunedAU]
     tool: Unimodality
+    raw: Optional[pd.DataFrame] = None               # the table as loaded, before any filter (for the description of the data)
 
     def describe(self) -> str:
         """The cleaning in a few lines: ratings and items before and after, what the cleaning removed."""
@@ -130,12 +132,27 @@ class DatasetResult:
 
 
 def run_dataset(spec: DatasetSpec, root: Optional[Path] = None, raw: Optional[pd.DataFrame] = None,
-                min_au_texts: Optional[int] = None) -> DatasetResult:
-    """Load (unless ``raw`` is given), clean, and find the AU texts of every dimension of a dataset."""
+                min_au_texts: Optional[int] = None, cache: Optional[Path] = None) -> DatasetResult:
+    """Load (unless ``raw`` is given), clean, and find the AU texts of every dimension of a dataset.
+
+    ``cache`` is a file for a large dataset (Kumar takes minutes): when it exists and was made for the same dataset and ``min_au_texts``, the
+    result is read from it instead of being computed again; otherwise the result is computed and saved there. It is only a convenience: delete
+    the file to run the analysis again (after the data, the rules or the package changed), and use the same Python that made it."""
+    threshold = spec.min_au_texts if min_au_texts is None else min_au_texts
+    key = (spec.name, threshold)
+    if cache is not None and Path(cache).exists():
+        with open(cache, "rb") as f:
+            saved_key, saved = pickle.load(f)
+        if saved_key == key and hasattr(saved, "raw"):
+            return saved
     raw = spec.load(Path(root) if root else find_root()) if raw is None else raw
     cleaned, report = clean(spec, raw)
     tool = make_tool(spec)
-    threshold = spec.min_au_texts if min_au_texts is None else min_au_texts
     pruned = {dim: tool.au_pruned(cleaned, "item_id", "rating", dim, min_au_texts=threshold, keep_cols=["text"])
               for dim in spec.dimensions}
-    return DatasetResult(spec, cleaned, report, pruned, tool)
+    result = DatasetResult(spec, cleaned, report, pruned, tool, raw)
+    if cache is not None:
+        Path(cache).parent.mkdir(parents=True, exist_ok=True)
+        with open(cache, "wb") as f:
+            pickle.dump((key, result), f, protocol=4)
+    return result

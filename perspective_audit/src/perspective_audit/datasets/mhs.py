@@ -42,4 +42,6 @@ SPEC = DatasetSpec(
     prefilter=_at_least_four_ratings,
     item_word="comment",
     description="Measuring Hate Speech, `hatespeech` item (1 = No, 2 = Unclear, 3 = Yes)",
+    annotator_column="annotator_id",
+    rating_column="hatespeech",
 )

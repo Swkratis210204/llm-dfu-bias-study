@@ -38,4 +38,5 @@ SPEC = DatasetSpec(
     },
     item_word="comment",
     description="Kumar, toxic_score + 1 (1-5)",
+    rating_column="toxic_score",                 # no rater id in the data
 )

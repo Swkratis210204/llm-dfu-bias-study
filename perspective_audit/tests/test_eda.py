@@ -23,7 +23,8 @@ def test_tables():
     assert pre["texts (raw)"] == 2 and pre["texts lost"] == 0 and pre["ratings with an excluded gender value (after the prefilter)"] == 0
     overview = tables["overview"]
     assert overview.loc["texts with > 3x the median ratings (% of the ratings)", "all texts"] == "0 (0.0%)"
-    assert overview.loc["texts"].to_dict() == {"all texts": 2, "AU texts": 1} and overview.loc["ratings"].to_dict() == {"all texts": 12, "AU texts": 6}
+    assert overview.loc["texts"].to_dict() == {"all texts": 2, "AU texts": 1}
+    assert overview.loc["ratings"].to_dict() == {"all texts": 12, "AU texts": 6}
     assert overview.loc["polarised texts %"].to_dict() == {"all texts": 50.0, "AU texts": 100.0}
     assert overview.loc["ratings called toxic %"].to_dict() == {"all texts": 75.0, "AU texts": 50.0}
     assert overview.loc["ratings per text (min / median / max)", "all texts"] == "6 / 6 / 6"
@@ -47,6 +48,8 @@ def test_save_writes_every_table_and_figure(tmp_path):
     pytest.importorskip("matplotlib")
     written = save_eda(toy(), tmp_path / "eda")
     assert set(written) == {"preprocessing.csv", "overview.csv", "rating_distribution.csv", "funnel.csv", "groups.csv", "au_labels.csv", "text_length.csv",
-                            "ratings.png", "groups.png", "funnel.png", "au_labels.png"}
+                            "ratings.png", "ratings_all.png", "ratings_au.png", "dfu.png", "dfu_all.png", "dfu_au.png",
+                            "groups.png", "groups_all.png", "groups_au.png", "funnel.png", "au_labels.png",
+                            "annotators.csv", "groups_annotators.csv", "group_mapping.csv", "dataset_info.csv"}
     assert all(path.exists() for path in written.values())
-    assert len(eda_figures(toy(), tmp_path / "again")) == 4
+    assert len(eda_figures(toy(), tmp_path / "again")) == 11
