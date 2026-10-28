@@ -7,9 +7,25 @@ from __future__ import annotations
 
 import json
 import re
+from pathlib import Path
 from typing import Callable, Dict, List, Optional, Sequence
 
-__all__ = ["label_from_score", "ScoringPrompt", "PersonaPrompt"]
+__all__ = ["label_from_score", "ScoringPrompt", "PersonaPrompt", "save_prompts"]
+
+
+def save_prompts(path: Path, sections: Dict[str, str]) -> None:
+    """Write the exact wording of prompts to a markdown file, one section per prompt: ``sections`` is ``{title: prompt text}``.
+    A section already in the file keeps its place and is replaced when its title is given again; new sections are added at the end;
+    the text above the first section and every other section are kept. So the experiments can each save their own prompts in one file."""
+    path = Path(path)
+    head, *blocks = re.split(r"(?m)^## ", path.read_text(encoding="utf-8") if path.exists() else "")
+    saved = {}
+    for block in blocks:
+        title, _, body = block.partition("\n")
+        saved[title.strip()] = body.strip("\n")
+    saved.update({title: f"```\n{prompt}\n```" for title, prompt in sections.items()})
+    text = head.rstrip("\n") + "\n\n" if head.strip() else ""
+    path.write_text(text + "\n\n".join(f"## {title}\n\n{body}" for title, body in saved.items()) + "\n", encoding="utf-8")
 
 
 def label_from_score(score: int, toxic_threshold: float = 3) -> str:

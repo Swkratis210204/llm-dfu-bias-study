@@ -1,0 +1,9 @@
+dimension,group,ratings,mean rating,toxic %,AU ratings,AU mean rating,AU toxic %,kept in AU analysis
+gender,female,36483,1.91,42.7,88,2.4,69.3,True
+gender,male,27840,1.88,41.9,87,1.61,29.9,True
+age,gen x+,15902,1.97,45.3,60,2.47,73.3,True
+age,gen z,5544,1.85,39.6,0,,,False
+age,millenial,42877,1.88,41.6,60,1.53,26.7,True
+ideology,conservative,17041,1.91,43.1,45,2.44,71.1,True
+ideology,liberal,35826,1.9,42.1,59,1.85,42.4,True
+ideology,neutral,11456,1.9,42.1,26,1.46,23.1,True

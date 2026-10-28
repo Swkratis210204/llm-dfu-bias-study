@@ -241,6 +241,22 @@ save_au_tables(
 )
 ```
 
+## Describing a dataset (EDA)
+
+```python
+from perspective_audit import eda_tables, save_eda
+
+tables = eda_tables(result)                    # result = run_dataset(...); a dict of tables
+save_eda(result, "new_results/popquorn/eda")   # every table as csv, every figure as png (figures need `pip install -e ".[plots]"`)
+```
+
+`preprocessing` shows what the cleaning removed (ratings and texts before and after, ratings with an excluded group value per dimension). The other tables
+put **all the texts next to the AU texts**: `overview` (texts, ratings, ratings per text and the texts rated far more than usual, mean rating, share of toxic
+ratings, polarisation, words), `rating_distribution`, `groups` (per group: ratings, mean rating and share of toxic ratings in all texts and in the AU texts of that
+dimension, and whether the group was kept) and `text_length`. `funnel` (per dimension: not polarised / too few groups / a group not unimodal / AU)
+and `au_labels` (the AU texts and how many have groups with different labels) describe the step from one to the other. The notebook has an EDA
+subsection under each dataset that calls these functions. Nothing is asked of a model.
+
 ## Annotating with language models
 
 `annotate` takes the texts of every dataset, sends them to **one model**, in batches (10 texts per call by default, a batch never mixes
@@ -547,8 +563,8 @@ wording (`"v1"`) and a short one (`"compact"`).
 - **The CSV is rebuilt from the saved batches**, never from the current input, so it always matches what was asked.
 - **Temperature 0 by default**, but a hosted model can still give different answers on different days; the raw files are the record of
   what you got.
-- **The prompts are written down.** The notebook writes the exact wording of the baseline and of both rewordings to `new_results/prompts.md`,
-  and of the SCD prompt to `new_results/prompts_scd.md`, so they can be quoted.
+- **The prompts are written down.** The notebook writes the exact wording of the baseline, both rewordings and the SCD prompt to one file,
+  `new_results/prompts.md`, with `save_prompts(path, {title: prompt})`, which replaces only its own sections, so they can be quoted.
 - **The order of the groups in SCD is seeded** (`seed`, default 42) and saved with every answer, so it can be reproduced and audited.
 - **Do not mix prompts in one run.** The run name is the condition, so when you change the prompt, delete the run's folder and run it
   again. Every batch in the raw file keeps its exact prompt.
@@ -585,6 +601,7 @@ perspective_audit/
     datasets/                   popquorn.py, attitudes.py, mhs.py, kumar.py, groups.py (shared age groups)
     pipeline.py                 clean, run_dataset, DatasetResult
     export.py                   save_au_tables and the CSV format of an AU table
+    eda.py                      eda_tables, eda_figures, save_eda: the description of a dataset
     sampling.py                 minimal_cover, cover_per_dimension (the sample of a large dataset)
     env.py                      the .env file and environment variables
     models.py                   ModelConfig, Model, ModelHub, DEFAULT_CONFIGS and the providers

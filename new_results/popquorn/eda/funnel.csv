@@ -1,0 +1,6 @@
+,texts,not polarised,too few groups,a group is not unimodal,AU,AU %
+gender,1500,814,71,601,14,0.9
+race,1500,814,482,191,13,0.9
+age,1500,814,103,528,55,3.7
+education,1500,814,95,544,47,3.1
+occupation,1500,814,268,364,54,3.6

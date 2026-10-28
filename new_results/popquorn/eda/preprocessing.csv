@@ -1,0 +1,13 @@
+step,count,% of raw ratings
+ratings (raw),13036,100.0
+removed by the prefilter,0,0.0
+removed for an excluded group value (any dimension),1684,12.9
+ratings (clean),11352,87.1
+texts (raw),1500,
+texts (clean),1500,
+texts lost,0,
+ratings with an excluded gender value (after the prefilter),350,2.7
+ratings with an excluded race value (after the prefilter),598,4.6
+ratings with an excluded age value (after the prefilter),0,0.0
+ratings with an excluded education value (after the prefilter),535,4.1
+ratings with an excluded occupation value (after the prefilter),300,2.3

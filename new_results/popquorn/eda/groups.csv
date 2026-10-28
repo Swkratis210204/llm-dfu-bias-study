@@ -1,0 +1,18 @@
+dimension,group,ratings,mean rating,toxic %,AU ratings,AU mean rating,AU toxic %,kept in AU analysis
+gender,Man,5526,1.91,27.6,50,2.4,46.0,True
+gender,Woman,5826,1.87,25.3,48,2.48,47.9,True
+race,Asian,899,1.91,26.5,10,2.3,40.0,False
+race,Black or African American,1535,2.15,35.8,31,3.84,90.3,True
+race,White,8918,1.85,24.8,59,1.75,22.0,True
+age,gen x+,5326,1.96,28.9,178,2.0,32.6,True
+age,gen z,1345,1.92,26.5,72,2.72,58.3,False
+age,millenial,4681,1.81,23.6,172,1.6,18.0,True
+education,College degree,5537,1.85,24.7,178,1.8,24.7,True
+education,Graduate degree,2381,2.01,30.9,62,2.77,67.7,True
+education,High school diploma or equivalent,3434,1.89,26.1,111,1.83,25.2,True
+occupation,Employed,5826,1.9,26.4,192,2.01,31.8,True
+occupation,Homemaker,494,1.82,26.5,16,2.44,56.2,False
+occupation,Retired,1346,2.04,31.5,47,2.3,44.7,True
+occupation,Self-employed,1593,1.84,23.8,79,1.51,11.4,True
+occupation,Student,846,1.98,31.2,42,2.4,47.6,True
+occupation,Unemployed,1247,1.75,21.3,44,1.84,27.3,True

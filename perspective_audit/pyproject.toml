@@ -18,6 +18,7 @@ dependencies = [
 
 [project.optional-dependencies]
 test = ["pytest"]
+plots = ["matplotlib"]         # the figures of eda_figures / save_eda
 openai = ["openai"]            # ChatGPT, Mistral, DeepSeek, Ollama (Llama)
 gemini = ["google-genai"]
 oci = ["oci"]                  # Grok on Oracle OCI

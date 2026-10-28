@@ -1,0 +1,13 @@
+dimension,group,ratings,mean rating,toxic %,AU ratings,AU mean rating,AU toxic %,kept in AU analysis
+gender,man,1893,2.79,51.4,29,3.07,62.1,True
+gender,woman,1461,3.12,57.3,24,3.25,58.3,True
+race,black,1131,3.09,59.3,28,3.75,89.3,True
+race,white,2223,2.86,51.2,41,2.78,46.3,True
+age,gen x+,809,2.99,55.9,15,2.47,40.0,True
+age,gen z,4,3.5,75.0,0,,,True
+age,millenial,2541,2.92,53.3,18,3.11,72.2,True
+politics,center,460,2.9,52.8,11,3.55,63.6,False
+politics,left,1741,2.92,52.3,30,3.27,60.0,True
+politics,right,1153,2.98,56.9,25,3.24,72.0,True
+traditionalism,high,2088,3.03,55.9,25,3.64,68.0,True
+traditionalism,not_high,1266,2.79,50.8,25,2.92,64.0,True

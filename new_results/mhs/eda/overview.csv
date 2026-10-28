@@ -1,0 +1,10 @@
+,all texts,AU texts
+texts,5990,95
+ratings,64323,384
+ratings per text (min / median / max),2 / 4 / 777,4 / 4 / 5
+texts with > 3x the median ratings (% of the ratings),70 (64.4%),0 (0.0%)
+mean rating,1.9,1.99
+ratings called toxic %,42.4,49.5
+polarised texts %,25.6,100.0
+mean DFU,0.128,0.978
+words per text (median),20.0,17.0
