@@ -176,3 +176,20 @@ ideology collapsed to three. Education, occupation, religion and traditionalism 
 `AU ratings` per group (same csv): attitudes 11-41 for every group (e.g. gender: man 29, woman 24; politics center 11 and removed from the AU analysis),
 popquorn 10-192, MHS 26-88, Kumar 272-3,434. Differences between groups in attitudes and popquorn are therefore noisy; do not read small gaps. Groups
 removed from the AU analysis are left out of the AU figure (their all-texts numbers stay in the other figure and in the csv).
+
+## Tie-broken group labels and constant labels in the kappa (checked 2026-10-29)
+
+**28. Some group labels are decided by the mean, not by the majority.**
+A group's label is the majority of its binarized ratings; when exactly half are toxic and half civil, the mean rating decides (mean >= 3 is toxic),
+see `unimodality.py`, `Unimodality.label_info`. Of the group labels on AU texts, the share decided by the mean is: Attitudes 11 of 102 (10.8%),
+popquorn 18 of 375 (4.8%), MHS 1 of 210 (0.5%), Kumar 293 of 12,180 (2.4%) in the full AU set and 4 of 130 (3.1%) in the 65-row sample given to the models
+(for the other three datasets the rows given to the models are all the AU rows). Attitudes is highest because its groups have few ratings. `tie_broken` is
+kept in memory but not saved in the AU csv files.
+
+**29. In the group-versus-model kappa, the models' labels are constant in some cases (kappa is then 0, not informative).**
+Taking the human group label against the model's label for the same text (baseline prompt, and the label as that group in the SCD prompt), 352 combinations of
+(dataset, model, prompt, characteristic, group) are possible. In 36 of them (10.2%) the model labels every text of the group toxic (35 cases) or civil (1 case),
+so kappa is 0 whatever the group does: Attitudes 14 of 80, MHS 20 of 56, Kumar 2 of 104, popquorn 0 of 112. No group has constant human labels, and no
+combination has both constant. In 32 combinations (all in Attitudes) the group has fewer than 10 texts (6 to 14). Source: `new_results/kappa_edge_cases.csv`.
+The thesis notebook has three kappa functions that treat constant labels differently (see the reply to this check); the package `cohen_kappa` returns NaN
+only when both sides are constant and equal, and 0 when only one side is constant.

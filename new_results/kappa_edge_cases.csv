@@ -1,0 +1,353 @@
+dataset,model,prompt,characteristic,group,texts,group toxic,model toxic,case,kappa (package),kappa (thesis per-attribute rule),kappa (thesis plain rule)
+popquorn,chatgpt,baseline,gender,Man,14,5,8,ok,0.039,0.039,0.039
+popquorn,chatgpt,baseline,gender,Woman,14,6,8,ok,0.16,0.16,0.16
+popquorn,chatgpt,baseline,race,Black or African American,13,11,6,ok,0.27,0.27,0.27
+popquorn,chatgpt,baseline,race,White,13,1,6,ok,-0.152,-0.152,-0.152
+popquorn,chatgpt,baseline,age,gen x+,55,17,27,ok,0.121,0.121,0.121
+popquorn,chatgpt,baseline,age,millenial,55,7,27,ok,0.189,0.189,0.189
+popquorn,chatgpt,baseline,education,College degree,44,10,17,ok,0.222,0.222,0.222
+popquorn,chatgpt,baseline,education,High school diploma or equivalent,38,8,12,ok,0.197,0.197,0.197
+popquorn,chatgpt,baseline,education,Graduate degree,17,10,8,ok,0.068,0.068,0.068
+popquorn,chatgpt,baseline,occupation,Employed,52,15,25,ok,0.296,0.296,0.296
+popquorn,chatgpt,baseline,occupation,Unemployed,10,1,7,ok,0.091,0.091,0.091
+popquorn,chatgpt,baseline,occupation,Self-employed,28,2,12,ok,0.186,0.186,0.186
+popquorn,chatgpt,baseline,occupation,Student,11,3,6,ok,-0.222,-0.222,-0.222
+popquorn,chatgpt,baseline,occupation,Retired,11,3,3,ok,1.0,1.0,1.0
+popquorn,chatgpt,scd,gender,Man,14,5,7,ok,-0.429,-0.429,-0.429
+popquorn,chatgpt,scd,gender,Woman,14,6,7,ok,0.571,0.571,0.571
+popquorn,chatgpt,scd,race,Black or African American,13,11,5,ok,0.204,0.204,0.204
+popquorn,chatgpt,scd,race,White,13,1,4,ok,-0.14,-0.14,-0.14
+popquorn,chatgpt,scd,age,gen x+,55,17,22,ok,0.016,0.016,0.016
+popquorn,chatgpt,scd,age,millenial,55,7,24,ok,0.076,0.076,0.076
+popquorn,chatgpt,scd,education,College degree,44,10,15,ok,0.395,0.395,0.395
+popquorn,chatgpt,scd,education,High school diploma or equivalent,38,8,11,ok,0.095,0.095,0.095
+popquorn,chatgpt,scd,education,Graduate degree,17,10,6,ok,0.105,0.105,0.105
+popquorn,chatgpt,scd,occupation,Employed,52,15,28,ok,0.292,0.292,0.292
+popquorn,chatgpt,scd,occupation,Unemployed,10,1,6,ok,0.138,0.138,0.138
+popquorn,chatgpt,scd,occupation,Self-employed,28,2,14,ok,0.143,0.143,0.143
+popquorn,chatgpt,scd,occupation,Student,11,3,6,ok,-0.222,-0.222,-0.222
+popquorn,chatgpt,scd,occupation,Retired,11,3,3,ok,1.0,1.0,1.0
+popquorn,deepseek,baseline,gender,Man,14,5,7,ok,-0.143,-0.143,-0.143
+popquorn,deepseek,baseline,gender,Woman,14,6,7,ok,0.286,0.286,0.286
+popquorn,deepseek,baseline,race,Black or African American,13,11,4,ok,0.15,0.15,0.15
+popquorn,deepseek,baseline,race,White,13,1,4,ok,-0.14,-0.14,-0.14
+popquorn,deepseek,baseline,age,gen x+,55,17,18,ok,0.204,0.204,0.204
+popquorn,deepseek,baseline,age,millenial,55,7,18,ok,0.069,0.069,0.069
+popquorn,deepseek,baseline,education,College degree,44,10,15,ok,0.175,0.175,0.175
+popquorn,deepseek,baseline,education,High school diploma or equivalent,38,8,10,ok,0.13,0.13,0.13
+popquorn,deepseek,baseline,education,Graduate degree,17,10,6,ok,0.329,0.329,0.329
+popquorn,deepseek,baseline,occupation,Employed,52,15,21,ok,0.414,0.414,0.414
+popquorn,deepseek,baseline,occupation,Unemployed,10,1,4,ok,0.286,0.286,0.286
+popquorn,deepseek,baseline,occupation,Self-employed,28,2,11,ok,0.213,0.212,0.212
+popquorn,deepseek,baseline,occupation,Student,11,3,5,ok,-0.517,-0.517,-0.517
+popquorn,deepseek,baseline,occupation,Retired,11,3,4,ok,0.792,0.792,0.792
+popquorn,deepseek,scd,gender,Man,14,5,7,ok,0.143,0.143,0.143
+popquorn,deepseek,scd,gender,Woman,14,6,7,ok,0.0,0.0,0.0
+popquorn,deepseek,scd,race,Black or African American,13,11,3,ok,0.103,0.103,0.103
+popquorn,deepseek,scd,race,White,13,1,3,ok,-0.13,-0.13,-0.13
+popquorn,deepseek,scd,age,gen x+,55,17,25,ok,0.171,0.171,0.171
+popquorn,deepseek,scd,age,millenial,55,7,30,ok,0.149,0.149,0.149
+popquorn,deepseek,scd,education,College degree,44,10,15,ok,0.175,0.175,0.175
+popquorn,deepseek,scd,education,High school diploma or equivalent,38,8,12,ok,0.063,0.063,0.063
+popquorn,deepseek,scd,education,Graduate degree,17,10,5,ok,0.232,0.232,0.232
+popquorn,deepseek,scd,occupation,Employed,52,15,23,ok,0.353,0.353,0.353
+popquorn,deepseek,scd,occupation,Unemployed,10,1,5,ok,-0.2,-0.2,-0.2
+popquorn,deepseek,scd,occupation,Self-employed,28,2,10,ok,0.054,0.054,0.054
+popquorn,deepseek,scd,occupation,Student,11,3,4,ok,-0.453,-0.453,-0.453
+popquorn,deepseek,scd,occupation,Retired,11,3,4,ok,0.377,0.377,0.377
+popquorn,mistral,baseline,gender,Man,14,5,11,ok,-0.228,-0.228,-0.228
+popquorn,mistral,baseline,gender,Woman,14,6,11,ok,0.34,0.34,0.34
+popquorn,mistral,baseline,race,Black or African American,13,11,9,ok,0.161,0.161,0.161
+popquorn,mistral,baseline,race,White,13,1,9,ok,0.071,0.071,0.071
+popquorn,mistral,baseline,age,gen x+,55,17,34,ok,0.166,0.166,0.166
+popquorn,mistral,baseline,age,millenial,55,7,34,ok,-0.02,-0.02,-0.02
+popquorn,mistral,baseline,education,College degree,44,10,25,ok,0.281,0.281,0.281
+popquorn,mistral,baseline,education,High school diploma or equivalent,38,8,22,ok,0.132,0.132,0.132
+popquorn,mistral,baseline,education,Graduate degree,17,10,9,ok,-0.07,-0.07,-0.07
+popquorn,mistral,baseline,occupation,Employed,52,15,35,ok,0.262,0.262,0.262
+popquorn,mistral,baseline,occupation,Unemployed,10,1,9,ok,0.024,0.024,0.024
+popquorn,mistral,baseline,occupation,Self-employed,28,2,15,ok,0.125,0.125,0.125
+popquorn,mistral,baseline,occupation,Student,11,3,7,ok,0.029,0.029,0.029
+popquorn,mistral,baseline,occupation,Retired,11,3,7,ok,0.353,0.353,0.353
+popquorn,mistral,scd,gender,Man,14,5,12,ok,0.169,0.169,0.169
+popquorn,mistral,scd,gender,Woman,14,6,13,ok,0.109,0.109,0.109
+popquorn,mistral,scd,race,Black or African American,13,11,10,ok,0.264,0.264,0.264
+popquorn,mistral,scd,race,White,13,1,10,ok,0.049,0.049,0.049
+popquorn,mistral,scd,age,gen x+,55,17,45,ok,0.064,0.064,0.064
+popquorn,mistral,scd,age,millenial,55,7,40,ok,-0.005,-0.005,-0.005
+popquorn,mistral,scd,education,College degree,44,10,27,ok,0.232,0.232,0.232
+popquorn,mistral,scd,education,High school diploma or equivalent,38,8,21,ok,0.256,0.256,0.256
+popquorn,mistral,scd,education,Graduate degree,17,10,11,ok,-0.117,-0.117,-0.117
+popquorn,mistral,scd,occupation,Employed,52,15,41,ok,0.196,0.196,0.196
+popquorn,mistral,scd,occupation,Unemployed,10,1,9,ok,0.024,0.024,0.024
+popquorn,mistral,scd,occupation,Self-employed,28,2,19,ok,0.07,0.07,0.07
+popquorn,mistral,scd,occupation,Student,11,3,7,ok,-0.294,-0.294,-0.294
+popquorn,mistral,scd,occupation,Retired,11,3,4,ok,0.792,0.792,0.792
+popquorn,gemini,baseline,gender,Man,14,5,7,ok,-0.143,-0.143,-0.143
+popquorn,gemini,baseline,gender,Woman,14,6,7,ok,0.286,0.286,0.286
+popquorn,gemini,baseline,race,Black or African American,13,11,9,ok,0.161,0.161,0.161
+popquorn,gemini,baseline,race,White,13,1,9,ok,0.071,0.071,0.071
+popquorn,gemini,baseline,age,gen x+,55,17,20,ok,0.148,0.148,0.148
+popquorn,gemini,baseline,age,millenial,55,7,20,ok,0.224,0.224,0.224
+popquorn,gemini,baseline,education,College degree,44,10,15,ok,0.285,0.285,0.285
+popquorn,gemini,baseline,education,High school diploma or equivalent,38,8,13,ok,0.292,0.292,0.292
+popquorn,gemini,baseline,education,Graduate degree,17,10,6,ok,-0.342,-0.342,-0.342
+popquorn,gemini,baseline,occupation,Employed,52,15,24,ok,0.483,0.483,0.483
+popquorn,gemini,baseline,occupation,Unemployed,10,1,6,ok,0.138,0.138,0.138
+popquorn,gemini,baseline,occupation,Self-employed,28,2,13,ok,0.163,0.163,0.163
+popquorn,gemini,baseline,occupation,Student,11,3,5,ok,-0.517,-0.517,-0.517
+popquorn,gemini,baseline,occupation,Retired,11,3,3,ok,1.0,1.0,1.0
+popquorn,gemini,scd,gender,Man,14,5,8,ok,-0.235,-0.235,-0.235
+popquorn,gemini,scd,gender,Woman,14,6,8,ok,0.44,0.44,0.44
+popquorn,gemini,scd,race,Black or African American,13,11,5,ok,0.204,0.204,0.204
+popquorn,gemini,scd,race,White,13,1,5,ok,-0.147,-0.147,-0.147
+popquorn,gemini,scd,age,gen x+,55,17,21,ok,0.281,0.281,0.281
+popquorn,gemini,scd,age,millenial,55,7,23,ok,0.089,0.089,0.089
+popquorn,gemini,scd,education,College degree,44,10,16,ok,0.359,0.359,0.359
+popquorn,gemini,scd,education,High school diploma or equivalent,38,8,11,ok,0.234,0.234,0.234
+popquorn,gemini,scd,education,Graduate degree,17,10,6,ok,0.105,0.105,0.105
+popquorn,gemini,scd,occupation,Employed,52,15,26,ok,0.423,0.423,0.423
+popquorn,gemini,scd,occupation,Unemployed,10,1,6,ok,0.138,0.138,0.138
+popquorn,gemini,scd,occupation,Self-employed,28,2,12,ok,0.186,0.186,0.186
+popquorn,gemini,scd,occupation,Student,11,3,5,ok,-0.517,-0.517,-0.517
+popquorn,gemini,scd,occupation,Retired,11,3,2,ok,0.744,0.744,0.744
+attitudes,chatgpt,baseline,gender,man,10,5,8,ok,-0.4,-0.4,-0.4
+attitudes,chatgpt,baseline,gender,woman,10,5,8,ok,0.4,0.4,0.4
+attitudes,chatgpt,baseline,race,black,14,12,9,ok,-0.256,-0.256,-0.256
+attitudes,chatgpt,baseline,race,white,14,5,9,ok,0.208,0.208,0.208
+attitudes,chatgpt,baseline,age,gen x+,6,2,4,ok,-0.8,-0.8,-0.8
+attitudes,chatgpt,baseline,age,millenial,6,4,4,ok,0.25,0.25,0.25
+attitudes,chatgpt,baseline,politics,left,12,8,9,ok,0.4,0.4,0.4
+attitudes,chatgpt,baseline,politics,right,12,8,9,ok,0.0,0.0,0.0
+attitudes,chatgpt,baseline,traditionalism,high,9,6,7,ok,0.182,0.182,0.182
+attitudes,chatgpt,baseline,traditionalism,not_high,9,5,7,ok,-0.421,-0.421,-0.421
+attitudes,chatgpt,scd,gender,man,10,5,10,model constant,0.0,0.0,0.0
+attitudes,chatgpt,scd,gender,woman,10,5,9,ok,0.2,0.2,0.2
+attitudes,chatgpt,scd,race,black,14,12,9,ok,-0.256,-0.256,-0.256
+attitudes,chatgpt,scd,race,white,14,5,10,ok,0.364,0.364,0.364
+attitudes,chatgpt,scd,age,gen x+,6,2,5,ok,0.182,0.182,0.182
+attitudes,chatgpt,scd,age,millenial,6,4,5,ok,-0.286,-0.286,-0.286
+attitudes,chatgpt,scd,politics,left,12,8,9,ok,0.4,0.4,0.4
+attitudes,chatgpt,scd,politics,right,12,8,7,ok,0.118,0.118,0.118
+attitudes,chatgpt,scd,traditionalism,high,9,6,9,model constant,0.0,0.0,0.0
+attitudes,chatgpt,scd,traditionalism,not_high,9,5,4,ok,-0.537,-0.537,-0.537
+attitudes,deepseek,baseline,gender,man,10,5,10,model constant,0.0,0.0,0.0
+attitudes,deepseek,baseline,gender,woman,10,5,10,model constant,0.0,0.0,0.0
+attitudes,deepseek,baseline,race,black,14,12,10,ok,-0.235,-0.235,-0.235
+attitudes,deepseek,baseline,race,white,14,5,10,ok,0.109,0.109,0.109
+attitudes,deepseek,baseline,age,gen x+,6,2,4,ok,-0.2,-0.2,-0.2
+attitudes,deepseek,baseline,age,millenial,6,4,4,ok,0.25,0.25,0.25
+attitudes,deepseek,baseline,politics,left,12,8,9,ok,0.4,0.4,0.4
+attitudes,deepseek,baseline,politics,right,12,8,9,ok,0.0,0.0,0.0
+attitudes,deepseek,baseline,traditionalism,high,9,6,7,ok,0.182,0.182,0.182
+attitudes,deepseek,baseline,traditionalism,not_high,9,5,7,ok,-0.421,-0.421,-0.421
+attitudes,deepseek,scd,gender,man,10,5,7,ok,-0.2,-0.2,-0.2
+attitudes,deepseek,scd,gender,woman,10,5,7,ok,0.2,0.2,0.2
+attitudes,deepseek,scd,race,black,14,12,11,ok,-0.207,-0.207,-0.207
+attitudes,deepseek,scd,race,white,14,5,10,ok,0.109,0.109,0.109
+attitudes,deepseek,scd,age,gen x+,6,2,5,ok,0.182,0.182,0.182
+attitudes,deepseek,scd,age,millenial,6,4,6,model constant,0.0,0.0,0.0
+attitudes,deepseek,scd,politics,left,12,8,10,ok,0.571,0.571,0.571
+attitudes,deepseek,scd,politics,right,12,8,6,ok,0.333,0.333,0.333
+attitudes,deepseek,scd,traditionalism,high,9,6,9,model constant,0.0,0.0,0.0
+attitudes,deepseek,scd,traditionalism,not_high,9,5,7,ok,-0.421,-0.421,-0.421
+attitudes,mistral,baseline,gender,man,10,5,9,ok,0.2,0.2,0.2
+attitudes,mistral,baseline,gender,woman,10,5,9,ok,-0.2,-0.2,-0.2
+attitudes,mistral,baseline,race,black,14,12,12,ok,0.417,0.417,0.417
+attitudes,mistral,baseline,race,white,14,5,12,ok,-0.068,-0.068,-0.068
+attitudes,mistral,baseline,age,gen x+,6,2,5,ok,-0.364,-0.364,-0.364
+attitudes,mistral,baseline,age,millenial,6,4,5,ok,0.571,0.571,0.571
+attitudes,mistral,baseline,politics,left,12,8,10,ok,0.571,0.571,0.571
+attitudes,mistral,baseline,politics,right,12,8,10,ok,-0.286,-0.286,-0.286
+attitudes,mistral,baseline,traditionalism,high,9,6,8,ok,-0.2,-0.2,-0.2
+attitudes,mistral,baseline,traditionalism,not_high,9,5,8,ok,0.27,0.27,0.27
+attitudes,mistral,scd,gender,man,10,5,10,model constant,0.0,0.0,0.0
+attitudes,mistral,scd,gender,woman,10,5,10,model constant,0.0,0.0,0.0
+attitudes,mistral,scd,race,black,14,12,12,ok,-0.167,-0.167,-0.167
+attitudes,mistral,scd,race,white,14,5,14,model constant,0.0,0.0,0.0
+attitudes,mistral,scd,age,gen x+,6,2,5,ok,0.182,0.182,0.182
+attitudes,mistral,scd,age,millenial,6,4,6,model constant,0.0,0.0,0.0
+attitudes,mistral,scd,politics,left,12,8,8,ok,0.625,0.625,0.625
+attitudes,mistral,scd,politics,right,12,8,9,ok,0.4,0.4,0.4
+attitudes,mistral,scd,traditionalism,high,9,6,9,model constant,0.0,0.0,0.0
+attitudes,mistral,scd,traditionalism,not_high,9,5,2,ok,-0.047,-0.047,-0.047
+attitudes,gemini,baseline,gender,man,10,5,10,model constant,0.0,0.0,0.0
+attitudes,gemini,baseline,gender,woman,10,5,10,model constant,0.0,0.0,0.0
+attitudes,gemini,baseline,race,black,14,12,11,ok,-0.207,-0.207,-0.207
+attitudes,gemini,baseline,race,white,14,5,11,ok,0.263,0.263,0.263
+attitudes,gemini,baseline,age,gen x+,6,2,4,ok,-0.2,-0.2,-0.2
+attitudes,gemini,baseline,age,millenial,6,4,4,ok,1.0,1.0,1.0
+attitudes,gemini,baseline,politics,left,12,8,11,ok,0.308,0.308,0.308
+attitudes,gemini,baseline,politics,right,12,8,11,ok,0.308,0.308,0.308
+attitudes,gemini,baseline,traditionalism,high,9,6,8,ok,-0.2,-0.2,-0.2
+attitudes,gemini,baseline,traditionalism,not_high,9,5,8,ok,0.27,0.27,0.27
+attitudes,gemini,scd,gender,man,10,5,9,ok,0.2,0.2,0.2
+attitudes,gemini,scd,gender,woman,10,5,8,ok,0.0,0.0,0.0
+attitudes,gemini,scd,race,black,14,12,10,ok,-0.235,-0.235,-0.235
+attitudes,gemini,scd,race,white,14,5,11,ok,0.263,0.263,0.263
+attitudes,gemini,scd,age,gen x+,6,2,5,ok,0.182,0.182,0.182
+attitudes,gemini,scd,age,millenial,6,4,4,ok,0.25,0.25,0.25
+attitudes,gemini,scd,politics,left,12,8,10,ok,0.571,0.571,0.571
+attitudes,gemini,scd,politics,right,12,8,8,ok,0.25,0.25,0.25
+attitudes,gemini,scd,traditionalism,high,9,6,9,model constant,0.0,0.0,0.0
+attitudes,gemini,scd,traditionalism,not_high,9,5,6,ok,-0.154,-0.154,-0.154
+mhs,chatgpt,baseline,gender,female,43,30,38,ok,0.065,0.065,0.065
+mhs,chatgpt,baseline,gender,male,43,13,38,ok,-0.035,-0.035,-0.035
+mhs,chatgpt,baseline,age,gen x+,30,22,28,ok,-0.119,-0.119,-0.119
+mhs,chatgpt,baseline,age,millenial,30,8,28,ok,0.051,0.051,0.051
+mhs,chatgpt,baseline,ideology,liberal,29,12,27,ok,0.099,0.099,0.099
+mhs,chatgpt,baseline,ideology,neutral,13,3,12,ok,0.049,0.049,0.049
+mhs,chatgpt,baseline,ideology,conservative,22,15,21,ok,-0.086,-0.086,-0.086
+mhs,chatgpt,scd,gender,female,43,30,43,model constant,0.0,0.0,0.0
+mhs,chatgpt,scd,gender,male,43,13,43,model constant,0.0,0.0,0.0
+mhs,chatgpt,scd,age,gen x+,30,22,29,ok,-0.063,-0.063,-0.063
+mhs,chatgpt,scd,age,millenial,30,8,29,ok,0.025,0.025,0.025
+mhs,chatgpt,scd,ideology,liberal,29,12,29,model constant,0.0,0.0,0.0
+mhs,chatgpt,scd,ideology,neutral,13,3,13,model constant,0.0,0.0,0.0
+mhs,chatgpt,scd,ideology,conservative,22,15,22,model constant,0.0,0.0,0.0
+mhs,deepseek,baseline,gender,female,43,30,41,ok,0.057,0.057,0.057
+mhs,deepseek,baseline,gender,male,43,13,41,ok,-0.027,-0.027,-0.027
+mhs,deepseek,baseline,age,gen x+,30,22,29,ok,-0.063,-0.063,-0.063
+mhs,deepseek,baseline,age,millenial,30,8,29,ok,0.025,0.025,0.025
+mhs,deepseek,baseline,ideology,liberal,29,12,29,model constant,0.0,0.0,0.0
+mhs,deepseek,baseline,ideology,neutral,13,3,13,model constant,0.0,0.0,0.0
+mhs,deepseek,baseline,ideology,conservative,22,15,22,model constant,0.0,0.0,0.0
+mhs,deepseek,scd,gender,female,43,30,41,ok,0.202,0.202,0.202
+mhs,deepseek,scd,gender,male,43,13,40,ok,-0.076,-0.076,-0.076
+mhs,deepseek,scd,age,gen x+,30,22,29,ok,-0.063,-0.063,-0.063
+mhs,deepseek,scd,age,millenial,30,8,29,ok,0.025,0.025,0.025
+mhs,deepseek,scd,ideology,liberal,29,12,28,ok,0.049,0.049,0.049
+mhs,deepseek,scd,ideology,neutral,13,3,13,model constant,0.0,0.0,0.0
+mhs,deepseek,scd,ideology,conservative,22,15,20,ok,0.353,0.353,0.353
+mhs,mistral,baseline,gender,female,43,30,41,ok,0.057,0.057,0.057
+mhs,mistral,baseline,gender,male,43,13,41,ok,-0.027,-0.027,-0.027
+mhs,mistral,baseline,age,gen x+,30,22,29,ok,-0.063,-0.063,-0.063
+mhs,mistral,baseline,age,millenial,30,8,29,ok,0.025,0.025,0.025
+mhs,mistral,baseline,ideology,liberal,29,12,28,ok,0.049,0.049,0.049
+mhs,mistral,baseline,ideology,neutral,13,3,13,model constant,0.0,0.0,0.0
+mhs,mistral,baseline,ideology,conservative,22,15,21,ok,-0.086,-0.086,-0.086
+mhs,mistral,scd,gender,female,43,30,42,ok,0.104,0.104,0.104
+mhs,mistral,scd,gender,male,43,13,43,model constant,0.0,0.0,0.0
+mhs,mistral,scd,age,gen x+,30,22,30,model constant,0.0,0.0,0.0
+mhs,mistral,scd,age,millenial,30,8,30,model constant,0.0,0.0,0.0
+mhs,mistral,scd,ideology,liberal,29,12,27,ok,-0.021,-0.021,-0.021
+mhs,mistral,scd,ideology,neutral,13,3,13,model constant,0.0,0.0,0.0
+mhs,mistral,scd,ideology,conservative,22,15,21,ok,0.185,0.185,0.185
+mhs,gemini,baseline,gender,female,43,30,41,ok,0.202,0.202,0.202
+mhs,gemini,baseline,gender,male,43,13,41,ok,-0.096,-0.096,-0.096
+mhs,gemini,baseline,age,gen x+,30,22,30,model constant,0.0,0.0,0.0
+mhs,gemini,baseline,age,millenial,30,8,30,model constant,0.0,0.0,0.0
+mhs,gemini,baseline,ideology,liberal,29,12,28,ok,0.049,0.049,0.049
+mhs,gemini,baseline,ideology,neutral,13,3,12,ok,0.049,0.049,0.049
+mhs,gemini,baseline,ideology,conservative,22,15,22,model constant,0.0,0.0,0.0
+mhs,gemini,scd,gender,female,43,30,41,ok,0.202,0.202,0.202
+mhs,gemini,scd,gender,male,43,13,41,ok,-0.096,-0.096,-0.096
+mhs,gemini,scd,age,gen x+,30,22,30,model constant,0.0,0.0,0.0
+mhs,gemini,scd,age,millenial,30,8,30,model constant,0.0,0.0,0.0
+mhs,gemini,scd,ideology,liberal,29,12,28,ok,0.049,0.049,0.049
+mhs,gemini,scd,ideology,neutral,13,3,13,model constant,0.0,0.0,0.0
+mhs,gemini,scd,ideology,conservative,22,15,20,ok,0.353,0.353,0.353
+kumar,chatgpt,baseline,gender,Female,10,5,4,ok,0.4,0.4,0.4
+kumar,chatgpt,baseline,gender,Male,10,5,4,ok,-0.4,-0.4,-0.4
+kumar,chatgpt,baseline,race,Asian,10,5,5,ok,0.6,0.6,0.6
+kumar,chatgpt,baseline,race,Black,10,9,7,ok,0.412,0.412,0.412
+kumar,chatgpt,baseline,race,White,10,2,4,ok,-0.364,-0.364,-0.364
+kumar,chatgpt,baseline,age,gen x+,10,2,3,ok,-0.316,-0.316,-0.316
+kumar,chatgpt,baseline,age,gen z,10,5,5,ok,0.6,0.6,0.6
+kumar,chatgpt,baseline,age,millenial,10,3,6,ok,-0.296,-0.296,-0.296
+kumar,chatgpt,baseline,politics,conservative,10,7,6,ok,-0.087,-0.087,-0.087
+kumar,chatgpt,baseline,politics,independent,10,2,6,ok,-0.071,-0.071,-0.071
+kumar,chatgpt,baseline,politics,liberal,10,4,4,ok,1.0,1.0,1.0
+kumar,chatgpt,baseline,religion,high,10,9,6,ok,-0.19,-0.19,-0.19
+kumar,chatgpt,baseline,religion,not_high,10,2,6,ok,0.286,0.286,0.286
+kumar,chatgpt,scd,gender,Female,10,5,4,ok,0.4,0.4,0.4
+kumar,chatgpt,scd,gender,Male,10,5,4,ok,-0.4,-0.4,-0.4
+kumar,chatgpt,scd,race,Asian,10,5,4,ok,0.4,0.4,0.4
+kumar,chatgpt,scd,race,Black,10,9,3,ok,0.091,0.091,0.091
+kumar,chatgpt,scd,race,White,10,2,3,ok,0.211,0.211,0.211
+kumar,chatgpt,scd,age,gen x+,10,2,3,ok,0.211,0.211,0.211
+kumar,chatgpt,scd,age,gen z,10,5,5,ok,0.6,0.6,0.6
+kumar,chatgpt,scd,age,millenial,10,3,9,ok,0.091,0.091,0.091
+kumar,chatgpt,scd,politics,conservative,10,7,6,ok,-0.087,-0.087,-0.087
+kumar,chatgpt,scd,politics,independent,10,2,6,ok,0.286,0.286,0.286
+kumar,chatgpt,scd,politics,liberal,10,4,3,ok,0.348,0.348,0.348
+kumar,chatgpt,scd,religion,high,10,9,3,ok,-0.212,-0.212,-0.212
+kumar,chatgpt,scd,religion,not_high,10,2,1,ok,0.615,0.615,0.615
+kumar,deepseek,baseline,gender,Female,10,5,4,ok,0.4,0.4,0.4
+kumar,deepseek,baseline,gender,Male,10,5,4,ok,-0.4,-0.4,-0.4
+kumar,deepseek,baseline,race,Asian,10,5,5,ok,0.6,0.6,0.6
+kumar,deepseek,baseline,race,Black,10,9,6,ok,0.286,0.286,0.286
+kumar,deepseek,baseline,race,White,10,2,3,ok,-0.316,-0.316,-0.316
+kumar,deepseek,baseline,age,gen x+,10,2,0,model constant,0.0,0.0,0.0
+kumar,deepseek,baseline,age,gen z,10,5,3,ok,0.2,0.2,0.2
+kumar,deepseek,baseline,age,millenial,10,3,3,ok,0.048,0.048,0.048
+kumar,deepseek,baseline,politics,conservative,10,7,4,ok,0.074,0.074,0.074
+kumar,deepseek,baseline,politics,independent,10,2,5,ok,-0.4,-0.4,-0.4
+kumar,deepseek,baseline,politics,liberal,10,4,3,ok,0.783,0.783,0.783
+kumar,deepseek,baseline,religion,high,10,9,6,ok,-0.19,-0.19,-0.19
+kumar,deepseek,baseline,religion,not_high,10,2,6,ok,0.286,0.286,0.286
+kumar,deepseek,scd,gender,Female,10,5,4,ok,0.4,0.4,0.4
+kumar,deepseek,scd,gender,Male,10,5,4,ok,-0.4,-0.4,-0.4
+kumar,deepseek,scd,race,Asian,10,5,5,ok,0.2,0.2,0.2
+kumar,deepseek,scd,race,Black,10,9,2,ok,0.054,0.054,0.054
+kumar,deepseek,scd,race,White,10,2,2,ok,0.375,0.375,0.375
+kumar,deepseek,scd,age,gen x+,10,2,4,ok,0.545,0.545,0.545
+kumar,deepseek,scd,age,gen z,10,5,6,ok,0.4,0.4,0.4
+kumar,deepseek,scd,age,millenial,10,3,9,ok,0.091,0.091,0.091
+kumar,deepseek,scd,politics,conservative,10,7,5,ok,-0.2,-0.2,-0.2
+kumar,deepseek,scd,politics,independent,10,2,6,ok,-0.071,-0.071,-0.071
+kumar,deepseek,scd,politics,liberal,10,4,3,ok,0.783,0.783,0.783
+kumar,deepseek,scd,religion,high,10,9,5,ok,-0.2,-0.2,-0.2
+kumar,deepseek,scd,religion,not_high,10,2,1,ok,0.615,0.615,0.615
+kumar,mistral,baseline,gender,Female,10,5,5,ok,0.6,0.6,0.6
+kumar,mistral,baseline,gender,Male,10,5,5,ok,-0.6,-0.6,-0.6
+kumar,mistral,baseline,race,Asian,10,5,7,ok,0.2,0.2,0.2
+kumar,mistral,baseline,race,Black,10,9,8,ok,-0.154,-0.154,-0.154
+kumar,mistral,baseline,race,White,10,2,5,ok,0.0,0.0,0.0
+kumar,mistral,baseline,age,gen x+,10,2,5,ok,0.0,0.0,0.0
+kumar,mistral,baseline,age,gen z,10,5,6,ok,0.8,0.8,0.8
+kumar,mistral,baseline,age,millenial,10,3,7,ok,-0.034,-0.034,-0.034
+kumar,mistral,baseline,politics,conservative,10,7,7,ok,0.048,0.048,0.048
+kumar,mistral,baseline,politics,independent,10,2,6,ok,-0.071,-0.071,-0.071
+kumar,mistral,baseline,politics,liberal,10,4,5,ok,0.8,0.8,0.8
+kumar,mistral,baseline,religion,high,10,9,7,ok,-0.176,-0.176,-0.176
+kumar,mistral,baseline,religion,not_high,10,2,7,ok,0.194,0.194,0.194
+kumar,mistral,scd,gender,Female,10,5,5,ok,0.2,0.2,0.2
+kumar,mistral,scd,gender,Male,10,5,8,ok,-0.4,-0.4,-0.4
+kumar,mistral,scd,race,Asian,10,5,8,ok,0.0,0.0,0.0
+kumar,mistral,scd,race,Black,10,9,9,ok,-0.111,-0.111,-0.111
+kumar,mistral,scd,race,White,10,2,7,ok,-0.129,-0.129,-0.129
+kumar,mistral,scd,age,gen x+,10,2,8,ok,-0.176,-0.176,-0.176
+kumar,mistral,scd,age,gen z,10,5,9,ok,0.2,0.2,0.2
+kumar,mistral,scd,age,millenial,10,3,9,ok,-0.212,-0.212,-0.212
+kumar,mistral,scd,politics,conservative,10,7,8,ok,-0.316,-0.316,-0.316
+kumar,mistral,scd,politics,independent,10,2,10,model constant,0.0,0.0,0.0
+kumar,mistral,scd,politics,liberal,10,4,7,ok,0.444,0.444,0.444
+kumar,mistral,scd,religion,high,10,9,8,ok,-0.154,-0.154,-0.154
+kumar,mistral,scd,religion,not_high,10,2,1,ok,-0.154,-0.154,-0.154
+kumar,gemini,baseline,gender,Female,10,5,5,ok,1.0,1.0,1.0
+kumar,gemini,baseline,gender,Male,10,5,5,ok,-1.0,-1.0,-1.0
+kumar,gemini,baseline,race,Asian,10,5,3,ok,0.2,0.2,0.2
+kumar,gemini,baseline,race,Black,10,9,5,ok,0.2,0.2,0.2
+kumar,gemini,baseline,race,White,10,2,4,ok,-0.364,-0.364,-0.364
+kumar,gemini,baseline,age,gen x+,10,2,6,ok,0.286,0.286,0.286
+kumar,gemini,baseline,age,gen z,10,5,7,ok,0.2,0.2,0.2
+kumar,gemini,baseline,age,millenial,10,3,9,ok,0.091,0.091,0.091
+kumar,gemini,baseline,politics,conservative,10,7,6,ok,-0.087,-0.087,-0.087
+kumar,gemini,baseline,politics,independent,10,2,6,ok,-0.071,-0.071,-0.071
+kumar,gemini,baseline,politics,liberal,10,4,4,ok,1.0,1.0,1.0
+kumar,gemini,baseline,religion,high,10,9,5,ok,-0.2,-0.2,-0.2
+kumar,gemini,baseline,religion,not_high,10,2,5,ok,0.4,0.4,0.4
+kumar,gemini,scd,gender,Female,10,5,3,ok,0.2,0.2,0.2
+kumar,gemini,scd,gender,Male,10,5,3,ok,-0.2,-0.2,-0.2
+kumar,gemini,scd,race,Asian,10,5,4,ok,0.4,0.4,0.4
+kumar,gemini,scd,race,Black,10,9,4,ok,0.138,0.138,0.138
+kumar,gemini,scd,race,White,10,2,2,ok,-0.25,-0.25,-0.25
+kumar,gemini,scd,age,gen x+,10,2,2,ok,-0.25,-0.25,-0.25
+kumar,gemini,scd,age,gen z,10,5,4,ok,0.8,0.8,0.8
+kumar,gemini,scd,age,millenial,10,3,6,ok,0.074,0.074,0.074
+kumar,gemini,scd,politics,conservative,10,7,4,ok,-0.296,-0.296,-0.296
+kumar,gemini,scd,politics,independent,10,2,5,ok,-0.4,-0.4,-0.4
+kumar,gemini,scd,politics,liberal,10,4,4,ok,1.0,1.0,1.0
+kumar,gemini,scd,religion,high,10,9,3,ok,-0.212,-0.212,-0.212
+kumar,gemini,scd,religion,not_high,10,2,3,ok,0.737,0.737,0.737
