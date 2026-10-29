@@ -209,3 +209,15 @@ Mean DFU of the AU texts: MHS 0.978 (median 1.0), Attitudes 0.549, Kumar 0.591, 
 two opposite peaks (for example No and Yes), with the unclear option almost unused (see the dataset notes). The Kolmogorov-Smirnov distance between the DFU
 distributions is largest between popquorn and MHS (0.447 for polarized texts) and smallest between Attitudes and Kumar (0.066 for all texts); it is
 descriptive only.
+
+## Prompt-wording ablation, saved results (added 2026-10-29)
+
+Source: `new_results/ablation_prompt/` (`README.md` has the design and the definitions).
+
+**32. Rewording the question changes the ratings less than changing the model, except in MHS.**
+Pooled over the four models, the share of identical labels is 85.4% to 98.5% and the weighted kappa 0.68 to 0.92 over the 12 dataset-by-pair rows. A model with
+itself under another wording has a mean weighted kappa of 0.81 to 0.88 in Attitudes, POPQUORN and Kumar, against 0.49 to 0.70 between different models under the
+baseline prompt. In MHS the wording effect (0.63 to 0.65) is about as large as the model effect (0.66). The second rewording (R2) scores slightly higher than the
+baseline in MHS (+0.14) and Kumar (+0.09 on average). In POPQUORN and Kumar the two rewordings agree more with each other than with the baseline; in Attitudes
+they agree less. Cohen's kappa of the labels is near 0 or undefined for some MHS models although 94-100% of their labels are equal (almost every label is one class), so
+it is not used as a main result there. Samples are 41-50 texts, so the intervals are wide per model.
