@@ -1,0 +1,45 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\caption{Cohen's kappa between each \ac{LLM} and the groups of each characteristic on polarized texts attributed to it, with the baseline and the \ac{SCD} prompt. Values in parentheses are bootstrap standard errors and values in brackets 95\% intervals from 10,000 resamples of the attributed texts. Dataset: POPQUORN.}
+\label{tab:kappa_popquorn}
+\begin{tabular}{@{}lr*{8}{c}@{}}
+\toprule
+& & \multicolumn{4}{c}{Baseline} & \multicolumn{4}{c}{SCD} \\
+\cmidrule(lr){3-6}\cmidrule(lr){7-10}
+Group & $n$ & ChatGPT & DeepSeek & Gemini & Mistral & ChatGPT & DeepSeek & Gemini & Mistral \\
+\midrule
+\multicolumn{10}{@{}l}{\textit{Gender (D)}} \\
+\quad Man & 14 & \makecell{0.04 (0.24)\\ {[}$-$0.43, 0.51{]}} & \makecell{$-$0.14 (0.25)\\ {[}$-$0.57, 0.36{]}} & \makecell{$-$0.14 (0.25)\\ {[}$-$0.62, 0.32{]}} & \makecell{$-$0.23 (0.20)\\ {[}$-$0.64, 0.12{]}} & \makecell{$-$0.43 (0.22)\\ {[}$-$0.78, 0.05{]}} & \makecell{0.14 (0.25)\\ {[}$-$0.35, 0.59{]}} & \makecell{$-$0.24 (0.23)\\ {[}$-$0.68, 0.22{]}} & \makecell{0.17 (0.13)\\ {[}0.00, 0.46{]}} \\
+\quad Woman & 14 & \makecell{0.16 (0.25)\\ {[}$-$0.34, 0.59{]}} & \makecell{0.29 (0.26)\\ {[}$-$0.24, 0.72{]}} & \makecell{0.29 (0.26)\\ {[}$-$0.24, 0.72{]}} & \makecell{0.34 (0.18)\\ {[}0.00, 0.71{]}} & \makecell{0.57 (0.22)\\ {[}0.09, 1.00{]}} & \makecell{0.00 (0.26)\\ {[}$-$0.51, 0.51{]}} & \makecell{0.44 (0.23)\\ {[}$-$0.04, 0.86{]}} & \makecell{0.11 (0.12)\\ {[}0.00, 0.43{]}} \\
+\addlinespace
+\multicolumn{10}{@{}l}{\textit{Race (D)}} \\
+\quad Black or African American & 13 & \makecell{0.27 (0.18)\\ {[}0.00, 0.68{]}} & \makecell{0.15 (0.12)\\ {[}0.00, 0.43{]}} & \makecell{0.16 (0.27)\\ {[}$-$0.28, 0.75{]}} & \makecell{0.16 (0.27)\\ {[}$-$0.28, 0.75{]}} & \makecell{0.20 (0.15)\\ {[}0.00, 0.55{]}} & \makecell{0.10 (0.10)\\ {[}0.00, 0.33{]}} & \makecell{0.20 (0.15)\\ {[}0.00, 0.55{]}} & \makecell{0.26 (0.31)\\ {[}$-$0.23, 1.00{]}} \\
+\quad White & 13 & \makecell{$-$0.15 (0.13)\\ {[}$-$0.44, 0.00{]}} & \makecell{$-$0.14 (0.11)\\ {[}$-$0.36, 0.00{]}} & \makecell{0.07 (0.08)\\ {[}0.00, 0.27{]}} & \makecell{0.07 (0.08)\\ {[}0.00, 0.27{]}} & \makecell{$-$0.14 (0.11)\\ {[}$-$0.36, 0.00{]}} & \makecell{$-$0.13 (0.10)\\ {[}$-$0.30, 0.00{]}} & \makecell{$-$0.15 (0.12)\\ {[}$-$0.41, 0.00{]}} & \makecell{0.05 (0.06)\\ {[}0.00, 0.24{]}} \\
+\addlinespace
+\multicolumn{10}{@{}l}{\textit{Age (D)}} \\
+\quad gen x+ & 55 & \makecell{0.12 (0.12)\\ {[}$-$0.12, 0.36{]}} & \makecell{0.20 (0.14)\\ {[}$-$0.07, 0.46{]}} & \makecell{0.15 (0.14)\\ {[}$-$0.12, 0.41{]}} & \makecell{0.17 (0.11)\\ {[}$-$0.04, 0.38{]}} & \makecell{0.02 (0.13)\\ {[}$-$0.24, 0.27{]}} & \makecell{0.17 (0.13)\\ {[}$-$0.08, 0.42{]}} & \makecell{0.28 (0.13)\\ {[}0.02, 0.54{]}} & \makecell{0.06 (0.07)\\ {[}$-$0.08, 0.21{]}} \\
+\quad millennial & 55 & \makecell{0.19 (0.09)\\ {[}0.02, 0.38{]}} & \makecell{0.07 (0.12)\\ {[}$-$0.15, 0.31{]}} & \makecell{0.22 (0.12)\\ {[}0.00, 0.46{]}} & \makecell{$-$0.02 (0.08)\\ {[}$-$0.18, 0.12{]}} & \makecell{0.08 (0.10)\\ {[}$-$0.12, 0.29{]}} & \makecell{0.15 (0.08)\\ {[}0.00, 0.32{]}} & \makecell{0.09 (0.11)\\ {[}$-$0.12, 0.30{]}} & \makecell{0.00 (0.06)\\ {[}$-$0.14, 0.11{]}} \\
+\addlinespace
+\multicolumn{10}{@{}l}{\textit{Education (N)}} \\
+\quad College degree & 44 & \makecell{0.22 (0.15)\\ {[}$-$0.06, 0.50{]}} & \makecell{0.17 (0.15)\\ {[}$-$0.12, 0.47{]}} & \makecell{0.28 (0.15)\\ {[}$-$0.02, 0.57{]}} & \makecell{0.28 (0.11)\\ {[}0.08, 0.49{]}} & \makecell{0.40 (0.15)\\ {[}0.09, 0.67{]}} & \makecell{0.17 (0.15)\\ {[}$-$0.12, 0.46{]}} & \makecell{0.36 (0.15)\\ {[}0.06, 0.63{]}} & \makecell{0.23 (0.10)\\ {[}0.05, 0.44{]}} \\
+\quad Graduate degree & 17 & \makecell{0.07 (0.24)\\ {[}$-$0.41, 0.53{]}} & \makecell{0.33 (0.21)\\ {[}$-$0.08, 0.73{]}} & \makecell{$-$0.34 (0.21)\\ {[}$-$0.73, 0.10{]}} & \makecell{$-$0.07 (0.24)\\ {[}$-$0.52, 0.42{]}} & \makecell{0.11 (0.22)\\ {[}$-$0.34, 0.53{]}} & \makecell{0.23 (0.20)\\ {[}$-$0.16, 0.62{]}} & \makecell{0.11 (0.22)\\ {[}$-$0.34, 0.53{]}} & \makecell{$-$0.12 (0.23)\\ {[}$-$0.53, 0.38{]}} \\
+\quad High school diploma or equivalent & 38 & \makecell{0.20 (0.17)\\ {[}$-$0.13, 0.51{]}} & \makecell{0.13 (0.17)\\ {[}$-$0.20, 0.47{]}} & \makecell{0.29 (0.16)\\ {[}$-$0.04, 0.60{]}} & \makecell{0.13 (0.11)\\ {[}$-$0.09, 0.37{]}} & \makecell{0.10 (0.17)\\ {[}$-$0.22, 0.42{]}} & \makecell{0.06 (0.16)\\ {[}$-$0.24, 0.38{]}} & \makecell{0.23 (0.17)\\ {[}$-$0.11, 0.57{]}} & \makecell{0.26 (0.12)\\ {[}0.04, 0.50{]}} \\
+\addlinespace
+\multicolumn{10}{@{}l}{\textit{Occupation (N)}} \\
+\quad Employed & 52 & \makecell{0.30 (0.12)\\ {[}0.05, 0.54{]}} & \makecell{0.41 (0.13)\\ {[}0.16, 0.65{]}} & \makecell{0.48 (0.12)\\ {[}0.25, 0.70{]}} & \makecell{0.26 (0.09)\\ {[}0.09, 0.46{]}} & \makecell{0.29 (0.11)\\ {[}0.07, 0.52{]}} & \makecell{0.35 (0.13)\\ {[}0.10, 0.60{]}} & \makecell{0.42 (0.11)\\ {[}0.20, 0.64{]}} & \makecell{0.20 (0.07)\\ {[}0.08, 0.34{]}} \\
+\quad Retired & 11 & \makecell{1.00 (0.21)\\ {[}0.00, 1.00{]}} & \makecell{0.79 (0.25)\\ {[}0.00, 1.00{]}} & \makecell{1.00 (0.21)\\ {[}0.00, 1.00{]}} & \makecell{0.35 (0.21)\\ {[}0.00, 0.80{]}} & \makecell{1.00 (0.21)\\ {[}0.00, 1.00{]}} & \makecell{0.38 (0.31)\\ {[}$-$0.24, 1.00{]}} & \makecell{0.74 (0.33)\\ {[}0.00, 1.00{]}} & \makecell{0.79 (0.25)\\ {[}0.00, 1.00{]}} \\
+\quad Self-employed & 28 & \makecell{0.19 (0.12)\\ {[}0.00, 0.46{]}} & \makecell{0.21 (0.14)\\ {[}0.00, 0.52{]}} & \makecell{0.16 (0.11)\\ {[}0.00, 0.42{]}} & \makecell{0.12 (0.09)\\ {[}0.00, 0.34{]}} & \makecell{0.14 (0.10)\\ {[}0.00, 0.38{]}} & \makecell{0.05 (0.14)\\ {[}$-$0.17, 0.36{]}} & \makecell{0.19 (0.13)\\ {[}0.00, 0.46{]}} & \makecell{0.07 (0.06)\\ {[}0.00, 0.21{]}} \\
+\quad Student & 11 & \makecell{$-$0.22 (0.25)\\ {[}$-$0.68, 0.29{]}} & \makecell{$-$0.52 (0.21)\\ {[}$-$0.86, 0.00{]}} & \makecell{$-$0.52 (0.20)\\ {[}$-$0.83, 0.00{]}} & \makecell{0.03 (0.24)\\ {[}$-$0.44, 0.51{]}} & \makecell{$-$0.22 (0.25)\\ {[}$-$0.68, 0.29{]}} & \makecell{$-$0.45 (0.19)\\ {[}$-$0.77, 0.00{]}} & \makecell{$-$0.52 (0.20)\\ {[}$-$0.83, 0.00{]}} & \makecell{$-$0.29 (0.25)\\ {[}$-$0.75, 0.18{]}} \\
+\quad Unemployed & 10 & \makecell{0.09 (0.12)\\ {[}0.00, 0.40{]}} & \makecell{0.29 (0.26)\\ {[}0.00, 1.00{]}} & \makecell{0.14 (0.16)\\ {[}0.00, 0.56{]}} & \makecell{0.02 (0.05)\\ {[}0.00, 0.17{]}} & \makecell{0.14 (0.16)\\ {[}0.00, 0.55{]}} & \makecell{$-$0.20 (0.18)\\ {[}$-$0.59, 0.00{]}} & \makecell{0.14 (0.16)\\ {[}0.00, 0.55{]}} & \makecell{0.02 (0.05)\\ {[}0.00, 0.16{]}} \\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\begin{minipage}{\linewidth}
+\footnotesize
+D = demographic, N = non-demographic characteristic; $n$ = number of attributed (\ac{AU}) texts in which the group is compared. \\
+$^\dagger$ the model gave the same label to every text, so kappa is 0 by definition. \\
+Bounds at exactly 0.00 can come from resamples in which the model gave one label to every text, for which kappa is 0 by definition.
+\end{minipage}
+\end{table}
