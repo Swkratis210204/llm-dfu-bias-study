@@ -1,0 +1,19 @@
+dataset,dimension,texts,not polarised,too few groups,a group is not unimodal,AU,AU %
+attitudes,gender,625,341,120,154,10,1.6
+attitudes,race,625,341,45,225,14,2.2
+attitudes,age,625,341,187,91,6,1.0
+attitudes,politics,625,341,140,132,12,1.9
+attitudes,traditionalism,625,341,130,145,9,1.4
+popquorn,gender,1500,814,71,601,14,0.9
+popquorn,race,1500,814,482,191,13,0.9
+popquorn,age,1500,814,103,528,55,3.7
+popquorn,education,1500,814,95,544,47,3.1
+popquorn,occupation,1500,814,268,364,54,3.6
+mhs,gender,5990,4458,1003,486,43,0.7
+mhs,age,5990,4458,1227,275,30,0.5
+mhs,ideology,5990,4458,1196,304,32,0.5
+kumar,gender,107620,62117,26067,18212,1224,1.1
+kumar,race,107620,62117,39776,5060,667,0.6
+kumar,age,107620,62117,34103,10362,1038,1.0
+kumar,politics,107620,62117,29919,13660,1924,1.8
+kumar,religion,107620,62117,29563,14703,1237,1.1

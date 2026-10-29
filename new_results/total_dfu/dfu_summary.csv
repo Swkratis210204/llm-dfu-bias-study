@@ -1,0 +1,5 @@
+dataset,texts,ratings per text (median),polarized texts,polarized %,DFU = 0 %,distinct DFU values,mean DFU (all texts),median (all texts),90th percentile (all texts),99th percentile (all texts),max DFU,mean DFU (polarized texts),25th percentile (polarized),median (polarized),75th percentile (polarized),AU texts,mean DFU (AU texts),median (AU texts)
+attitudes,625.0,6.0,284.0,45.4,54.6,7.0,0.214,0.0,0.667,1.0,1.0,0.471,0.25,0.5,0.5,41.0,0.549,0.5
+popquorn,1500.0,8.0,686.0,45.7,54.3,15.0,0.16,0.0,0.5,1.0,1.0,0.35,0.2,0.333,0.5,154.0,0.324,0.25
+mhs,5990.0,4.0,1532.0,25.6,74.4,60.0,0.128,0.0,0.333,1.0,1.0,0.501,0.333,0.333,0.5,95.0,0.978,1.0
+kumar,107620.0,4.0,45503.0,42.3,57.7,6.0,0.223,0.0,0.5,1.0,1.0,0.528,0.333,0.5,0.5,5209.0,0.591,0.5

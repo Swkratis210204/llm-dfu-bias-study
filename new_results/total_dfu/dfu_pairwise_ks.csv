@@ -1,0 +1,7 @@
+dataset A,dataset B,KS distance (all texts),KS distance (polarized texts),texts A,texts B
+attitudes,popquorn,0.108,0.24,625,1500
+attitudes,mhs,0.205,0.232,625,5990
+attitudes,kumar,0.066,0.198,625,107620
+popquorn,mhs,0.208,0.447,1500,5990
+popquorn,kumar,0.17,0.429,1500,107620
+mhs,kumar,0.22,0.368,5990,107620

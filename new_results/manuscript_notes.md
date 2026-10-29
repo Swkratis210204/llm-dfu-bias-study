@@ -193,3 +193,19 @@ so kappa is 0 whatever the group does: Attitudes 14 of 80, MHS 20 of 56, Kumar 2
 combination has both constant. In 32 combinations (all in Attitudes) the group has fewer than 10 texts (6 to 14). Source: `new_results/kappa_edge_cases.csv`.
 The thesis notebook has three kappa functions that treat constant labels differently (see the reply to this check); the package `cohen_kappa` returns NaN
 only when both sides are constant and equal, and 0 when only one side is constant.
+
+## DFU across the datasets (added 2026-10-29)
+
+Source: `new_results/total_dfu/` (explore there; `README.md` explains each file).
+
+**30. The DFU is coarse and depends on how many ratings a text has, so raw DFU values are not comparable across datasets.**
+Number of distinct DFU values over all texts: Kumar 6, Attitudes 7, popquorn 15, MHS 60 (the 60 come from the 70 reference comments, which have hundreds of
+ratings). Among polarized texts the mean DFU falls as the number of ratings grows: about 1.0 for texts with 2 ratings, 0.5-0.7 with 3, 0.45-0.5 with 5 and
+0.33 with 7 to 10 ratings (popquorn), and 0.14 for the MHS reference comments. The share of texts that are polarized (DFU above 0) is 45.4% in Attitudes,
+45.7% in popquorn, 25.6% in MHS and 42.3% in Kumar; in Kumar it rises from 28.6% (2 ratings) to 45.7% (5 ratings).
+
+**31. MHS AU texts are almost all maximally polarized.**
+Mean DFU of the AU texts: MHS 0.978 (median 1.0), Attitudes 0.549, Kumar 0.591, popquorn 0.324. In MHS the 95 AU texts have 4 or 5 ratings that split into
+two opposite peaks (for example No and Yes), with the unclear option almost unused (see the dataset notes). The Kolmogorov-Smirnov distance between the DFU
+distributions is largest between popquorn and MHS (0.447 for polarized texts) and smallest between Attitudes and Kumar (0.066 for all texts); it is
+descriptive only.
