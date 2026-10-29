@@ -2,9 +2,10 @@
 from __future__ import annotations
 
 import pickle
+import tempfile
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, Optional
+from typing import Dict, Optional, Sequence
 
 import pandas as pd
 
@@ -12,7 +13,7 @@ from .spec import DatasetSpec
 from .unimodality import PrunedAU, Unimodality
 from .utils import find_root
 
-__all__ = ["DatasetResult", "make_tool", "clean", "run_dataset"]
+__all__ = ["DatasetResult", "make_tool", "clean", "run_dataset", "load_results"]
 
 AU_COLUMNS = ["dataset", "dimension", "item_id", "text", "n_ratings", "dfu", "toxic_pole", "kept_groups", "group_sizes", "group_label"]
 
@@ -156,3 +157,34 @@ def run_dataset(spec: DatasetSpec, root: Optional[Path] = None, raw: Optional[pd
         with open(cache, "wb") as f:
             pickle.dump((key, result), f, protocol=4)
     return result
+
+
+def load_results(names: Optional[Sequence[str]] = None, root: Optional[Path] = None, cache_dir: Optional[Path] = None,
+                 keep_raw: bool = False) -> Dict[str, DatasetResult]:
+    """The AU results of the datasets (default: the four of the thesis, in the order Attitudes, POPQUORN, MHS, Kumar), read from a temporary cache so that the
+    AU analysis runs once and a later session loads them in seconds. ``cache_dir`` defaults to ``perspective_audit_cache`` in the temporary folder of the
+    system. A result is made at most once; delete its file to make it again (after the data, the rules or the package changed), and use the same Python that
+    made it.
+
+    Unless ``keep_raw`` is True the results are kept **without the raw ratings** (``result.raw`` is None): the statistical sections and the description of the
+    AU texts do not need them and Kumar's raw table is large. The description of the data itself (``dataset_tables``, ``save_eda``) needs ``keep_raw=True``."""
+    from .datasets import SPECS
+
+    cache_dir = Path(cache_dir) if cache_dir else Path(tempfile.gettempdir()) / "perspective_audit_cache"
+    results: Dict[str, DatasetResult] = {}
+    for name in (names or ["attitudes", "popquorn", "mhs", "kumar"]):
+        spec = SPECS[name]
+        slim = cache_dir / f"{name}_result_slim.pkl"
+        if not keep_raw and slim.exists():
+            with open(slim, "rb") as f:
+                key, saved = pickle.load(f)
+            if key == (name, spec.min_au_texts):
+                results[name] = saved
+                continue
+        result = run_dataset(spec, root, cache=cache_dir / f"{name}_result.pkl")
+        if not keep_raw:
+            result.raw = None
+            with open(slim, "wb") as f:
+                pickle.dump(((name, spec.min_au_texts), result), f, protocol=4)
+        results[name] = result
+    return results
