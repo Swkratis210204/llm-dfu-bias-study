@@ -1,0 +1,45 @@
+dataset,dimension,group,AU rows with the group (all),share of the group appearances % (all),AU rows with the group (given to the models),share of the group appearances % (given to the models)
+attitudes,gender,man,10,50.0,10,50.0
+attitudes,gender,woman,10,50.0,10,50.0
+attitudes,race,black,14,50.0,14,50.0
+attitudes,race,white,14,50.0,14,50.0
+attitudes,age,gen x+,6,50.0,6,50.0
+attitudes,age,millenial,6,50.0,6,50.0
+attitudes,politics,left,12,50.0,12,50.0
+attitudes,politics,right,12,50.0,12,50.0
+attitudes,traditionalism,high,9,50.0,9,50.0
+attitudes,traditionalism,not_high,9,50.0,9,50.0
+popquorn,gender,Man,14,50.0,14,50.0
+popquorn,gender,Woman,14,50.0,14,50.0
+popquorn,race,Black or African American,13,50.0,13,50.0
+popquorn,race,White,13,50.0,13,50.0
+popquorn,age,gen x+,55,50.0,55,50.0
+popquorn,age,millenial,55,50.0,55,50.0
+popquorn,education,College degree,44,44.4,44,44.4
+popquorn,education,Graduate degree,17,17.2,17,17.2
+popquorn,education,High school diploma or equivalent,38,38.4,38,38.4
+popquorn,occupation,Employed,52,46.4,52,46.4
+popquorn,occupation,Retired,11,9.8,11,9.8
+popquorn,occupation,Self-employed,28,25.0,28,25.0
+popquorn,occupation,Student,11,9.8,11,9.8
+popquorn,occupation,Unemployed,10,8.9,10,8.9
+mhs,gender,female,43,50.0,43,50.0
+mhs,gender,male,43,50.0,43,50.0
+mhs,age,gen x+,30,50.0,30,50.0
+mhs,age,millenial,30,50.0,30,50.0
+mhs,ideology,conservative,22,34.4,22,34.4
+mhs,ideology,liberal,29,45.3,29,45.3
+mhs,ideology,neutral,13,20.3,13,20.3
+kumar,gender,Female,1224,50.0,10,50.0
+kumar,gender,Male,1224,50.0,10,50.0
+kumar,race,Asian,83,6.2,10,33.3
+kumar,race,Black,592,44.4,10,33.3
+kumar,race,White,659,49.4,10,33.3
+kumar,age,gen x+,880,42.4,10,33.3
+kumar,age,gen z,243,11.7,10,33.3
+kumar,age,millenial,953,45.9,10,33.3
+kumar,politics,conservative,1228,31.9,10,33.3
+kumar,politics,independent,1143,29.7,10,33.3
+kumar,politics,liberal,1477,38.4,10,33.3
+kumar,religion,high,1237,50.0,10,50.0
+kumar,religion,not_high,1237,50.0,10,50.0

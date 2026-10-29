@@ -1,0 +1,51 @@
+dataset,dimension,group,AU texts at the start,AU texts at the end,AU texts of the dimension (final),status,ratings (all texts),toxic % (all texts),ratings (AU texts),toxic % (AU texts)
+attitudes,gender,man,10,10,10,kept,1893,51.4,29,62.1
+attitudes,gender,woman,10,10,10,kept,1461,57.3,24,58.3
+attitudes,race,black,14,14,14,kept,1131,59.3,28,89.3
+attitudes,race,white,14,14,14,kept,2223,51.2,41,46.3
+attitudes,age,gen x+,6,6,6,"kept, below 10 (the rule could not remove it)",809,55.9,15,40.0
+attitudes,age,gen z,0,0,6,"kept, below 10 (the rule could not remove it)",4,75.0,0,
+attitudes,age,millenial,6,6,6,"kept, below 10 (the rule could not remove it)",2541,53.3,18,72.2
+attitudes,politics,center,9,,12,removed (fewer than 10 AU texts),460,52.8,,
+attitudes,politics,left,17,12,12,kept,1741,52.3,30,60.0
+attitudes,politics,right,11,12,12,kept,1153,56.9,25,72.0
+attitudes,traditionalism,high,9,9,9,"kept, below 10 (the rule could not remove it)",2088,55.9,25,68.0
+attitudes,traditionalism,not_high,9,9,9,"kept, below 10 (the rule could not remove it)",1266,50.8,25,64.0
+popquorn,gender,Man,14,14,14,kept,5526,27.6,50,46.0
+popquorn,gender,Woman,14,14,14,kept,5826,25.3,48,47.9
+popquorn,race,Asian,8,,13,removed (fewer than 10 AU texts),899,26.5,,
+popquorn,race,Black or African American,12,13,13,kept,1535,35.8,31,90.3
+popquorn,race,White,20,13,13,kept,8918,24.8,59,22.0
+popquorn,age,gen x+,39,55,55,kept,5326,28.9,178,32.6
+popquorn,age,gen z,7,,55,removed (fewer than 10 AU texts),1345,26.5,,
+popquorn,age,millenial,36,55,55,kept,4681,23.6,172,18.0
+popquorn,education,College degree,44,44,47,kept,5537,24.7,178,24.7
+popquorn,education,Graduate degree,17,17,47,kept,2381,30.9,62,67.7
+popquorn,education,High school diploma or equivalent,38,38,47,kept,3434,26.1,111,25.2
+popquorn,occupation,Employed,54,52,54,kept,5826,26.4,192,31.8
+popquorn,occupation,Homemaker,3,,54,removed (fewer than 10 AU texts),494,26.5,,
+popquorn,occupation,Retired,11,11,54,kept,1346,31.5,47,44.7
+popquorn,occupation,Self-employed,27,28,54,kept,1593,23.8,79,11.4
+popquorn,occupation,Student,11,11,54,kept,846,31.2,42,47.6
+popquorn,occupation,Unemployed,10,10,54,kept,1247,21.3,44,27.3
+mhs,gender,female,43,43,43,kept,36483,42.7,88,69.3
+mhs,gender,male,43,43,43,kept,27840,41.9,87,29.9
+mhs,age,gen x+,31,30,30,kept,15902,45.3,60,73.3
+mhs,age,gen z,5,,30,removed (fewer than 10 AU texts),5544,39.6,,
+mhs,age,millenial,34,30,30,kept,42877,41.6,60,26.7
+mhs,ideology,conservative,22,22,32,kept,17041,43.1,45,71.1
+mhs,ideology,liberal,29,29,32,kept,35826,42.1,59,42.4
+mhs,ideology,neutral,13,13,32,kept,11456,42.1,26,23.1
+kumar,gender,Female,1224,1224,1224,kept,234940,27.9,2769,40.5
+kumar,gender,Male,1224,1224,1224,kept,215220,31.7,2740,61.5
+kumar,race,Asian,83,83,667,kept,28860,26.9,272,47.4
+kumar,race,Black,592,592,667,kept,61720,44.5,1249,86.9
+kumar,race,White,659,659,667,kept,359580,27.4,1554,17.4
+kumar,age,gen x+,880,880,1038,kept,111280,28.0,1927,45.7
+kumar,age,gen z,243,243,1038,kept,46580,25.5,829,43.4
+kumar,age,millenial,953,953,1038,kept,292300,31.1,2142,45.0
+kumar,politics,conservative,1228,1228,1924,kept,132240,35.3,3063,61.1
+kumar,politics,independent,1143,1143,1924,kept,125120,26.5,2717,32.4
+kumar,politics,liberal,1477,1477,1924,kept,192800,28.0,3434,34.6
+kumar,religion,high,1237,1237,1237,kept,146040,39.4,2635,85.7
+kumar,religion,not_high,1237,1237,1237,kept,304120,25.0,2976,16.9

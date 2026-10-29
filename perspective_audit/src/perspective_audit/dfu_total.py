@@ -75,7 +75,7 @@ def dfu_summary(table: pd.DataFrame) -> pd.DataFrame:
             "25th percentile (polarized)": _quantile(polarized, 0.25), "median (polarized)": _quantile(polarized, 0.5),
             "75th percentile (polarized)": _quantile(polarized, 0.75),
             "AU texts": len(au), "mean DFU (AU texts)": round(float(au.mean()), 3) if len(au) else np.nan, "median (AU texts)": _quantile(au, 0.5)}
-    return pd.DataFrame(rows).T.rename_axis("dataset")
+    return pd.DataFrame.from_dict(rows, orient="index").rename_axis("dataset")           # from_dict keeps whole numbers whole
 
 
 def dfu_histogram(table: pd.DataFrame) -> pd.DataFrame:
