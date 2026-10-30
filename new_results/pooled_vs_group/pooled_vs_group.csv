@@ -1,0 +1,425 @@
+dataset,characteristic,model,row_type,group,n_texts,kappa,se,ci_low,ci_high,constant_flag,share_pooled_equals_group
+attitudes,gender,chatgpt,pooled,pooled,10,0.2105,0.3167,-0.3158,0.7826,False,
+attitudes,gender,chatgpt,group,man,10,-0.4,0.2078,-0.8,0.0,False,40.0
+attitudes,gender,chatgpt,pooled_on_group_subset,man,10,0.2105,0.3167,-0.3158,0.7826,False,40.0
+attitudes,gender,chatgpt,group,woman,10,0.4,0.244,0.0,1.0,False,60.0
+attitudes,gender,chatgpt,pooled_on_group_subset,woman,10,0.2105,0.3167,-0.3158,0.7826,False,60.0
+attitudes,gender,deepseek,pooled,pooled,10,0.0,0.0,0.0,0.0,True,
+attitudes,gender,deepseek,group,man,10,0.0,0.0,0.0,0.0,True,40.0
+attitudes,gender,deepseek,pooled_on_group_subset,man,10,0.0,0.0,0.0,0.0,True,40.0
+attitudes,gender,deepseek,group,woman,10,0.0,0.0,0.0,0.0,True,60.0
+attitudes,gender,deepseek,pooled_on_group_subset,woman,10,0.0,0.0,0.0,0.0,True,60.0
+attitudes,gender,gemini,pooled,pooled,10,0.0,0.0,0.0,0.0,True,
+attitudes,gender,gemini,group,man,10,0.0,0.0,0.0,0.0,True,40.0
+attitudes,gender,gemini,pooled_on_group_subset,man,10,0.0,0.0,0.0,0.0,True,40.0
+attitudes,gender,gemini,group,woman,10,0.0,0.0,0.0,0.0,True,60.0
+attitudes,gender,gemini,pooled_on_group_subset,woman,10,0.0,0.0,0.0,0.0,True,60.0
+attitudes,gender,mistral,pooled,pooled,10,0.4118,0.3207,0.0,1.0,False,
+attitudes,gender,mistral,group,man,10,0.2,0.1957,0.0,0.6154,False,40.0
+attitudes,gender,mistral,pooled_on_group_subset,man,10,0.4118,0.3207,0.0,1.0,False,40.0
+attitudes,gender,mistral,group,woman,10,-0.2,0.1676,-0.6,0.0,False,60.0
+attitudes,gender,mistral,pooled_on_group_subset,woman,10,0.4118,0.3207,0.0,1.0,False,60.0
+attitudes,race,chatgpt,pooled,pooled,14,0.3778,0.2609,-0.1667,0.8511,False,
+attitudes,race,chatgpt,group,black,14,-0.2564,0.1347,-0.5217,0.0,False,50.0
+attitudes,race,chatgpt,pooled_on_group_subset,black,14,0.3778,0.2609,-0.1667,0.8511,False,50.0
+attitudes,race,chatgpt,group,white,14,0.2075,0.2166,-0.2353,0.5882,False,71.43
+attitudes,race,chatgpt,pooled_on_group_subset,white,14,0.3778,0.2609,-0.1667,0.8511,False,71.43
+attitudes,race,deepseek,pooled,pooled,14,0.5116,0.255,-0.1053,1.0,False,
+attitudes,race,deepseek,group,black,14,-0.2353,0.1205,-0.4651,0.0,False,50.0
+attitudes,race,deepseek,pooled_on_group_subset,black,14,0.5116,0.255,-0.1053,1.0,False,50.0
+attitudes,race,deepseek,group,white,14,0.1091,0.2016,-0.2924,0.4717,False,71.43
+attitudes,race,deepseek,pooled_on_group_subset,white,14,0.5116,0.255,-0.1053,1.0,False,71.43
+attitudes,race,gemini,pooled,pooled,14,0.6585,0.2359,0.0,1.0,False,
+attitudes,race,gemini,group,black,14,-0.2069,0.1066,-0.4,0.0,False,50.0
+attitudes,race,gemini,pooled_on_group_subset,black,14,0.6585,0.2359,0.0,1.0,False,50.0
+attitudes,race,gemini,group,white,14,0.2632,0.1588,0.0,0.5882,False,71.43
+attitudes,race,gemini,pooled_on_group_subset,white,14,0.6585,0.2359,0.0,1.0,False,71.43
+attitudes,race,mistral,pooled,pooled,14,0.1026,0.2352,-0.2727,0.6316,False,
+attitudes,race,mistral,group,black,14,0.4167,0.352,-0.1667,1.0,False,50.0
+attitudes,race,mistral,pooled_on_group_subset,black,14,0.1026,0.2352,-0.2727,0.6316,False,50.0
+attitudes,race,mistral,group,white,14,-0.0678,0.1625,-0.4286,0.2222,False,71.43
+attitudes,race,mistral,pooled_on_group_subset,white,14,0.1026,0.2352,-0.2727,0.6316,False,71.43
+attitudes,age,chatgpt,pooled,pooled,6,-0.2,0.3268,-0.8,0.4,False,
+attitudes,age,chatgpt,group,gen x+,6,-0.8,0.305,-1.0,0.0,False,66.67
+attitudes,age,chatgpt,pooled_on_group_subset,gen x+,6,-0.2,0.3268,-0.8,0.4,False,66.67
+attitudes,age,chatgpt,group,millenial,6,0.25,0.3896,-0.5,1.0,False,66.67
+attitudes,age,chatgpt,pooled_on_group_subset,millenial,6,-0.2,0.3268,-0.8,0.4,False,66.67
+attitudes,age,deepseek,pooled,pooled,6,-0.2,0.3249,-0.8,0.4,False,
+attitudes,age,deepseek,group,gen x+,6,-0.2,0.3255,-0.8,0.4,False,66.67
+attitudes,age,deepseek,pooled_on_group_subset,gen x+,6,-0.2,0.3249,-0.8,0.4,False,66.67
+attitudes,age,deepseek,group,millenial,6,0.25,0.3905,-0.5,1.0,False,66.67
+attitudes,age,deepseek,pooled_on_group_subset,millenial,6,-0.2,0.3249,-0.8,0.4,False,66.67
+attitudes,age,gemini,pooled,pooled,6,0.4,0.294,0.0,1.0,False,
+attitudes,age,gemini,group,gen x+,6,-0.2,0.3235,-0.8,0.4,False,66.67
+attitudes,age,gemini,pooled_on_group_subset,gen x+,6,0.4,0.294,0.0,1.0,False,66.67
+attitudes,age,gemini,group,millenial,6,1.0,0.2882,0.0,1.0,False,66.67
+attitudes,age,gemini,pooled_on_group_subset,millenial,6,0.4,0.294,0.0,1.0,False,66.67
+attitudes,age,mistral,pooled,pooled,6,0.1818,0.2173,0.0,0.6667,False,
+attitudes,age,mistral,group,gen x+,6,-0.3636,0.2866,-1.0,0.0,False,66.67
+attitudes,age,mistral,pooled_on_group_subset,gen x+,6,0.1818,0.2173,0.0,0.6667,False,66.67
+attitudes,age,mistral,group,millenial,6,0.5714,0.391,0.0,1.0,False,66.67
+attitudes,age,mistral,pooled_on_group_subset,millenial,6,0.1818,0.2173,0.0,0.6667,False,66.67
+attitudes,politics,chatgpt,pooled,pooled,12,0.5556,0.3112,-0.125,1.0,False,
+attitudes,politics,chatgpt,group,left,12,0.4,0.2943,-0.2,1.0,False,91.67
+attitudes,politics,chatgpt,pooled_on_group_subset,left,12,0.5556,0.3112,-0.125,1.0,False,91.67
+attitudes,politics,chatgpt,group,right,12,0.0,0.2658,-0.4545,0.5714,False,58.33
+attitudes,politics,chatgpt,pooled_on_group_subset,right,12,0.5556,0.3112,-0.125,1.0,False,58.33
+attitudes,politics,deepseek,pooled,pooled,12,0.5556,0.3112,-0.125,1.0,False,
+attitudes,politics,deepseek,group,left,12,0.4,0.2943,-0.2,1.0,False,91.67
+attitudes,politics,deepseek,pooled_on_group_subset,left,12,0.5556,0.3112,-0.125,1.0,False,91.67
+attitudes,politics,deepseek,group,right,12,0.0,0.2658,-0.4545,0.5714,False,58.33
+attitudes,politics,deepseek,pooled_on_group_subset,right,12,0.5556,0.3112,-0.125,1.0,False,58.33
+attitudes,politics,gemini,pooled,pooled,12,0.4286,0.3275,0.0,1.0,False,
+attitudes,politics,gemini,group,left,12,0.3077,0.2644,0.0,1.0,False,91.67
+attitudes,politics,gemini,pooled_on_group_subset,left,12,0.4286,0.3275,0.0,1.0,False,91.67
+attitudes,politics,gemini,group,right,12,0.3077,0.2601,0.0,0.8235,False,58.33
+attitudes,politics,gemini,pooled_on_group_subset,right,12,0.4286,0.3275,0.0,1.0,False,58.33
+attitudes,politics,mistral,pooled,pooled,12,0.25,0.3096,-0.25,0.8333,False,
+attitudes,politics,mistral,group,left,12,0.5714,0.2817,0.0,1.0,False,91.67
+attitudes,politics,mistral,pooled_on_group_subset,left,12,0.25,0.3096,-0.25,0.8333,False,91.67
+attitudes,politics,mistral,group,right,12,-0.2857,0.1456,-0.5385,0.0,False,58.33
+attitudes,politics,mistral,pooled_on_group_subset,right,12,0.25,0.3096,-0.25,0.8333,False,58.33
+attitudes,traditionalism,chatgpt,pooled,pooled,9,0.1818,0.3231,-0.3636,0.7692,False,
+attitudes,traditionalism,chatgpt,group,high,9,0.1818,0.3231,-0.3636,0.7692,False,100.0
+attitudes,traditionalism,chatgpt,pooled_on_group_subset,high,9,0.1818,0.3231,-0.3636,0.7692,False,100.0
+attitudes,traditionalism,chatgpt,group,not_high,9,-0.4211,0.2077,-0.8,0.0,False,22.22
+attitudes,traditionalism,chatgpt,pooled_on_group_subset,not_high,9,0.1818,0.3231,-0.3636,0.7692,False,22.22
+attitudes,traditionalism,deepseek,pooled,pooled,9,0.1818,0.3231,-0.3636,0.7692,False,
+attitudes,traditionalism,deepseek,group,high,9,0.1818,0.3231,-0.3636,0.7692,False,100.0
+attitudes,traditionalism,deepseek,pooled_on_group_subset,high,9,0.1818,0.3231,-0.3636,0.7692,False,100.0
+attitudes,traditionalism,deepseek,group,not_high,9,-0.4211,0.2077,-0.8,0.0,False,22.22
+attitudes,traditionalism,deepseek,pooled_on_group_subset,not_high,9,0.1818,0.3231,-0.3636,0.7692,False,22.22
+attitudes,traditionalism,gemini,pooled,pooled,9,-0.2,0.1495,-0.5,0.0,False,
+attitudes,traditionalism,gemini,group,high,9,-0.2,0.1495,-0.5,0.0,False,100.0
+attitudes,traditionalism,gemini,pooled_on_group_subset,high,9,-0.2,0.1495,-0.5,0.0,False,100.0
+attitudes,traditionalism,gemini,group,not_high,9,0.2703,0.2489,0.0,0.7692,False,22.22
+attitudes,traditionalism,gemini,pooled_on_group_subset,not_high,9,-0.2,0.1495,-0.5,0.0,False,22.22
+attitudes,traditionalism,mistral,pooled,pooled,9,-0.2,0.1495,-0.5,0.0,False,
+attitudes,traditionalism,mistral,group,high,9,-0.2,0.1495,-0.5,0.0,False,100.0
+attitudes,traditionalism,mistral,pooled_on_group_subset,high,9,-0.2,0.1495,-0.5,0.0,False,100.0
+attitudes,traditionalism,mistral,group,not_high,9,0.2703,0.2489,0.0,0.7692,False,22.22
+attitudes,traditionalism,mistral,pooled_on_group_subset,not_high,9,-0.2,0.1495,-0.5,0.0,False,22.22
+popquorn,gender,chatgpt,pooled,pooled,14,0.5882,0.1954,0.1967,1.0,False,
+popquorn,gender,chatgpt,group,Man,14,0.0392,0.2387,-0.4286,0.5116,False,57.14
+popquorn,gender,chatgpt,pooled_on_group_subset,Man,14,0.5882,0.1954,0.1967,1.0,False,57.14
+popquorn,gender,chatgpt,group,Woman,14,0.16,0.2502,-0.3404,0.5882,False,64.29
+popquorn,gender,chatgpt,pooled_on_group_subset,Woman,14,0.5882,0.1954,0.1967,1.0,False,64.29
+popquorn,gender,deepseek,pooled,pooled,14,0.4286,0.2333,-0.05,0.8571,False,
+popquorn,gender,deepseek,group,Man,14,-0.1429,0.247,-0.5714,0.3636,False,57.14
+popquorn,gender,deepseek,pooled_on_group_subset,Man,14,0.4286,0.2333,-0.05,0.8571,False,57.14
+popquorn,gender,deepseek,group,Woman,14,0.2857,0.255,-0.2444,0.72,False,64.29
+popquorn,gender,deepseek,pooled_on_group_subset,Woman,14,0.4286,0.2333,-0.05,0.8571,False,64.29
+popquorn,gender,gemini,pooled,pooled,14,0.4286,0.2351,-0.0566,0.8511,False,
+popquorn,gender,gemini,group,Man,14,-0.1429,0.2454,-0.6154,0.3171,False,57.14
+popquorn,gender,gemini,pooled_on_group_subset,Man,14,0.4286,0.2351,-0.0566,0.8511,False,57.14
+popquorn,gender,gemini,group,Woman,14,0.2857,0.2559,-0.2444,0.72,False,64.29
+popquorn,gender,gemini,pooled_on_group_subset,Woman,14,0.4286,0.2351,-0.0566,0.8511,False,64.29
+popquorn,gender,mistral,pooled,pooled,14,0.0175,0.1811,-0.3462,0.3636,False,
+popquorn,gender,mistral,group,Man,14,-0.2281,0.2012,-0.6383,0.125,False,57.14
+popquorn,gender,mistral,pooled_on_group_subset,Man,14,0.0175,0.1811,-0.3462,0.3636,False,57.14
+popquorn,gender,mistral,group,Woman,14,0.3396,0.1807,0.0,0.7143,False,64.29
+popquorn,gender,mistral,pooled_on_group_subset,Woman,14,0.0175,0.1811,-0.3462,0.3636,False,64.29
+popquorn,race,chatgpt,pooled,pooled,13,0.025,0.2099,-0.3582,0.4507,False,
+popquorn,race,chatgpt,group,Black or African American,13,0.2697,0.1829,0.0,0.6829,False,30.77
+popquorn,race,chatgpt,pooled_on_group_subset,Black or African American,13,0.025,0.2099,-0.3582,0.4507,False,30.77
+popquorn,race,chatgpt,group,White,13,-0.1519,0.1317,-0.4444,0.0,False,76.92
+popquorn,race,chatgpt,pooled_on_group_subset,White,13,0.025,0.2099,-0.3582,0.4507,False,76.92
+popquorn,race,deepseek,pooled,pooled,13,0.1613,0.267,-0.2817,0.6829,False,
+popquorn,race,deepseek,group,Black or African American,13,0.1495,0.1242,0.0,0.4348,False,30.77
+popquorn,race,deepseek,pooled_on_group_subset,Black or African American,13,0.1613,0.267,-0.2817,0.6829,False,30.77
+popquorn,race,deepseek,group,White,13,-0.1404,0.1101,-0.3582,0.0,False,76.92
+popquorn,race,deepseek,pooled_on_group_subset,White,13,0.1613,0.267,-0.2817,0.6829,False,76.92
+popquorn,race,gemini,pooled,pooled,13,0.1495,0.1234,0.0,0.4348,False,
+popquorn,race,gemini,group,Black or African American,13,0.1613,0.2689,-0.2817,0.7547,False,30.77
+popquorn,race,gemini,pooled_on_group_subset,Black or African American,13,0.1495,0.1234,0.0,0.4348,False,30.77
+popquorn,race,gemini,group,White,13,0.0714,0.0837,0.0,0.2697,False,76.92
+popquorn,race,gemini,pooled_on_group_subset,White,13,0.1495,0.1234,0.0,0.4348,False,76.92
+popquorn,race,mistral,pooled,pooled,13,0.1495,0.1234,0.0,0.4348,False,
+popquorn,race,mistral,group,Black or African American,13,0.1613,0.2689,-0.2817,0.7547,False,30.77
+popquorn,race,mistral,pooled_on_group_subset,Black or African American,13,0.1495,0.1234,0.0,0.4348,False,30.77
+popquorn,race,mistral,group,White,13,0.0714,0.0837,0.0,0.2697,False,76.92
+popquorn,race,mistral,pooled_on_group_subset,White,13,0.1495,0.1234,0.0,0.4348,False,76.92
+popquorn,age,chatgpt,pooled,pooled,55,0.1879,0.08,0.0502,0.3605,False,
+popquorn,age,chatgpt,group,gen x+,55,0.1212,0.1237,-0.118,0.3618,False,70.91
+popquorn,age,chatgpt,pooled_on_group_subset,gen x+,55,0.1879,0.08,0.0502,0.3605,False,70.91
+popquorn,age,chatgpt,group,millenial,55,0.189,0.0919,0.0179,0.3829,False,89.09
+popquorn,age,chatgpt,pooled_on_group_subset,millenial,55,0.1879,0.08,0.0502,0.3605,False,89.09
+popquorn,age,deepseek,pooled,pooled,55,0.2396,0.1215,0.0072,0.4839,False,
+popquorn,age,deepseek,group,gen x+,55,0.2041,0.1366,-0.0714,0.4628,False,70.91
+popquorn,age,deepseek,pooled_on_group_subset,gen x+,55,0.2396,0.1215,0.0072,0.4839,False,70.91
+popquorn,age,deepseek,group,millenial,55,0.0695,0.1193,-0.1512,0.3132,False,89.09
+popquorn,age,deepseek,pooled_on_group_subset,millenial,55,0.2396,0.1215,0.0072,0.4839,False,89.09
+popquorn,age,gemini,pooled,pooled,55,0.2043,0.1101,0.0,0.4298,False,
+popquorn,age,gemini,group,gen x+,55,0.1476,0.1351,-0.1192,0.4077,False,70.91
+popquorn,age,gemini,pooled_on_group_subset,gen x+,55,0.2043,0.1101,0.0,0.4298,False,70.91
+popquorn,age,gemini,group,millenial,55,0.2241,0.1192,-0.0048,0.4597,False,89.09
+popquorn,age,gemini,pooled_on_group_subset,millenial,55,0.2043,0.1101,0.0,0.4298,False,89.09
+popquorn,age,mistral,pooled,pooled,55,0.0554,0.0597,-0.0625,0.1772,False,
+popquorn,age,mistral,group,gen x+,55,0.1662,0.107,-0.0417,0.3758,False,70.91
+popquorn,age,mistral,pooled_on_group_subset,gen x+,55,0.0554,0.0597,-0.0625,0.1772,False,70.91
+popquorn,age,mistral,group,millenial,55,-0.0202,0.0767,-0.1803,0.1249,False,89.09
+popquorn,age,mistral,pooled_on_group_subset,millenial,55,0.0554,0.0597,-0.0625,0.1772,False,89.09
+popquorn,education,chatgpt,pooled,pooled,47,-0.0182,0.1151,-0.2314,0.2185,False,
+popquorn,education,chatgpt,group,College degree,44,0.2217,0.1455,-0.0645,0.501,False,79.55
+popquorn,education,chatgpt,pooled_on_group_subset,College degree,44,0.0075,0.1139,-0.2038,0.2395,False,79.55
+popquorn,education,chatgpt,group,Graduate degree,17,0.0685,0.2362,-0.4061,0.5294,False,41.18
+popquorn,education,chatgpt,pooled_on_group_subset,Graduate degree,17,-0.2319,0.1402,-0.5195,0.0,False,41.18
+popquorn,education,chatgpt,group,High school diploma or equivalent,38,0.1972,0.1659,-0.1342,0.5147,False,84.21
+popquorn,education,chatgpt,pooled_on_group_subset,High school diploma or equivalent,38,0.0148,0.1468,-0.2486,0.3133,False,84.21
+popquorn,education,deepseek,pooled,pooled,47,0.0099,0.1239,-0.2117,0.2612,False,
+popquorn,education,deepseek,group,College degree,44,0.175,0.1512,-0.1237,0.466,False,79.55
+popquorn,education,deepseek,pooled_on_group_subset,College degree,44,0.0356,0.1239,-0.1899,0.2871,False,79.55
+popquorn,education,deepseek,group,Graduate degree,17,0.3289,0.2051,-0.0769,0.7273,False,41.18
+popquorn,education,deepseek,pooled_on_group_subset,Graduate degree,17,-0.2143,0.1202,-0.4528,0.0,False,41.18
+popquorn,education,deepseek,group,High school diploma or equivalent,38,0.1298,0.1692,-0.2,0.4697,False,84.21
+popquorn,education,deepseek,pooled_on_group_subset,High school diploma or equivalent,38,0.0656,0.1604,-0.2198,0.3919,False,84.21
+popquorn,education,gemini,pooled,pooled,47,0.2185,0.1336,-0.0419,0.4897,False,
+popquorn,education,gemini,group,College degree,44,0.285,0.1496,-0.0171,0.5676,False,79.55
+popquorn,education,gemini,pooled_on_group_subset,College degree,44,0.1562,0.1331,-0.0996,0.4241,False,79.55
+popquorn,education,gemini,group,Graduate degree,17,-0.3421,0.2124,-0.7273,0.1026,False,41.18
+popquorn,education,gemini,pooled_on_group_subset,Graduate degree,17,0.0893,0.2044,-0.2511,0.5385,False,41.18
+popquorn,education,gemini,group,High school diploma or equivalent,38,0.2915,0.1629,-0.0366,0.5985,False,84.21
+popquorn,education,gemini,pooled_on_group_subset,High school diploma or equivalent,38,0.2615,0.1558,-0.0503,0.5668,False,84.21
+popquorn,education,mistral,pooled,pooled,47,0.0537,0.0887,-0.1232,0.2333,False,
+popquorn,education,mistral,group,College degree,44,0.2808,0.1078,0.078,0.4944,False,79.55
+popquorn,education,mistral,pooled_on_group_subset,College degree,44,0.0953,0.0823,-0.0573,0.2668,False,79.55
+popquorn,education,mistral,group,Graduate degree,17,-0.0699,0.2387,-0.5172,0.4179,False,41.18
+popquorn,education,mistral,pooled_on_group_subset,Graduate degree,17,-0.0132,0.156,-0.3209,0.3103,False,41.18
+popquorn,education,mistral,group,High school diploma or equivalent,38,0.132,0.1143,-0.0909,0.3661,False,84.21
+popquorn,education,mistral,pooled_on_group_subset,High school diploma or equivalent,38,0.05,0.104,-0.1589,0.2597,False,84.21
+popquorn,occupation,chatgpt,pooled,pooled,54,0.2163,0.0995,0.0326,0.4194,False,
+popquorn,occupation,chatgpt,group,Employed,52,0.2962,0.1218,0.0539,0.5378,False,80.77
+popquorn,occupation,chatgpt,pooled_on_group_subset,Employed,52,0.2085,0.0989,0.0267,0.4133,False,80.77
+popquorn,occupation,chatgpt,group,Retired,11,1.0,0.2055,0.0,1.0,False,81.82
+popquorn,occupation,chatgpt,pooled_on_group_subset,Retired,11,0.4211,0.3273,0.0,1.0,False,81.82
+popquorn,occupation,chatgpt,group,Self-employed,28,0.186,0.1246,0.0,0.4615,False,89.29
+popquorn,occupation,chatgpt,pooled_on_group_subset,Self-employed,28,0.1149,0.1405,-0.1429,0.4086,False,89.29
+popquorn,occupation,chatgpt,group,Student,11,-0.2222,0.2542,-0.678,0.2903,False,72.73
+popquorn,occupation,chatgpt,pooled_on_group_subset,Student,11,0.3125,0.2171,0.0,0.7925,False,72.73
+popquorn,occupation,chatgpt,group,Unemployed,10,0.0909,0.1194,0.0,0.4,False,80.0
+popquorn,occupation,chatgpt,pooled_on_group_subset,Unemployed,10,0.0909,0.1209,0.0,0.4,False,80.0
+popquorn,occupation,deepseek,pooled,pooled,54,0.202,0.1162,-0.0212,0.4311,False,
+popquorn,occupation,deepseek,group,Employed,52,0.4138,0.1266,0.1599,0.6517,False,80.77
+popquorn,occupation,deepseek,pooled_on_group_subset,Employed,52,0.1945,0.1161,-0.0297,0.427,False,80.77
+popquorn,occupation,deepseek,group,Retired,11,0.7925,0.2526,0.0,1.0,False,81.82
+popquorn,occupation,deepseek,pooled_on_group_subset,Retired,11,0.2979,0.2644,0.0,1.0,False,81.82
+popquorn,occupation,deepseek,group,Self-employed,28,0.2125,0.1391,0.0,0.5161,False,89.29
+popquorn,occupation,deepseek,pooled_on_group_subset,Self-employed,28,0.1411,0.1531,-0.1375,0.4615,False,89.29
+popquorn,occupation,deepseek,group,Student,11,-0.5172,0.2053,-0.8571,0.0,False,72.73
+popquorn,occupation,deepseek,pooled_on_group_subset,Student,11,0.0351,0.251,-0.4286,0.5714,False,72.73
+popquorn,occupation,deepseek,group,Unemployed,10,0.2857,0.2611,0.0,1.0,False,80.0
+popquorn,occupation,deepseek,pooled_on_group_subset,Unemployed,10,0.2857,0.264,0.0,1.0,False,80.0
+popquorn,occupation,gemini,pooled,pooled,54,0.2332,0.1033,0.0398,0.4462,False,
+popquorn,occupation,gemini,group,Employed,52,0.4832,0.1162,0.2471,0.7029,False,80.77
+popquorn,occupation,gemini,pooled_on_group_subset,Employed,52,0.2257,0.1027,0.0325,0.4387,False,80.77
+popquorn,occupation,gemini,group,Retired,11,1.0,0.2055,0.0,1.0,False,81.82
+popquorn,occupation,gemini,pooled_on_group_subset,Retired,11,0.4211,0.3273,0.0,1.0,False,81.82
+popquorn,occupation,gemini,group,Self-employed,28,0.163,0.1123,0.0,0.4199,False,89.29
+popquorn,occupation,gemini,pooled_on_group_subset,Self-employed,28,0.2432,0.1316,0.0,0.5263,False,89.29
+popquorn,occupation,gemini,group,Student,11,-0.5172,0.2042,-0.8333,0.0,False,72.73
+popquorn,occupation,gemini,pooled_on_group_subset,Student,11,0.0351,0.2496,-0.4211,0.5714,False,72.73
+popquorn,occupation,gemini,group,Unemployed,10,0.1379,0.1603,0.0,0.56,False,80.0
+popquorn,occupation,gemini,pooled_on_group_subset,Unemployed,10,0.1379,0.1588,0.0,0.5455,False,80.0
+popquorn,occupation,mistral,pooled,pooled,54,0.1496,0.0605,0.0495,0.2886,False,
+popquorn,occupation,mistral,group,Employed,52,0.2619,0.0924,0.0916,0.4552,False,80.77
+popquorn,occupation,mistral,pooled_on_group_subset,Employed,52,0.1405,0.0584,0.0464,0.2741,False,80.77
+popquorn,occupation,mistral,group,Retired,11,0.3529,0.2101,0.0,0.8,False,81.82
+popquorn,occupation,mistral,pooled_on_group_subset,Retired,11,0.1081,0.1278,0.0,0.4377,False,81.82
+popquorn,occupation,mistral,group,Self-employed,28,0.125,0.0903,0.0,0.3396,False,89.29
+popquorn,occupation,mistral,pooled_on_group_subset,Self-employed,28,0.1884,0.1097,0.0,0.4375,False,89.29
+popquorn,occupation,mistral,group,Student,11,0.0294,0.2385,-0.4444,0.5144,False,72.73
+popquorn,occupation,mistral,pooled_on_group_subset,Student,11,0.2254,0.1792,0.0,0.6488,False,72.73
+popquorn,occupation,mistral,group,Unemployed,10,0.0244,0.0499,0.0,0.1667,False,80.0
+popquorn,occupation,mistral,pooled_on_group_subset,Unemployed,10,0.0244,0.0489,0.0,0.1538,False,80.0
+mhs,gender,chatgpt,pooled,pooled,43,0.0062,0.0076,0.0,0.0266,False,
+mhs,gender,chatgpt,group,female,43,0.0652,0.1353,-0.1758,0.3452,False,32.56
+mhs,gender,chatgpt,pooled_on_group_subset,female,43,0.0062,0.0076,0.0,0.0266,False,32.56
+mhs,gender,chatgpt,group,male,43,-0.0349,0.0747,-0.1944,0.0969,False,67.44
+mhs,gender,chatgpt,pooled_on_group_subset,male,43,0.0062,0.0076,0.0,0.0266,False,67.44
+mhs,gender,deepseek,pooled,pooled,43,0.0023,0.0034,0.0,0.0112,False,
+mhs,gender,deepseek,group,female,43,0.0573,0.1061,-0.1202,0.2951,False,32.56
+mhs,gender,deepseek,pooled_on_group_subset,female,43,0.0023,0.0034,0.0,0.0112,False,32.56
+mhs,gender,deepseek,group,male,43,-0.0271,0.0518,-0.1448,0.0562,False,67.44
+mhs,gender,deepseek,pooled_on_group_subset,male,43,0.0023,0.0034,0.0,0.0112,False,67.44
+mhs,gender,gemini,pooled,pooled,43,0.0023,0.0034,0.0,0.0112,False,
+mhs,gender,gemini,group,female,43,0.2024,0.127,0.0,0.4658,False,32.56
+mhs,gender,gemini,pooled_on_group_subset,female,43,0.0023,0.0034,0.0,0.0112,False,32.56
+mhs,gender,gemini,group,male,43,-0.0955,0.0669,-0.2474,0.0,False,67.44
+mhs,gender,gemini,pooled_on_group_subset,male,43,0.0023,0.0034,0.0,0.0112,False,67.44
+mhs,gender,mistral,pooled,pooled,43,0.0023,0.0034,0.0,0.0112,False,
+mhs,gender,mistral,group,female,43,0.0573,0.1061,-0.1202,0.2951,False,32.56
+mhs,gender,mistral,pooled_on_group_subset,female,43,0.0023,0.0034,0.0,0.0112,False,32.56
+mhs,gender,mistral,group,male,43,-0.0271,0.0515,-0.1448,0.0562,False,67.44
+mhs,gender,mistral,pooled_on_group_subset,male,43,0.0023,0.0034,0.0,0.0112,False,67.44
+mhs,age,chatgpt,pooled,pooled,30,0.0,0.0,0.0,0.0,False,
+mhs,age,chatgpt,group,gen x+,30,-0.1194,0.0684,-0.25,0.0,False,26.67
+mhs,age,chatgpt,pooled_on_group_subset,gen x+,30,0.0,0.0,0.0,0.0,False,26.67
+mhs,age,chatgpt,group,millenial,30,0.0506,0.0411,0.0,0.1566,False,73.33
+mhs,age,chatgpt,pooled_on_group_subset,millenial,30,0.0,0.0,0.0,0.0,False,73.33
+mhs,age,deepseek,pooled,pooled,30,0.0,0.0,0.0,0.0,False,
+mhs,age,deepseek,group,gen x+,30,-0.063,0.0536,-0.1765,0.0,False,26.67
+mhs,age,deepseek,pooled_on_group_subset,gen x+,30,0.0,0.0,0.0,0.0,False,26.67
+mhs,age,deepseek,group,millenial,30,0.0248,0.0275,0.0,0.0909,False,73.33
+mhs,age,deepseek,pooled_on_group_subset,millenial,30,0.0,0.0,0.0,0.0,False,73.33
+mhs,age,gemini,pooled,pooled,30,0.0,0.0,0.0,0.0,True,
+mhs,age,gemini,group,gen x+,30,0.0,0.0,0.0,0.0,True,26.67
+mhs,age,gemini,pooled_on_group_subset,gen x+,30,0.0,0.0,0.0,0.0,True,26.67
+mhs,age,gemini,group,millenial,30,0.0,0.0,0.0,0.0,True,73.33
+mhs,age,gemini,pooled_on_group_subset,millenial,30,0.0,0.0,0.0,0.0,True,73.33
+mhs,age,mistral,pooled,pooled,30,0.0,0.0,0.0,0.0,False,
+mhs,age,mistral,group,gen x+,30,-0.063,0.0551,-0.1818,0.0,False,26.67
+mhs,age,mistral,pooled_on_group_subset,gen x+,30,0.0,0.0,0.0,0.0,False,26.67
+mhs,age,mistral,group,millenial,30,0.0248,0.0282,0.0,0.1036,False,73.33
+mhs,age,mistral,pooled_on_group_subset,millenial,30,0.0,0.0,0.0,0.0,False,73.33
+mhs,ideology,chatgpt,pooled,pooled,32,0.0,0.0,0.0,0.0,False,
+mhs,ideology,chatgpt,group,conservative,22,-0.0864,0.0752,-0.25,0.0,False,31.82
+mhs,ideology,chatgpt,pooled_on_group_subset,conservative,22,0.0,0.0,0.0,0.0,False,31.82
+mhs,ideology,chatgpt,group,liberal,29,0.0994,0.0731,0.0,0.2703,False,58.62
+mhs,ideology,chatgpt,pooled_on_group_subset,liberal,29,0.0,0.0,0.0,0.0,False,58.62
+mhs,ideology,chatgpt,group,neutral,13,0.0488,0.0647,0.0,0.2254,False,76.92
+mhs,ideology,chatgpt,pooled_on_group_subset,neutral,13,0.0,0.0,0.0,0.0,False,76.92
+mhs,ideology,deepseek,pooled,pooled,32,0.0,0.0,0.0,0.0,True,
+mhs,ideology,deepseek,group,conservative,22,0.0,0.0,0.0,0.0,True,31.82
+mhs,ideology,deepseek,pooled_on_group_subset,conservative,22,0.0,0.0,0.0,0.0,True,31.82
+mhs,ideology,deepseek,group,liberal,29,0.0,0.0,0.0,0.0,True,58.62
+mhs,ideology,deepseek,pooled_on_group_subset,liberal,29,0.0,0.0,0.0,0.0,True,58.62
+mhs,ideology,deepseek,group,neutral,13,0.0,0.0,0.0,0.0,True,76.92
+mhs,ideology,deepseek,pooled_on_group_subset,neutral,13,0.0,0.0,0.0,0.0,True,76.92
+mhs,ideology,gemini,pooled,pooled,32,0.0,0.0,0.0,0.0,False,
+mhs,ideology,gemini,group,conservative,22,0.0,0.0,0.0,0.0,True,31.82
+mhs,ideology,gemini,pooled_on_group_subset,conservative,22,0.0,0.0,0.0,0.0,True,31.82
+mhs,ideology,gemini,group,liberal,29,0.0492,0.0515,0.0,0.1772,False,58.62
+mhs,ideology,gemini,pooled_on_group_subset,liberal,29,0.0,0.0,0.0,0.0,False,58.62
+mhs,ideology,gemini,group,neutral,13,0.0488,0.0647,0.0,0.2254,False,76.92
+mhs,ideology,gemini,pooled_on_group_subset,neutral,13,0.0,0.0,0.0,0.0,False,76.92
+mhs,ideology,mistral,pooled,pooled,32,0.0,0.0,0.0,0.0,False,
+mhs,ideology,mistral,group,conservative,22,-0.0864,0.0752,-0.25,0.0,False,31.82
+mhs,ideology,mistral,pooled_on_group_subset,conservative,22,0.0,0.0,0.0,0.0,False,31.82
+mhs,ideology,mistral,group,liberal,29,0.0492,0.0528,0.0,0.1818,False,58.62
+mhs,ideology,mistral,pooled_on_group_subset,liberal,29,0.0,0.0,0.0,0.0,False,58.62
+mhs,ideology,mistral,group,neutral,13,0.0,0.0,0.0,0.0,True,76.92
+mhs,ideology,mistral,pooled_on_group_subset,neutral,13,0.0,0.0,0.0,0.0,True,76.92
+kumar,gender,chatgpt,pooled,pooled,10,-0.25,0.277,-0.6667,0.3478,False,
+kumar,gender,chatgpt,group,Female,10,0.4,0.2876,-0.2,1.0,False,50.0
+kumar,gender,chatgpt,pooled_on_group_subset,Female,10,-0.25,0.277,-0.6667,0.3478,False,50.0
+kumar,gender,chatgpt,group,Male,10,-0.4,0.266,-0.8,0.2,False,50.0
+kumar,gender,chatgpt,pooled_on_group_subset,Male,10,-0.25,0.277,-0.6667,0.3478,False,50.0
+kumar,gender,deepseek,pooled,pooled,10,-0.25,0.277,-0.6667,0.3478,False,
+kumar,gender,deepseek,group,Female,10,0.4,0.2876,-0.2,1.0,False,50.0
+kumar,gender,deepseek,pooled_on_group_subset,Female,10,-0.25,0.277,-0.6667,0.3478,False,50.0
+kumar,gender,deepseek,group,Male,10,-0.4,0.266,-0.8,0.2,False,50.0
+kumar,gender,deepseek,pooled_on_group_subset,Male,10,-0.25,0.277,-0.6667,0.3478,False,50.0
+kumar,gender,gemini,pooled,pooled,10,0.0,0.3001,-0.6,0.6,False,
+kumar,gender,gemini,group,Female,10,1.0,0.0412,1.0,1.0,False,50.0
+kumar,gender,gemini,pooled_on_group_subset,Female,10,0.0,0.3001,-0.6,0.6,False,50.0
+kumar,gender,gemini,group,Male,10,-1.0,0.1824,-1.0,-0.4706,False,50.0
+kumar,gender,gemini,pooled_on_group_subset,Male,10,0.0,0.3001,-0.6,0.6,False,50.0
+kumar,gender,mistral,pooled,pooled,10,-0.4,0.2674,-0.8,0.2,False,
+kumar,gender,mistral,group,Female,10,0.6,0.2697,0.0,1.0,False,50.0
+kumar,gender,mistral,pooled_on_group_subset,Female,10,-0.4,0.2674,-0.8,0.2,False,50.0
+kumar,gender,mistral,group,Male,10,-0.6,0.2519,-1.0,0.0,False,50.0
+kumar,gender,mistral,pooled_on_group_subset,Male,10,-0.4,0.2674,-0.8,0.2,False,50.0
+kumar,race,chatgpt,pooled,pooled,15,0.359,0.183,0.0,0.7273,False,
+kumar,race,chatgpt,group,Asian,10,0.6,0.276,0.0,1.0,False,80.0
+kumar,race,chatgpt,pooled_on_group_subset,Asian,10,0.6,0.2506,0.0,1.0,False,80.0
+kumar,race,chatgpt,group,Black,10,0.4118,0.3253,0.0,1.0,False,40.0
+kumar,race,chatgpt,pooled_on_group_subset,Black,10,0.3103,0.2047,0.0,0.7805,False,40.0
+kumar,race,chatgpt,group,White,10,-0.3636,0.1881,-0.7143,0.0,False,80.0
+kumar,race,chatgpt,pooled_on_group_subset,White,10,0.0,0.0,0.0,0.0,False,80.0
+kumar,race,deepseek,pooled,pooled,15,0.4444,0.204,0.0,0.8571,False,
+kumar,race,deepseek,group,Asian,10,0.6,0.276,0.0,1.0,False,80.0
+kumar,race,deepseek,pooled_on_group_subset,Asian,10,0.6,0.2506,0.0,1.0,False,80.0
+kumar,race,deepseek,group,Black,10,0.2857,0.259,0.0,1.0,False,40.0
+kumar,race,deepseek,pooled_on_group_subset,Black,10,0.4444,0.2341,0.0,1.0,False,40.0
+kumar,race,deepseek,group,White,10,-0.3158,0.1642,-0.6,0.0,False,80.0
+kumar,race,deepseek,pooled_on_group_subset,White,10,0.0,0.0,0.0,0.0,False,80.0
+kumar,race,gemini,pooled,pooled,15,-0.0606,0.219,-0.4348,0.4118,False,
+kumar,race,gemini,group,Asian,10,0.2,0.2894,-0.3636,0.7692,False,80.0
+kumar,race,gemini,pooled_on_group_subset,Asian,10,0.0476,0.304,-0.4651,0.6667,False,80.0
+kumar,race,gemini,group,Black,10,0.2,0.2043,0.0,0.7143,False,40.0
+kumar,race,gemini,pooled_on_group_subset,Black,10,-0.2,0.2783,-0.7143,0.3847,False,40.0
+kumar,race,gemini,group,White,10,-0.3636,0.1881,-0.7143,0.0,False,80.0
+kumar,race,gemini,pooled_on_group_subset,White,10,0.0,0.0,0.0,0.0,False,80.0
+kumar,race,mistral,pooled,pooled,15,0.2222,0.1388,0.0,0.5455,False,
+kumar,race,mistral,group,Asian,10,0.2,0.2926,-0.4,0.7505,False,80.0
+kumar,race,mistral,pooled_on_group_subset,Asian,10,0.3103,0.2035,0.0,0.7805,False,80.0
+kumar,race,mistral,group,Black,10,-0.1538,0.1131,-0.3636,0.0,False,40.0
+kumar,race,mistral,pooled_on_group_subset,Black,10,0.1935,0.1647,0.0,0.6,False,40.0
+kumar,race,mistral,group,White,10,0.0,0.2541,-0.5,0.5263,False,80.0
+kumar,race,mistral,pooled_on_group_subset,White,10,0.0,0.0,0.0,0.0,False,80.0
+kumar,age,chatgpt,pooled,pooled,15,0.3119,0.2312,-0.1538,0.7321,False,
+kumar,age,chatgpt,group,gen x+,10,-0.3158,0.1632,-0.6,0.0,False,90.0
+kumar,age,chatgpt,pooled_on_group_subset,gen x+,10,-0.1765,0.1337,-0.4286,0.0,False,90.0
+kumar,age,chatgpt,group,gen z,10,0.6,0.2774,0.0,1.0,False,80.0
+kumar,age,chatgpt,pooled_on_group_subset,gen z,10,0.6,0.2518,0.0,1.0,False,80.0
+kumar,age,chatgpt,group,millenial,10,-0.2963,0.2609,-0.8,0.2105,False,70.0
+kumar,age,chatgpt,pooled_on_group_subset,millenial,10,0.2308,0.2891,-0.3636,0.7826,False,70.0
+kumar,age,deepseek,pooled,pooled,15,0.4444,0.2827,-0.125,1.0,False,
+kumar,age,deepseek,group,gen x+,10,0.0,0.0,0.0,0.0,True,90.0
+kumar,age,deepseek,pooled_on_group_subset,gen x+,10,0.0,0.0,0.0,0.0,True,90.0
+kumar,age,deepseek,group,gen z,10,0.2,0.2883,-0.3636,0.7692,False,80.0
+kumar,age,deepseek,pooled_on_group_subset,gen z,10,0.5238,0.3223,-0.1739,1.0,False,80.0
+kumar,age,deepseek,group,millenial,10,0.0476,0.3081,-0.5,0.72,False,70.0
+kumar,age,deepseek,pooled_on_group_subset,millenial,10,0.3478,0.3092,-0.2791,1.0,False,70.0
+kumar,age,gemini,pooled,pooled,15,0.2336,0.1412,0.0217,0.5872,False,
+kumar,age,gemini,group,gen x+,10,0.2857,0.2062,0.0,0.7692,False,90.0
+kumar,age,gemini,pooled_on_group_subset,gen x+,10,0.1379,0.1547,0.0,0.5455,False,90.0
+kumar,age,gemini,group,gen z,10,0.2,0.2899,-0.375,0.7692,False,80.0
+kumar,age,gemini,pooled_on_group_subset,gen z,10,0.3103,0.2048,0.0,0.7826,False,80.0
+kumar,age,gemini,group,millenial,10,0.0909,0.1163,0.0,0.4,False,70.0
+kumar,age,gemini,pooled_on_group_subset,millenial,10,0.1379,0.1566,0.0,0.5456,False,70.0
+kumar,age,mistral,pooled,pooled,15,0.3902,0.1815,0.0909,0.7368,False,
+kumar,age,mistral,group,gen x+,10,0.0,0.2556,-0.5,0.5455,False,90.0
+kumar,age,mistral,pooled_on_group_subset,gen x+,10,0.2,0.2027,0.0,0.6957,False,90.0
+kumar,age,mistral,group,gen z,10,0.8,0.2113,0.2979,1.0,False,80.0
+kumar,age,mistral,pooled_on_group_subset,gen z,10,0.4444,0.2366,0.0,1.0,False,80.0
+kumar,age,mistral,group,millenial,10,-0.0345,0.2386,-0.5283,0.4211,False,70.0
+kumar,age,mistral,pooled_on_group_subset,millenial,10,0.4444,0.237,0.0,1.0,False,70.0
+kumar,politics,chatgpt,pooled,pooled,15,0.4737,0.2171,0.0187,0.8649,False,
+kumar,politics,chatgpt,group,conservative,10,-0.087,0.285,-0.6,0.5263,False,50.0
+kumar,politics,chatgpt,pooled_on_group_subset,conservative,10,0.5833,0.2859,-0.0871,1.0,False,50.0
+kumar,politics,chatgpt,group,independent,10,-0.0714,0.233,-0.5385,0.3774,False,70.0
+kumar,politics,chatgpt,pooled_on_group_subset,independent,10,0.4444,0.2304,0.0,1.0,False,70.0
+kumar,politics,chatgpt,group,liberal,10,1.0,0.0955,1.0,1.0,False,70.0
+kumar,politics,chatgpt,pooled_on_group_subset,liberal,10,0.3478,0.3073,-0.2791,1.0,False,70.0
+kumar,politics,deepseek,pooled,pooled,15,0.1667,0.2515,-0.3393,0.6154,False,
+kumar,politics,deepseek,group,conservative,10,0.0741,0.2647,-0.4529,0.6,False,50.0
+kumar,politics,deepseek,pooled_on_group_subset,conservative,10,0.2308,0.287,-0.3509,0.7826,False,50.0
+kumar,politics,deepseek,group,independent,10,-0.4,0.2112,-0.8,0.0,False,70.0
+kumar,politics,deepseek,pooled_on_group_subset,independent,10,0.2,0.2855,-0.3636,0.7692,False,70.0
+kumar,politics,deepseek,group,liberal,10,0.7826,0.2469,0.0,1.0,False,70.0
+kumar,politics,deepseek,pooled_on_group_subset,liberal,10,0.0476,0.3048,-0.5,0.6755,False,70.0
+kumar,politics,gemini,pooled,pooled,15,0.4737,0.2171,0.0187,0.8649,False,
+kumar,politics,gemini,group,conservative,10,-0.087,0.285,-0.6,0.5263,False,50.0
+kumar,politics,gemini,pooled_on_group_subset,conservative,10,0.5833,0.2859,-0.0871,1.0,False,50.0
+kumar,politics,gemini,group,independent,10,-0.0714,0.233,-0.5385,0.3774,False,70.0
+kumar,politics,gemini,pooled_on_group_subset,independent,10,0.4444,0.2304,0.0,1.0,False,70.0
+kumar,politics,gemini,group,liberal,10,1.0,0.0955,1.0,1.0,False,70.0
+kumar,politics,gemini,pooled_on_group_subset,liberal,10,0.3478,0.3073,-0.2791,1.0,False,70.0
+kumar,politics,mistral,pooled,pooled,15,0.359,0.2168,-0.08,0.7368,False,
+kumar,politics,mistral,group,conservative,10,0.0476,0.303,-0.4675,0.6667,False,50.0
+kumar,politics,mistral,pooled_on_group_subset,conservative,10,0.3478,0.3107,-0.2791,1.0,False,50.0
+kumar,politics,mistral,group,independent,10,-0.0714,0.233,-0.5385,0.3774,False,70.0
+kumar,politics,mistral,pooled_on_group_subset,independent,10,0.4444,0.2304,0.0,1.0,False,70.0
+kumar,politics,mistral,group,liberal,10,0.8,0.2131,0.2979,1.0,False,70.0
+kumar,politics,mistral,pooled_on_group_subset,liberal,10,0.2,0.2861,-0.3636,0.75,False,70.0
+kumar,religion,chatgpt,pooled,pooled,10,0.2308,0.2775,-0.3636,0.8,False,
+kumar,religion,chatgpt,group,high,10,-0.1905,0.1507,-0.5217,0.0,False,50.0
+kumar,religion,chatgpt,pooled_on_group_subset,high,10,0.2308,0.2775,-0.3636,0.8,False,50.0
+kumar,religion,chatgpt,group,not_high,10,0.2857,0.2021,0.0,0.7826,False,60.0
+kumar,religion,chatgpt,pooled_on_group_subset,not_high,10,0.2308,0.2775,-0.3636,0.8,False,60.0
+kumar,religion,deepseek,pooled,pooled,10,0.2308,0.2775,-0.3636,0.8,False,
+kumar,religion,deepseek,group,high,10,-0.1905,0.1507,-0.5217,0.0,False,50.0
+kumar,religion,deepseek,pooled_on_group_subset,high,10,0.2308,0.2775,-0.3636,0.8,False,50.0
+kumar,religion,deepseek,group,not_high,10,0.2857,0.2021,0.0,0.7826,False,60.0
+kumar,religion,deepseek,pooled_on_group_subset,not_high,10,0.2308,0.2775,-0.3636,0.8,False,60.0
+kumar,religion,gemini,pooled,pooled,10,0.0,0.2947,-0.6,0.6,False,
+kumar,religion,gemini,group,high,10,-0.2,0.1665,-0.5217,0.0,False,50.0
+kumar,religion,gemini,pooled_on_group_subset,high,10,0.0,0.2947,-0.6,0.6,False,50.0
+kumar,religion,gemini,group,not_high,10,0.4,0.2421,0.0,1.0,False,60.0
+kumar,religion,gemini,pooled_on_group_subset,not_high,10,0.0,0.2947,-0.6,0.6,False,60.0
+kumar,religion,mistral,pooled,pooled,10,0.4444,0.227,0.0,1.0,False,
+kumar,religion,mistral,group,high,10,-0.1765,0.1306,-0.4286,0.0,False,50.0
+kumar,religion,mistral,pooled_on_group_subset,high,10,0.4444,0.227,0.0,1.0,False,50.0
+kumar,religion,mistral,group,not_high,10,0.1935,0.1598,0.0,0.6,False,60.0
+kumar,religion,mistral,pooled_on_group_subset,not_high,10,0.4444,0.227,0.0,1.0,False,60.0

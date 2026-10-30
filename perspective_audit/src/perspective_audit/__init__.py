@@ -11,6 +11,9 @@ from .ablation_prompt import save_ablation_prompt
 from .attribution_bootstrap import attribution_gap, attribution_table, bootstrap_gap
 from .kappa_groups import compute_kappa, save_kappa
 from .persona_kappa import compute_persona_kappa, save_persona_kappa
+from .shuffling_robustness import compute_null, save_null
+from .poles import compute_poles, save_poles
+from .model_eda import label_share_figure, model_eda, save_model_eda, score_histogram_figure
 from .model_comparison import compare_models, model_comparison_figure, save_model_comparison
 from .kappa_figures import kappa_figure, save_kappa_figures
 from .kappa_tables import save_kappa_tables
@@ -39,4 +42,4 @@ __all__ = ["Unimodality", "PrunedAU", "dfu_of_hist",
            "AnnotationError", "cohen_kappa", "weighted_kappa", "spearman",
            "eda_tables", "eda_figures", "save_eda", "dataset_tables", "save_dataset_eda", "eda_overview_all", "ratings_per_text", "save_total_eda",
            "read_group_tables", "toxicity_by_group", "save_toxicity_by_dimension", "save_appendix_figures", "save_total_dfu", "save_total_au", "save_ablation_prompt", "attribution_gap", "attribution_table", "bootstrap_gap", "load_results", "compute_kappa", "save_kappa", "save_kappa_tables", "kappa_figure", "compare_models", "compute_persona_kappa", "save_persona_kappa", "model_comparison_figure", "save_model_comparison", "save_kappa_figures", "save_prompts",
-           "annotate_personas", "load_persona_inputs", "persona_long", "collect_persona_runs", "inspect_personas", "group_order"]
+           "compute_null", "save_null", "compute_poles", "save_poles", "model_eda", "save_model_eda", "score_histogram_figure", "label_share_figure", "annotate_personas", "load_persona_inputs", "persona_long", "collect_persona_runs", "inspect_personas", "group_order"]

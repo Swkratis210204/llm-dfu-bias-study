@@ -1,0 +1,353 @@
+dataset,characteristic,group,model,group_pole,n_texts,agreement,small_n
+attitudes,gender,man,chatgpt,toxic,5,0.6,False
+attitudes,gender,man,chatgpt,civil,5,0.0,False
+attitudes,gender,man,deepseek,toxic,5,1.0,False
+attitudes,gender,man,deepseek,civil,5,0.0,False
+attitudes,gender,man,gemini,toxic,5,1.0,False
+attitudes,gender,man,gemini,civil,5,0.0,False
+attitudes,gender,man,mistral,toxic,5,1.0,False
+attitudes,gender,man,mistral,civil,5,0.2,False
+attitudes,gender,woman,chatgpt,toxic,5,1.0,False
+attitudes,gender,woman,chatgpt,civil,5,0.4,False
+attitudes,gender,woman,deepseek,toxic,5,1.0,False
+attitudes,gender,woman,deepseek,civil,5,0.0,False
+attitudes,gender,woman,gemini,toxic,5,1.0,False
+attitudes,gender,woman,gemini,civil,5,0.0,False
+attitudes,gender,woman,mistral,toxic,5,0.8,False
+attitudes,gender,woman,mistral,civil,5,0.0,False
+attitudes,race,black,chatgpt,toxic,9,0.5556,False
+attitudes,race,black,chatgpt,civil,2,0.0,True
+attitudes,race,black,deepseek,toxic,9,0.6667,False
+attitudes,race,black,deepseek,civil,2,0.0,True
+attitudes,race,black,gemini,toxic,9,0.6667,False
+attitudes,race,black,gemini,civil,2,0.0,True
+attitudes,race,black,mistral,toxic,9,0.8889,False
+attitudes,race,black,mistral,civil,2,0.5,True
+attitudes,race,white,chatgpt,toxic,2,1.0,True
+attitudes,race,white,chatgpt,civil,9,0.4444,False
+attitudes,race,white,deepseek,toxic,2,1.0,True
+attitudes,race,white,deepseek,civil,9,0.3333,False
+attitudes,race,white,gemini,toxic,2,1.0,True
+attitudes,race,white,gemini,civil,9,0.3333,False
+attitudes,race,white,mistral,toxic,2,0.5,True
+attitudes,race,white,mistral,civil,9,0.1111,False
+attitudes,age,gen x+,chatgpt,toxic,1,0.0,True
+attitudes,age,gen x+,chatgpt,civil,3,0.0,True
+attitudes,age,gen x+,deepseek,toxic,1,1.0,True
+attitudes,age,gen x+,deepseek,civil,3,0.0,True
+attitudes,age,gen x+,gemini,toxic,1,0.0,True
+attitudes,age,gen x+,gemini,civil,3,0.0,True
+attitudes,age,gen x+,mistral,toxic,1,0.0,True
+attitudes,age,gen x+,mistral,civil,3,0.0,True
+attitudes,age,millenial,chatgpt,toxic,3,1.0,True
+attitudes,age,millenial,chatgpt,civil,1,1.0,True
+attitudes,age,millenial,deepseek,toxic,3,1.0,True
+attitudes,age,millenial,deepseek,civil,1,0.0,True
+attitudes,age,millenial,gemini,toxic,3,1.0,True
+attitudes,age,millenial,gemini,civil,1,1.0,True
+attitudes,age,millenial,mistral,toxic,3,1.0,True
+attitudes,age,millenial,mistral,civil,1,1.0,True
+attitudes,politics,left,chatgpt,toxic,3,1.0,True
+attitudes,politics,left,chatgpt,civil,3,0.3333,True
+attitudes,politics,left,deepseek,toxic,3,1.0,True
+attitudes,politics,left,deepseek,civil,3,0.3333,True
+attitudes,politics,left,gemini,toxic,3,1.0,True
+attitudes,politics,left,gemini,civil,3,0.0,True
+attitudes,politics,left,mistral,toxic,3,1.0,True
+attitudes,politics,left,mistral,civil,3,0.6667,True
+attitudes,politics,right,chatgpt,toxic,3,0.6667,True
+attitudes,politics,right,chatgpt,civil,3,0.0,True
+attitudes,politics,right,deepseek,toxic,3,0.6667,True
+attitudes,politics,right,deepseek,civil,3,0.0,True
+attitudes,politics,right,gemini,toxic,3,1.0,True
+attitudes,politics,right,gemini,civil,3,0.0,True
+attitudes,politics,right,mistral,toxic,3,0.3333,True
+attitudes,politics,right,mistral,civil,3,0.0,True
+attitudes,traditionalism,high,chatgpt,toxic,4,1.0,True
+attitudes,traditionalism,high,chatgpt,civil,3,0.3333,True
+attitudes,traditionalism,high,deepseek,toxic,4,1.0,True
+attitudes,traditionalism,high,deepseek,civil,3,0.3333,True
+attitudes,traditionalism,high,gemini,toxic,4,0.75,True
+attitudes,traditionalism,high,gemini,civil,3,0.0,True
+attitudes,traditionalism,high,mistral,toxic,4,0.75,True
+attitudes,traditionalism,high,mistral,civil,3,0.0,True
+attitudes,traditionalism,not_high,chatgpt,toxic,3,0.6667,True
+attitudes,traditionalism,not_high,chatgpt,civil,4,0.0,True
+attitudes,traditionalism,not_high,deepseek,toxic,3,0.6667,True
+attitudes,traditionalism,not_high,deepseek,civil,4,0.0,True
+attitudes,traditionalism,not_high,gemini,toxic,3,1.0,True
+attitudes,traditionalism,not_high,gemini,civil,4,0.25,True
+attitudes,traditionalism,not_high,mistral,toxic,3,1.0,True
+attitudes,traditionalism,not_high,mistral,civil,4,0.25,True
+popquorn,gender,Man,chatgpt,toxic,5,0.6,False
+popquorn,gender,Man,chatgpt,civil,6,0.3333,False
+popquorn,gender,Man,deepseek,toxic,5,0.4,False
+popquorn,gender,Man,deepseek,civil,6,0.3333,False
+popquorn,gender,Man,gemini,toxic,5,0.4,False
+popquorn,gender,Man,gemini,civil,6,0.3333,False
+popquorn,gender,Man,mistral,toxic,5,0.6,False
+popquorn,gender,Man,mistral,civil,6,0.0,False
+popquorn,gender,Woman,chatgpt,toxic,6,0.6667,False
+popquorn,gender,Woman,chatgpt,civil,5,0.4,False
+popquorn,gender,Woman,deepseek,toxic,6,0.6667,False
+popquorn,gender,Woman,deepseek,civil,5,0.6,False
+popquorn,gender,Woman,gemini,toxic,6,0.6667,False
+popquorn,gender,Woman,gemini,civil,5,0.6,False
+popquorn,gender,Woman,mistral,toxic,6,1.0,False
+popquorn,gender,Woman,mistral,civil,5,0.4,False
+popquorn,race,Black or African American,chatgpt,toxic,11,0.5455,False
+popquorn,race,Black or African American,chatgpt,civil,1,1.0,True
+popquorn,race,Black or African American,deepseek,toxic,11,0.3636,False
+popquorn,race,Black or African American,deepseek,civil,1,1.0,True
+popquorn,race,Black or African American,gemini,toxic,11,0.7273,False
+popquorn,race,Black or African American,gemini,civil,1,0.0,True
+popquorn,race,Black or African American,mistral,toxic,11,0.7273,False
+popquorn,race,Black or African American,mistral,civil,1,0.0,True
+popquorn,race,White,chatgpt,toxic,1,0.0,True
+popquorn,race,White,chatgpt,civil,11,0.4545,False
+popquorn,race,White,deepseek,toxic,1,0.0,True
+popquorn,race,White,deepseek,civil,11,0.6364,False
+popquorn,race,White,gemini,toxic,1,1.0,True
+popquorn,race,White,gemini,civil,11,0.2727,False
+popquorn,race,White,mistral,toxic,1,1.0,True
+popquorn,race,White,mistral,civil,11,0.2727,False
+popquorn,age,gen x+,chatgpt,toxic,16,0.5625,False
+popquorn,age,gen x+,chatgpt,civil,6,0.1667,False
+popquorn,age,gen x+,deepseek,toxic,16,0.5,False
+popquorn,age,gen x+,deepseek,civil,6,0.5,False
+popquorn,age,gen x+,gemini,toxic,16,0.5,False
+popquorn,age,gen x+,gemini,civil,6,0.1667,False
+popquorn,age,gen x+,mistral,toxic,16,0.8125,False
+popquorn,age,gen x+,mistral,civil,6,0.3333,False
+popquorn,age,millenial,chatgpt,toxic,6,0.8333,False
+popquorn,age,millenial,chatgpt,civil,16,0.4375,False
+popquorn,age,millenial,deepseek,toxic,6,0.5,False
+popquorn,age,millenial,deepseek,civil,16,0.5,False
+popquorn,age,millenial,gemini,toxic,6,0.8333,False
+popquorn,age,millenial,gemini,civil,16,0.5,False
+popquorn,age,millenial,mistral,toxic,6,0.6667,False
+popquorn,age,millenial,mistral,civil,16,0.1875,False
+popquorn,education,College degree,chatgpt,toxic,9,0.5556,False
+popquorn,education,College degree,chatgpt,civil,14,0.4286,False
+popquorn,education,College degree,deepseek,toxic,9,0.4444,False
+popquorn,education,College degree,deepseek,civil,14,0.5,False
+popquorn,education,College degree,gemini,toxic,9,0.5556,False
+popquorn,education,College degree,gemini,civil,14,0.6429,False
+popquorn,education,College degree,mistral,toxic,9,0.8889,False
+popquorn,education,College degree,mistral,civil,14,0.3571,False
+popquorn,education,Graduate degree,chatgpt,toxic,10,0.5,False
+popquorn,education,Graduate degree,chatgpt,civil,4,0.25,True
+popquorn,education,Graduate degree,deepseek,toxic,10,0.5,False
+popquorn,education,Graduate degree,deepseek,civil,4,0.75,True
+popquorn,education,Graduate degree,gemini,toxic,10,0.2,False
+popquorn,education,Graduate degree,gemini,civil,4,0.25,True
+popquorn,education,Graduate degree,mistral,toxic,10,0.5,False
+popquorn,education,Graduate degree,mistral,civil,4,0.25,True
+popquorn,education,High school diploma or equivalent,chatgpt,toxic,7,0.4286,False
+popquorn,education,High school diploma or equivalent,chatgpt,civil,11,0.5455,False
+popquorn,education,High school diploma or equivalent,deepseek,toxic,7,0.2857,False
+popquorn,education,High school diploma or equivalent,deepseek,civil,11,0.6364,False
+popquorn,education,High school diploma or equivalent,gemini,toxic,7,0.5714,False
+popquorn,education,High school diploma or equivalent,gemini,civil,11,0.5455,False
+popquorn,education,High school diploma or equivalent,mistral,toxic,7,0.7143,False
+popquorn,education,High school diploma or equivalent,mistral,civil,11,0.2727,False
+popquorn,occupation,Employed,chatgpt,toxic,12,0.6667,False
+popquorn,occupation,Employed,chatgpt,civil,5,0.4,False
+popquorn,occupation,Employed,deepseek,toxic,12,0.6667,False
+popquorn,occupation,Employed,deepseek,civil,5,0.6,False
+popquorn,occupation,Employed,gemini,toxic,12,0.8333,False
+popquorn,occupation,Employed,gemini,civil,5,0.6,False
+popquorn,occupation,Employed,mistral,toxic,12,0.9167,False
+popquorn,occupation,Employed,mistral,civil,5,0.2,False
+popquorn,occupation,Retired,chatgpt,toxic,2,1.0,True
+popquorn,occupation,Retired,chatgpt,civil,1,1.0,True
+popquorn,occupation,Retired,deepseek,toxic,2,1.0,True
+popquorn,occupation,Retired,deepseek,civil,1,0.0,True
+popquorn,occupation,Retired,gemini,toxic,2,1.0,True
+popquorn,occupation,Retired,gemini,civil,1,1.0,True
+popquorn,occupation,Retired,mistral,toxic,2,1.0,True
+popquorn,occupation,Retired,mistral,civil,1,0.0,True
+popquorn,occupation,Self-employed,chatgpt,toxic,0,,True
+popquorn,occupation,Self-employed,chatgpt,civil,7,0.2857,False
+popquorn,occupation,Self-employed,deepseek,toxic,0,,True
+popquorn,occupation,Self-employed,deepseek,civil,7,0.2857,False
+popquorn,occupation,Self-employed,gemini,toxic,0,,True
+popquorn,occupation,Self-employed,gemini,civil,7,0.1429,False
+popquorn,occupation,Self-employed,mistral,toxic,0,,True
+popquorn,occupation,Self-employed,mistral,civil,7,0.0,False
+popquorn,occupation,Student,chatgpt,toxic,3,0.3333,True
+popquorn,occupation,Student,chatgpt,civil,2,0.0,True
+popquorn,occupation,Student,deepseek,toxic,3,0.0,True
+popquorn,occupation,Student,deepseek,civil,2,0.0,True
+popquorn,occupation,Student,gemini,toxic,3,0.0,True
+popquorn,occupation,Student,gemini,civil,2,0.0,True
+popquorn,occupation,Student,mistral,toxic,3,0.6667,True
+popquorn,occupation,Student,mistral,civil,2,0.0,True
+popquorn,occupation,Unemployed,chatgpt,toxic,1,1.0,True
+popquorn,occupation,Unemployed,chatgpt,civil,3,0.3333,True
+popquorn,occupation,Unemployed,deepseek,toxic,1,1.0,True
+popquorn,occupation,Unemployed,deepseek,civil,3,0.6667,True
+popquorn,occupation,Unemployed,gemini,toxic,1,1.0,True
+popquorn,occupation,Unemployed,gemini,civil,3,0.0,True
+popquorn,occupation,Unemployed,mistral,toxic,1,1.0,True
+popquorn,occupation,Unemployed,mistral,civil,3,0.3333,True
+mhs,gender,female,chatgpt,toxic,30,0.9,False
+mhs,gender,female,chatgpt,civil,13,0.1538,False
+mhs,gender,female,deepseek,toxic,30,0.9667,False
+mhs,gender,female,deepseek,civil,13,0.0769,False
+mhs,gender,female,gemini,toxic,30,1.0,False
+mhs,gender,female,gemini,civil,13,0.1538,False
+mhs,gender,female,mistral,toxic,30,0.9667,False
+mhs,gender,female,mistral,civil,13,0.0769,False
+mhs,gender,male,chatgpt,toxic,13,0.8462,False
+mhs,gender,male,chatgpt,civil,30,0.1,False
+mhs,gender,male,deepseek,toxic,13,0.9231,False
+mhs,gender,male,deepseek,civil,30,0.0333,False
+mhs,gender,male,gemini,toxic,13,0.8462,False
+mhs,gender,male,gemini,civil,30,0.0,False
+mhs,gender,male,mistral,toxic,13,0.9231,False
+mhs,gender,male,mistral,civil,30,0.0333,False
+mhs,age,gen x+,chatgpt,toxic,22,0.9091,False
+mhs,age,gen x+,chatgpt,civil,8,0.0,False
+mhs,age,gen x+,deepseek,toxic,22,0.9545,False
+mhs,age,gen x+,deepseek,civil,8,0.0,False
+mhs,age,gen x+,gemini,toxic,22,1.0,False
+mhs,age,gen x+,gemini,civil,8,0.0,False
+mhs,age,gen x+,mistral,toxic,22,0.9545,False
+mhs,age,gen x+,mistral,civil,8,0.0,False
+mhs,age,millenial,chatgpt,toxic,8,1.0,False
+mhs,age,millenial,chatgpt,civil,22,0.0909,False
+mhs,age,millenial,deepseek,toxic,8,1.0,False
+mhs,age,millenial,deepseek,civil,22,0.0455,False
+mhs,age,millenial,gemini,toxic,8,1.0,False
+mhs,age,millenial,gemini,civil,22,0.0,False
+mhs,age,millenial,mistral,toxic,8,1.0,False
+mhs,age,millenial,mistral,civil,22,0.0455,False
+mhs,ideology,conservative,chatgpt,toxic,15,0.9333,False
+mhs,ideology,conservative,chatgpt,civil,6,0.0,False
+mhs,ideology,conservative,deepseek,toxic,15,1.0,False
+mhs,ideology,conservative,deepseek,civil,6,0.0,False
+mhs,ideology,conservative,gemini,toxic,15,1.0,False
+mhs,ideology,conservative,gemini,civil,6,0.0,False
+mhs,ideology,conservative,mistral,toxic,15,0.9333,False
+mhs,ideology,conservative,mistral,civil,6,0.0,False
+mhs,ideology,liberal,chatgpt,toxic,12,1.0,False
+mhs,ideology,liberal,chatgpt,civil,16,0.0625,False
+mhs,ideology,liberal,deepseek,toxic,12,1.0,False
+mhs,ideology,liberal,deepseek,civil,16,0.0,False
+mhs,ideology,liberal,gemini,toxic,12,1.0,False
+mhs,ideology,liberal,gemini,civil,16,0.0,False
+mhs,ideology,liberal,mistral,toxic,12,1.0,False
+mhs,ideology,liberal,mistral,civil,16,0.0625,False
+mhs,ideology,neutral,chatgpt,toxic,3,1.0,True
+mhs,ideology,neutral,chatgpt,civil,8,0.0,False
+mhs,ideology,neutral,deepseek,toxic,3,1.0,True
+mhs,ideology,neutral,deepseek,civil,8,0.0,False
+mhs,ideology,neutral,gemini,toxic,3,1.0,True
+mhs,ideology,neutral,gemini,civil,8,0.0,False
+mhs,ideology,neutral,mistral,toxic,3,1.0,True
+mhs,ideology,neutral,mistral,civil,8,0.0,False
+kumar,gender,Female,chatgpt,toxic,5,0.6,False
+kumar,gender,Female,chatgpt,civil,5,0.8,False
+kumar,gender,Female,deepseek,toxic,5,0.6,False
+kumar,gender,Female,deepseek,civil,5,0.8,False
+kumar,gender,Female,gemini,toxic,5,1.0,False
+kumar,gender,Female,gemini,civil,5,1.0,False
+kumar,gender,Female,mistral,toxic,5,0.8,False
+kumar,gender,Female,mistral,civil,5,0.8,False
+kumar,gender,Male,chatgpt,toxic,5,0.2,False
+kumar,gender,Male,chatgpt,civil,5,0.4,False
+kumar,gender,Male,deepseek,toxic,5,0.2,False
+kumar,gender,Male,deepseek,civil,5,0.4,False
+kumar,gender,Male,gemini,toxic,5,0.0,False
+kumar,gender,Male,gemini,civil,5,0.0,False
+kumar,gender,Male,mistral,toxic,5,0.2,False
+kumar,gender,Male,mistral,civil,5,0.2,False
+kumar,race,Asian,chatgpt,toxic,2,0.5,True
+kumar,race,Asian,chatgpt,civil,3,0.6667,True
+kumar,race,Asian,deepseek,toxic,2,0.5,True
+kumar,race,Asian,deepseek,civil,3,0.6667,True
+kumar,race,Asian,gemini,toxic,2,0.5,True
+kumar,race,Asian,gemini,civil,3,0.6667,True
+kumar,race,Asian,mistral,toxic,2,0.5,True
+kumar,race,Asian,mistral,civil,3,0.3333,True
+kumar,race,Black,chatgpt,toxic,6,0.6667,False
+kumar,race,Black,chatgpt,civil,0,,True
+kumar,race,Black,deepseek,toxic,6,0.5,False
+kumar,race,Black,deepseek,civil,0,,True
+kumar,race,Black,gemini,toxic,6,0.6667,False
+kumar,race,Black,gemini,civil,0,,True
+kumar,race,Black,mistral,toxic,6,0.6667,False
+kumar,race,Black,mistral,civil,0,,True
+kumar,race,White,chatgpt,toxic,2,0.0,True
+kumar,race,White,chatgpt,civil,7,0.4286,False
+kumar,race,White,deepseek,toxic,2,0.0,True
+kumar,race,White,deepseek,civil,7,0.5714,False
+kumar,race,White,gemini,toxic,2,0.0,True
+kumar,race,White,gemini,civil,7,0.4286,False
+kumar,race,White,mistral,toxic,2,0.5,True
+kumar,race,White,mistral,civil,7,0.4286,False
+kumar,age,gen x+,chatgpt,toxic,1,0.0,True
+kumar,age,gen x+,chatgpt,civil,1,1.0,True
+kumar,age,gen x+,deepseek,toxic,1,0.0,True
+kumar,age,gen x+,deepseek,civil,1,1.0,True
+kumar,age,gen x+,gemini,toxic,1,1.0,True
+kumar,age,gen x+,gemini,civil,1,1.0,True
+kumar,age,gen x+,mistral,toxic,1,0.0,True
+kumar,age,gen x+,mistral,civil,1,0.0,True
+kumar,age,gen z,chatgpt,toxic,4,0.75,True
+kumar,age,gen z,chatgpt,civil,1,1.0,True
+kumar,age,gen z,deepseek,toxic,4,0.5,True
+kumar,age,gen z,deepseek,civil,1,0.0,True
+kumar,age,gen z,gemini,toxic,4,0.75,True
+kumar,age,gen z,gemini,civil,1,0.0,True
+kumar,age,gen z,mistral,toxic,4,1.0,True
+kumar,age,gen z,mistral,civil,1,1.0,True
+kumar,age,millenial,chatgpt,toxic,1,0.0,True
+kumar,age,millenial,chatgpt,civil,4,0.25,True
+kumar,age,millenial,deepseek,toxic,1,1.0,True
+kumar,age,millenial,deepseek,civil,4,0.5,True
+kumar,age,millenial,gemini,toxic,1,1.0,True
+kumar,age,millenial,gemini,civil,4,0.0,True
+kumar,age,millenial,mistral,toxic,1,0.0,True
+kumar,age,millenial,mistral,civil,4,0.25,True
+kumar,politics,conservative,chatgpt,toxic,6,0.5,False
+kumar,politics,conservative,chatgpt,civil,3,0.3333,True
+kumar,politics,conservative,deepseek,toxic,6,0.5,False
+kumar,politics,conservative,deepseek,civil,3,0.6667,True
+kumar,politics,conservative,gemini,toxic,6,0.5,False
+kumar,politics,conservative,gemini,civil,3,0.3333,True
+kumar,politics,conservative,mistral,toxic,6,0.6667,False
+kumar,politics,conservative,mistral,civil,3,0.3333,True
+kumar,politics,independent,chatgpt,toxic,1,0.0,True
+kumar,politics,independent,chatgpt,civil,5,0.0,False
+kumar,politics,independent,deepseek,toxic,1,0.0,True
+kumar,politics,independent,deepseek,civil,5,0.0,False
+kumar,politics,independent,gemini,toxic,1,0.0,True
+kumar,politics,independent,gemini,civil,5,0.0,False
+kumar,politics,independent,mistral,toxic,1,0.0,True
+kumar,politics,independent,mistral,civil,5,0.0,False
+kumar,politics,liberal,chatgpt,toxic,4,1.0,True
+kumar,politics,liberal,chatgpt,civil,3,1.0,True
+kumar,politics,liberal,deepseek,toxic,4,0.75,True
+kumar,politics,liberal,deepseek,civil,3,1.0,True
+kumar,politics,liberal,gemini,toxic,4,1.0,True
+kumar,politics,liberal,gemini,civil,3,1.0,True
+kumar,politics,liberal,mistral,toxic,4,1.0,True
+kumar,politics,liberal,mistral,civil,3,0.6667,True
+kumar,religion,high,chatgpt,toxic,8,0.5,False
+kumar,religion,high,chatgpt,civil,1,0.0,True
+kumar,religion,high,deepseek,toxic,8,0.5,False
+kumar,religion,high,deepseek,civil,1,0.0,True
+kumar,religion,high,gemini,toxic,8,0.375,False
+kumar,religion,high,gemini,civil,1,0.0,True
+kumar,religion,high,mistral,toxic,8,0.625,False
+kumar,religion,high,mistral,civil,1,0.0,True
+kumar,religion,not_high,chatgpt,toxic,1,1.0,True
+kumar,religion,not_high,chatgpt,civil,8,0.5,False
+kumar,religion,not_high,deepseek,toxic,1,1.0,True
+kumar,religion,not_high,deepseek,civil,8,0.5,False
+kumar,religion,not_high,gemini,toxic,1,1.0,True
+kumar,religion,not_high,gemini,civil,8,0.625,False
+kumar,religion,not_high,mistral,toxic,1,1.0,True
+kumar,religion,not_high,mistral,civil,8,0.375,False

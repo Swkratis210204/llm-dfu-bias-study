@@ -1,0 +1,5 @@
+dataset,texts,testable_D,attributed_D,testable_N,attributed_N,observed_rate_D_pct,observed_rate_N_pct,chance_rate_D_pct,chance_rate_N_pct,observed_gap_pp,gap_ci_low,gap_ci_high,gap_share_le0_pct,excess_gap_pp,excess_ci_low,excess_ci_high,excess_share_le0_pct,permutations
+attitudes,262,500,30,298,21,6.0,7.05,4.47,5.35,1.05,-2.37,4.57,28.16,0.17,-3.04,3.45,46.42,1000
+popquorn,684,1402,82,1009,101,5.85,10.01,5.33,8.96,4.16,2.08,6.31,0.0,0.52,-1.39,2.41,29.51,1000
+mhs,1316,834,73,336,32,8.75,9.52,8.17,8.91,0.77,-2.66,4.29,34.07,0.04,-2.96,3.08,49.91,1000
+kumar,38171,36563,2929,31524,3161,8.01,10.03,7.0,8.76,2.02,1.59,2.44,0.0,0.26,-0.14,0.66,9.88,1000

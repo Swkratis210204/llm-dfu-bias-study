@@ -1,0 +1,5 @@
+model,civil,toxic,civil_pct,toxic_pct
+chatgpt,132,223,37.18,62.82
+deepseek,148,207,41.69,58.31
+gemini,133,222,37.46,62.54
+mistral,93,262,26.2,73.8
