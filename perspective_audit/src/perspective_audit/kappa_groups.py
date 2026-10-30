@@ -198,20 +198,24 @@ def _constant_summary(by_group: pd.DataFrame) -> pd.DataFrame:
     return table
 
 
-def share_problems(gaps: pd.DataFrame, change: pd.DataFrame, tolerance: float = 0.015) -> pd.DataFrame:
+def share_problems(gaps: pd.DataFrame, change: Optional[pd.DataFrame], tolerance: float = 0.015) -> pd.DataFrame:
     """The rows of the gap and prompt-change tables in which share_lt0 + share_eq0 differs from share_le0, or the three shares do not sum to 100 (rounding allowed)."""
     rows = []
     for name, table in (("gaps", gaps), ("prompt_change", change)):
+        if table is None:
+            continue
         bad = table[((table["share_lt0"] + table["share_eq0"] - table["share_le0"]).abs() > tolerance)
                     | ((table[["share_lt0", "share_eq0", "share_gt0"]].sum(axis=1) - 100).abs() > 2 * tolerance)]
         rows.append(bad.assign(table=name))
     return pd.concat(rows, ignore_index=True)
 
 
-def excludes_zero_counts(gaps: pd.DataFrame, change: pd.DataFrame) -> pd.DataFrame:
+def excludes_zero_counts(gaps: pd.DataFrame, change: Optional[pd.DataFrame]) -> pd.DataFrame:
     """How many gaps (per prompt) and prompt changes have an interval that excludes 0, per dataset, out of all."""
     rows = []
     for name, table, by in (("gaps", gaps, ["dataset", "prompt"]), ("prompt_change", change, ["dataset"])):
+        if table is None:
+            continue
         count = table.groupby(by, sort=False)["interval_excludes_zero"].agg(["sum", "size"]).reset_index()
         count.insert(0, "table", name)
         rows.append(count.rename(columns={"sum": "excluding_zero", "size": "rows"}))
@@ -224,8 +228,10 @@ def mirrored_pairs(by_group: pd.DataFrame) -> pd.DataFrame:
 
 
 def compute_kappa(results: Dict[str, DatasetResult], results_dir: Path, given: pd.DataFrame, reps: int = 10_000, seed: int = 42,
-                  models: Sequence[str] = MODELS) -> Dict[str, pd.DataFrame]:
-    """The four tables of section 7.2 and a table of checks: ``by_group``, ``gaps``, ``prompt_change``, ``constant`` and ``checks``.
+                  models: Sequence[str] = MODELS, prompt: str = "baseline") -> Dict[str, pd.DataFrame]:
+    """The tables of one prompt and a table of checks: ``by_group``, ``gaps``, ``constant``, ``checks`` and the checks of the shares, and for ``prompt="scd"`` also
+    ``prompt_change`` (the change from the default prompt to the SCD prompt). ``prompt="baseline"`` is the default prompt (section 7.2), ``"scd"`` section 7.3; both
+    use the same resamples (same seed), so their numbers can be compared.
     ``results`` are the AU results of the datasets, ``results_dir`` holds ``<dataset>/baseline/<model>.csv`` and ``<dataset>/scd/<model>.csv`` (the
     labels the models gave), and ``given`` is ``aposteriori_for_models.csv`` (the rows given to the models: for Kumar the sample)."""
     scd = collect_persona_runs(results_dir, "scd")
@@ -244,14 +250,23 @@ def compute_kappa(results: Dict[str, DatasetResult], results_dir: Path, given: p
                        "AU rows (all)": full_rows, "distinct AU texts (all)": full_distinct, "expected distinct AU texts (all)": EXPECTED_DISTINCT.get(dataset),
                        "expected rows used": EXPECTED_SAMPLE_ROWS.get(dataset, full_rows),
                        "matches": bool(full_distinct == EXPECTED_DISTINCT.get(dataset, full_distinct) and len(rows) == EXPECTED_SAMPLE_ROWS.get(dataset, full_rows))})
+    if prompt not in PROMPTS:
+        raise ValueError(f"prompt must be one of {PROMPTS}, not {prompt!r}")
     by_group, gaps, change = pd.DataFrame(by_group), pd.DataFrame(gaps), pd.DataFrame(change)
-    return {"by_group": by_group, "gaps": gaps, "prompt_change": change, "constant": _constant_summary(by_group), "checks": pd.DataFrame(checks),
-            "share_problems": share_problems(gaps, change), "excludes_zero": excludes_zero_counts(gaps, change), "mirrored": mirrored_pairs(by_group)}
+    by_group, gaps = (table[table["prompt"] == prompt].reset_index(drop=True) for table in (by_group, gaps))
+    change = change if prompt == "scd" else None                          # the change compares the two prompts: it belongs to the SCD tables
+    out = {"by_group": by_group, "gaps": gaps, "constant": _constant_summary(by_group), "checks": pd.DataFrame(checks),
+           "share_problems": share_problems(gaps, change), "excludes_zero": excludes_zero_counts(gaps, change), "mirrored": mirrored_pairs(by_group)}
+    if change is not None:
+        out["prompt_change"] = change
+    return out
 
 
-README = """# Cohen's kappa between the models and the annotator groups (section 7.2)
+README = """# Cohen's kappa between the models and the annotator groups
 
-Nothing here asks a model for anything: it reads the AU results and the labels the models already gave (baseline prompt and SCD prompt).
+{which}
+
+Nothing here asks a model for anything: it reads the AU results and the labels the models already gave.
 
 ## Definitions
 
@@ -281,13 +296,18 @@ Nothing here asks a model for anything: it reads the AU results and the labels t
 
 
 def save_kappa(tables: Dict[str, pd.DataFrame], folder: Path) -> Dict[str, Path]:
-    """Write the four csv files and the README of section 7.2 into ``folder`` (created if needed). Returns the files written, by file name."""
+    """Write the csv files and the README of one prompt (section 7.2: default, 7.3: SCD) into ``folder`` (created if needed). Returns the files written, by file name."""
     folder = Path(folder)
     folder.mkdir(parents=True, exist_ok=True)
+    prompt = tables["by_group"]["prompt"].iloc[0]
+    which = ("**This folder (section 7.2): the default prompt only** (the rating of the text as it is). The SCD prompt is in the folder `scd`." if prompt == "baseline" else
+             "**This folder (section 7.3): the SCD prompt only** (the model rates the text as a person of each group). `kappa_prompt_change.csv` compares it with the default prompt "
+             "(folder `default`) on the same resamples.")
     written = {}
     for file, key in (("kappa_by_group.csv", "by_group"), ("kappa_gaps.csv", "gaps"), ("kappa_prompt_change.csv", "prompt_change"), ("constant_label_summary.csv", "constant")):
-        tables[key].to_csv(folder / file, index=False, encoding="utf-8")
-        written[file] = folder / file
-    (folder / "README.md").write_text(README, encoding="utf-8")
+        if key in tables:
+            tables[key].to_csv(folder / file, index=False, encoding="utf-8")
+            written[file] = folder / file
+    (folder / "README.md").write_text(README.replace("{which}", which), encoding="utf-8")
     written["README.md"] = folder / "README.md"
     return written

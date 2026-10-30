@@ -1,6 +1,8 @@
-# Cohen's kappa between the models and the annotator groups (section 7.2)
+# Cohen's kappa between the models and the annotator groups
 
-Nothing here asks a model for anything: it reads the AU results and the labels the models already gave (baseline prompt and SCD prompt).
+**This folder (section 7.2): the default prompt only** (the rating of the text as it is). The SCD prompt is in the folder `scd`.
+
+Nothing here asks a model for anything: it reads the AU results and the labels the models already gave.
 
 ## Definitions
 

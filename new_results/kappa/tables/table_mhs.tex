@@ -23,7 +23,7 @@ Group & $n$ & ChatGPT & DeepSeek & Gemini & Mistral & ChatGPT & DeepSeek & Gemin
 \quad liberal & 29 & \makecell{0.10 (0.07)\\ {[}0.00, 0.27{]}} & \makecell{0.00$^\dagger$ (0.00)\\ {[}0.00, 0.00{]}} & \makecell{0.05 (0.05)\\ {[}0.00, 0.18{]}} & \makecell{0.05 (0.05)\\ {[}0.00, 0.18{]}} & \makecell{0.00$^\dagger$ (0.00)\\ {[}0.00, 0.00{]}} & \makecell{0.05 (0.05)\\ {[}0.00, 0.18{]}} & \makecell{0.05 (0.05)\\ {[}0.00, 0.18{]}} & \makecell{$-$0.02 (0.09)\\ {[}$-$0.21, 0.14{]}} \\
 \quad neutral & 13 & \makecell{0.05 (0.06)\\ {[}0.00, 0.23{]}} & \makecell{0.00$^\dagger$ (0.00)\\ {[}0.00, 0.00{]}} & \makecell{0.05 (0.06)\\ {[}0.00, 0.23{]}} & \makecell{0.00$^\dagger$ (0.00)\\ {[}0.00, 0.00{]}} & \makecell{0.00$^\dagger$ (0.00)\\ {[}0.00, 0.00{]}} & \makecell{0.00$^\dagger$ (0.00)\\ {[}0.00, 0.00{]}} & \makecell{0.00$^\dagger$ (0.00)\\ {[}0.00, 0.00{]}} & \makecell{0.00$^\dagger$ (0.00)\\ {[}0.00, 0.00{]}} \\
 \midrule
-\multicolumn{2}{@{}l}{Toxic labels of the model} & 92\% & 98\% & 97\% & 97\% & 99\% & 96\% & 97\% & 98\% \\
+\multicolumn{2}{@{}l}{Toxic labels (\%)} & 92\% & 98\% & 97\% & 97\% & 99\% & 96\% & 97\% & 98\% \\
 \bottomrule
 \end{tabular}
 \par\smallskip
@@ -31,6 +31,8 @@ Group & $n$ & ChatGPT & DeepSeek & Gemini & Mistral & ChatGPT & DeepSeek & Gemin
 \footnotesize
 D = demographic, N = non-demographic characteristic; $n$ = number of attributed (\ac{AU}) texts in which the group is compared. \\
 $^\dagger$ the model gave the same label to every text, so kappa is 0 by definition. \\
+Bounds at exactly 0.00 can come from resamples in which the model gave one label to every text, for which kappa is 0 by definition. \\
+For two-group characteristics the two kappas are opposite because the groups take opposite sides on every text. \\
 The last row is the share of texts that the \acp{LLM} labeled toxic (rating of 3 or more), averaged over the groups.
 \end{minipage}
 \end{table}

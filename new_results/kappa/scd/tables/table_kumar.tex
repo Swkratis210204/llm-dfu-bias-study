@@ -1,0 +1,43 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\caption{Cohen's kappa between each \ac{LLM} and the groups of each characteristic on polarized texts attributed to it, with the \ac{SCD} prompt. Values in parentheses are bootstrap standard errors and values in brackets 95\% intervals from 10,000 resamples of the attributed texts. Dataset: Kumar.}
+\label{tab:kappa_kumar}
+\begin{tabular}{@{}lr*{4}{c}@{}}
+\toprule
+Group & $n$ & ChatGPT & DeepSeek & Gemini & Mistral \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{Gender (D)}} \\
+\quad Female & 10 & \makecell{0.40 (0.29)\\ {[}$-$0.20, 1.00{]}} & \makecell{0.40 (0.29)\\ {[}$-$0.20, 1.00{]}} & \makecell{0.20 (0.28)\\ {[}$-$0.40, 0.78{]}} & \makecell{0.20 (0.30)\\ {[}$-$0.40, 0.80{]}} \\
+\quad Male & 10 & \makecell{$-$0.40 (0.27)\\ {[}$-$0.80, 0.20{]}} & \makecell{$-$0.40 (0.27)\\ {[}$-$0.80, 0.20{]}} & \makecell{$-$0.20 (0.27)\\ {[}$-$0.67, 0.38{]}} & \makecell{$-$0.40 (0.21)\\ {[}$-$0.80, 0.00{]}} \\
+\addlinespace
+\multicolumn{6}{@{}l}{\textit{Race (D)}} \\
+\quad Asian & 10 & \makecell{0.40 (0.30)\\ {[}$-$0.25, 1.00{]}} & \makecell{0.20 (0.31)\\ {[}$-$0.43, 0.78{]}} & \makecell{0.40 (0.30)\\ {[}$-$0.24, 1.00{]}} & \makecell{0.00 (0.25)\\ {[}$-$0.50, 0.53{]}} \\
+\quad Black & 10 & \makecell{0.09 (0.12)\\ {[}0.00, 0.40{]}} & \makecell{0.05 (0.08)\\ {[}0.00, 0.29{]}} & \makecell{0.14 (0.16)\\ {[}0.00, 0.56{]}} & \makecell{$-$0.11 (0.09)\\ {[}$-$0.28, 0.00{]}} \\
+\quad White & 10 & \makecell{0.21 (0.32)\\ {[}$-$0.33, 1.00{]}} & \makecell{0.38 (0.36)\\ {[}$-$0.24, 1.00{]}} & \makecell{$-$0.25 (0.14)\\ {[}$-$0.50, 0.00{]}} & \makecell{$-$0.13 (0.22)\\ {[}$-$0.62, 0.25{]}} \\
+\addlinespace
+\multicolumn{6}{@{}l}{\textit{Age (D)}} \\
+\quad gen x+ & 10 & \makecell{0.21 (0.32)\\ {[}$-$0.33, 1.00{]}} & \makecell{0.55 (0.29)\\ {[}0.00, 1.00{]}} & \makecell{$-$0.25 (0.14)\\ {[}$-$0.50, 0.00{]}} & \makecell{$-$0.18 (0.21)\\ {[}$-$0.67, 0.12{]}} \\
+\quad gen z & 10 & \makecell{0.60 (0.27)\\ {[}0.00, 1.00{]}} & \makecell{0.40 (0.30)\\ {[}$-$0.25, 1.00{]}} & \makecell{0.80 (0.21)\\ {[}0.31, 1.00{]}} & \makecell{0.20 (0.20)\\ {[}0.00, 0.65{]}} \\
+\quad millennial & 10 & \makecell{0.09 (0.11)\\ {[}0.00, 0.40{]}} & \makecell{0.09 (0.11)\\ {[}0.00, 0.40{]}} & \makecell{0.07 (0.27)\\ {[}$-$0.46, 0.60{]}} & \makecell{$-$0.21 (0.20)\\ {[}$-$0.67, 0.00{]}} \\
+\addlinespace
+\multicolumn{6}{@{}l}{\textit{Politics (N)}} \\
+\quad conservative & 10 & \makecell{$-$0.09 (0.28)\\ {[}$-$0.60, 0.53{]}} & \makecell{$-$0.20 (0.27)\\ {[}$-$0.69, 0.37{]}} & \makecell{$-$0.30 (0.26)\\ {[}$-$0.80, 0.21{]}} & \makecell{$-$0.32 (0.16)\\ {[}$-$0.62, 0.00{]}} \\
+\quad independent & 10 & \makecell{0.29 (0.21)\\ {[}0.00, 0.77{]}} & \makecell{$-$0.07 (0.23)\\ {[}$-$0.54, 0.38{]}} & \makecell{$-$0.40 (0.21)\\ {[}$-$0.80, 0.00{]}} & \makecell{0.00$^\dagger$ (0.00)\\ {[}0.00, 0.00{]}} \\
+\quad liberal & 10 & \makecell{0.35 (0.31)\\ {[}$-$0.29, 1.00{]}} & \makecell{0.78 (0.25)\\ {[}0.00, 1.00{]}} & \makecell{1.00 (0.10)\\ {[}1.00, 1.00{]}} & \makecell{0.44 (0.23)\\ {[}0.00, 1.00{]}} \\
+\addlinespace
+\multicolumn{6}{@{}l}{\textit{Religion (N)}} \\
+\quad high & 10 & \makecell{$-$0.21 (0.20)\\ {[}$-$0.67, 0.00{]}} & \makecell{$-$0.20 (0.17)\\ {[}$-$0.60, 0.00{]}} & \makecell{$-$0.21 (0.20)\\ {[}$-$0.67, 0.00{]}} & \makecell{$-$0.15 (0.11)\\ {[}$-$0.36, 0.00{]}} \\
+\quad not\_high & 10 & \makecell{0.62 (0.39)\\ {[}0.00, 1.00{]}} & \makecell{0.62 (0.39)\\ {[}0.00, 1.00{]}} & \makecell{0.74 (0.31)\\ {[}0.00, 1.00{]}} & \makecell{$-$0.15 (0.11)\\ {[}$-$0.36, 0.00{]}} \\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\begin{minipage}{\linewidth}
+\footnotesize
+D = demographic, N = non-demographic characteristic; $n$ = number of attributed (\ac{AU}) texts in which the group is compared. \\
+$^\dagger$ the model gave the same label to every text, so kappa is 0 by definition. \\
+Bounds at exactly 0.00 can come from resamples in which the model gave one label to every text, for which kappa is 0 by definition. \\
+For two-group characteristics the two kappas are opposite because the groups take opposite sides on every text.
+\end{minipage}
+\end{table}

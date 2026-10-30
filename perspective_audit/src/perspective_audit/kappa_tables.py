@@ -16,8 +16,9 @@ PROMPT_NAME = {"baseline": "Baseline", "scd": "SCD"}
 TOXIC_SHARE_DATASETS = ("mhs", "attitudes")                  # the datasets where the models give almost one label to every text
 GROUP_NAME = {"millenial": "millennial"}                    # the spelling of the data is corrected in the tables
 
-CAPTION = ("Cohen's kappa between each \\ac{LLM} and the groups of each characteristic on polarized texts attributed to it, with the baseline and the \\ac{SCD} "
-           "prompt. Values in parentheses are bootstrap standard errors and values in brackets 95\\% intervals from 10,000 resamples of the attributed texts.")
+PROMPT_PHRASE = {("baseline",): "with the default prompt", ("scd",): "with the \\ac{SCD} prompt", ("baseline", "scd"): "with the default and the \\ac{SCD} prompt"}
+CAPTION = ("Cohen's kappa between each \\ac{LLM} and the groups of each characteristic on polarized texts attributed to it, {prompt}. "
+           "Values in parentheses are bootstrap standard errors and values in brackets 95\\% intervals from 10,000 resamples of the attributed texts.")
 
 
 def _number(value: float) -> str:
@@ -46,15 +47,17 @@ def _characteristic(name: str, kind: str) -> str:
 
 def dataset_table(part: pd.DataFrame, dataset: str, models: Sequence[str]) -> str:
     """The LaTeX table (as text) of one dataset. ``part`` is the ``kappa_by_group`` table of that dataset."""
-    prompts = list(PROMPT_NAME)
+    prompts = [p for p in PROMPT_NAME if p in set(part["prompt"])]                              # the default prompt (7.2), the SCD prompt (7.3), or both
     models = [m for m in models if m in set(part["model"])]          # only the models that rated this dataset
     columns = 2 + len(prompts) * len(models)
+    caption = CAPTION.replace("{prompt}", PROMPT_PHRASE[tuple(prompts)])
     lookup = {(r.characteristic, r.group, r.model, r.prompt): r for _, r in part.iterrows()}
     lines = ["\\begin{table}[t]", "\\centering", "\\footnotesize", "\\setlength{\\tabcolsep}{3pt}",
-             f"\\caption{{{CAPTION} Dataset: {DATASET_LABEL.get(dataset, dataset)}.}}", f"\\label{{tab:kappa_{dataset}}}",
+             f"\\caption{{{caption} Dataset: {DATASET_LABEL.get(dataset, dataset)}.}}", f"\\label{{tab:kappa_{dataset}}}",
              f"\\begin{{tabular}}{{@{{}}lr*{{{len(prompts) * len(models)}}}{{c}}@{{}}}}", "\\toprule"]
-    lines.append("& & " + " & ".join(f"\\multicolumn{{{len(models)}}}{{c}}{{{PROMPT_NAME[p]}}}" for p in prompts) + " \\\\")
-    lines.append("".join(f"\\cmidrule(lr){{{3 + i * len(models)}-{2 + (i + 1) * len(models)}}}" for i in range(len(prompts))))
+    if len(prompts) > 1:                                                                         # one prompt: the caption says which, no header over the models
+        lines.append("& & " + " & ".join(f"\\multicolumn{{{len(models)}}}{{c}}{{{PROMPT_NAME[p]}}}" for p in prompts) + " \\\\")
+        lines.append("".join(f"\\cmidrule(lr){{{3 + i * len(models)}-{2 + (i + 1) * len(models)}}}" for i in range(len(prompts))))
     lines.append("Group & $n$ & " + " & ".join(MODEL_NAME.get(m, m) for _ in prompts for m in models) + " \\\\")
     lines.append("\\midrule")
     first = True

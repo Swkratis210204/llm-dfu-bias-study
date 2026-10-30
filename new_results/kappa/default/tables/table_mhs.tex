@@ -1,0 +1,36 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\caption{Cohen's kappa between each \ac{LLM} and the groups of each characteristic on polarized texts attributed to it, with the default prompt. Values in parentheses are bootstrap standard errors and values in brackets 95\% intervals from 10,000 resamples of the attributed texts. Dataset: MHS.}
+\label{tab:kappa_mhs}
+\begin{tabular}{@{}lr*{4}{c}@{}}
+\toprule
+Group & $n$ & ChatGPT & DeepSeek & Gemini & Mistral \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{Gender (D)}} \\
+\quad female & 43 & \makecell{0.07 (0.14)\\ {[}$-$0.18, 0.35{]}} & \makecell{0.06 (0.11)\\ {[}$-$0.12, 0.30{]}} & \makecell{0.20 (0.13)\\ {[}0.00, 0.47{]}} & \makecell{0.06 (0.11)\\ {[}$-$0.12, 0.30{]}} \\
+\quad male & 43 & \makecell{$-$0.03 (0.07)\\ {[}$-$0.19, 0.10{]}} & \makecell{$-$0.03 (0.05)\\ {[}$-$0.14, 0.06{]}} & \makecell{$-$0.10 (0.07)\\ {[}$-$0.25, 0.00{]}} & \makecell{$-$0.03 (0.05)\\ {[}$-$0.14, 0.06{]}} \\
+\addlinespace
+\multicolumn{6}{@{}l}{\textit{Age (D)}} \\
+\quad gen x+ & 30 & \makecell{$-$0.12 (0.07)\\ {[}$-$0.25, 0.00{]}} & \makecell{$-$0.06 (0.05)\\ {[}$-$0.18, 0.00{]}} & \makecell{0.00$^\dagger$ (0.00)\\ {[}0.00, 0.00{]}} & \makecell{$-$0.06 (0.06)\\ {[}$-$0.18, 0.00{]}} \\
+\quad millennial & 30 & \makecell{0.05 (0.04)\\ {[}0.00, 0.16{]}} & \makecell{0.02 (0.03)\\ {[}0.00, 0.09{]}} & \makecell{0.00$^\dagger$ (0.00)\\ {[}0.00, 0.00{]}} & \makecell{0.02 (0.03)\\ {[}0.00, 0.10{]}} \\
+\addlinespace
+\multicolumn{6}{@{}l}{\textit{Ideology (N)}} \\
+\quad conservative & 22 & \makecell{$-$0.09 (0.08)\\ {[}$-$0.25, 0.00{]}} & \makecell{0.00$^\dagger$ (0.00)\\ {[}0.00, 0.00{]}} & \makecell{0.00$^\dagger$ (0.00)\\ {[}0.00, 0.00{]}} & \makecell{$-$0.09 (0.08)\\ {[}$-$0.25, 0.00{]}} \\
+\quad liberal & 29 & \makecell{0.10 (0.07)\\ {[}0.00, 0.27{]}} & \makecell{0.00$^\dagger$ (0.00)\\ {[}0.00, 0.00{]}} & \makecell{0.05 (0.05)\\ {[}0.00, 0.18{]}} & \makecell{0.05 (0.05)\\ {[}0.00, 0.18{]}} \\
+\quad neutral & 13 & \makecell{0.05 (0.06)\\ {[}0.00, 0.23{]}} & \makecell{0.00$^\dagger$ (0.00)\\ {[}0.00, 0.00{]}} & \makecell{0.05 (0.06)\\ {[}0.00, 0.23{]}} & \makecell{0.00$^\dagger$ (0.00)\\ {[}0.00, 0.00{]}} \\
+\midrule
+\multicolumn{2}{@{}l}{Toxic labels (\%)} & 92\% & 98\% & 97\% & 97\% \\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\begin{minipage}{\linewidth}
+\footnotesize
+D = demographic, N = non-demographic characteristic; $n$ = number of attributed (\ac{AU}) texts in which the group is compared. \\
+$^\dagger$ the model gave the same label to every text, so kappa is 0 by definition. \\
+Bounds at exactly 0.00 can come from resamples in which the model gave one label to every text, for which kappa is 0 by definition. \\
+For two-group characteristics the two kappas are opposite because the groups take opposite sides on every text. \\
+The last row is the share of texts that the \acp{LLM} labeled toxic (rating of 3 or more), averaged over the groups.
+\end{minipage}
+\end{table}

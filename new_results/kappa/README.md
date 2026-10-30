@@ -22,7 +22,7 @@ Nothing here asks a model for anything: it reads the AU results and the labels t
 
 | file | content |
 |---|---|
-| `kappa_by_group.csv` | one row per dataset, model, characteristic, group and prompt: `n_texts`, `kappa`, `ci_low`, `ci_high`, `resamples_without_value`, `constant_model`, `constant_group`, `pct_toxic_model`, `pct_toxic_group`, `small_n` |
-| `kappa_gaps.csv` | per dataset, model, characteristic, prompt and pair of groups: `gap` = kappa(A) - kappa(B), its interval from the same resamples, `share_gap_le0` (% of resamples with a gap of 0 or less) |
-| `kappa_prompt_change.csv` | per dataset, model, characteristic and group: `change` = kappa(scd) - kappa(baseline), its interval, `share_change_le0` |
+| `kappa_by_group.csv` | one row per dataset, model, characteristic, group and prompt: `n_texts`, `kappa`, `ci_low`, `ci_high`, `resamples_without_value`, `constant_model`, `constant_group`, `pct_toxic_model`, `pct_toxic_group`, `small_n`, `se`, `mirrored` (a characteristic with two groups that take opposite sides on every text) |
+| `kappa_gaps.csv` | per dataset, model, characteristic, prompt and pair of groups: `gap` = kappa(A) - kappa(B), its interval from the same resamples, `share_lt0`, `share_eq0`, `share_gt0`, `share_le0` (% of resamples with a gap below 0, exactly 0, above 0, 0 or less), `interval_excludes_zero` |
+| `kappa_prompt_change.csv` | per dataset, model, characteristic and group: `change` = kappa(scd) - kappa(baseline), its interval, `share_lt0`, `share_eq0`, `share_gt0`, `share_le0`, `interval_excludes_zero` |
 | `constant_label_summary.csv` | how many combinations have a constant model label, per dataset, model and prompt, and in total |
