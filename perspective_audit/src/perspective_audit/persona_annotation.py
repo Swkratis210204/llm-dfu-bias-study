@@ -170,10 +170,11 @@ def persona_long(table: pd.DataFrame) -> pd.DataFrame:
 
 def collect_persona_runs(out_dir: Path, run: str = "scd") -> pd.DataFrame:
     """All saved answers of a run in the long form: one row per dataset, model, text, dimension and group."""
-    files = sorted(Path(out_dir).glob(f"*/{run}/*.csv"))
-    if not files:
+    tables = [pd.read_csv(f, dtype={"item_id": str}) for f in sorted(Path(out_dir).glob(f"*/{run}/*.csv"))]
+    tables = [t for t in tables if "personas" in t.columns]               # other results can sit in a folder of the same name (new_results/kappa/scd holds kappa tables)
+    if not tables:
         return pd.DataFrame(columns=LONG_COLUMNS)
-    return persona_long(pd.concat([pd.read_csv(f, dtype={"item_id": str}) for f in files], ignore_index=True))
+    return persona_long(pd.concat(tables, ignore_index=True))
 
 
 def inspect_personas(out_dir: Path, model: str, run: str = "scd") -> pd.DataFrame:

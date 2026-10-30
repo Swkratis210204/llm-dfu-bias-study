@@ -1,0 +1,149 @@
+dataset,model,characteristic,persona_a,persona_b,n_texts,kappa,se,ci_low,ci_high,constant_label
+attitudes,chatgpt,gender,man,woman,10,0.0,0.0,0.0,0.0,True
+attitudes,deepseek,gender,man,woman,10,1.0,0.1621,0.0,1.0,False
+attitudes,gemini,gender,man,woman,10,0.6154,0.3967,0.0,1.0,False
+attitudes,mistral,gender,man,woman,10,0.0,0.0,0.0,0.0,True
+attitudes,chatgpt,race,black,white,14,0.8372,0.1833,0.4286,1.0,False
+attitudes,deepseek,race,black,white,14,0.4324,0.2865,-0.1429,1.0,False
+attitudes,gemini,race,black,white,14,0.4324,0.2866,-0.1667,1.0,False
+attitudes,mistral,race,black,white,14,0.0,0.0,0.0,0.0,True
+attitudes,chatgpt,age,gen x+,millenial,6,-0.2,0.1541,-0.5,0.0,False
+attitudes,deepseek,age,gen x+,millenial,6,0.0,0.0,0.0,0.0,True
+attitudes,gemini,age,gen x+,millenial,6,0.5714,0.3919,0.0,1.0,False
+attitudes,mistral,age,gen x+,millenial,6,0.0,0.0,0.0,0.0,True
+attitudes,chatgpt,politics,left,right,12,-0.0909,0.2482,-0.501,0.4286,False
+attitudes,deepseek,politics,left,right,12,0.3333,0.2088,0.0,0.8,False
+attitudes,gemini,politics,left,right,12,0.5714,0.2819,0.0,1.0,False
+attitudes,mistral,politics,left,right,12,0.0,0.2654,-0.4545,0.5714,False
+attitudes,chatgpt,traditionalism,high,not_high,9,0.0,0.0,0.0,0.0,True
+attitudes,deepseek,traditionalism,high,not_high,9,0.0,0.0,0.0,0.0,True
+attitudes,gemini,traditionalism,high,not_high,9,0.0,0.0,0.0,0.0,True
+attitudes,mistral,traditionalism,high,not_high,9,0.0,0.0,0.0,0.0,True
+popquorn,chatgpt,gender,Man,Woman,14,1.0,0.01,1.0,1.0,False
+popquorn,deepseek,gender,Man,Woman,14,1.0,0.0,1.0,1.0,False
+popquorn,gemini,gender,Man,Woman,14,1.0,0.01,1.0,1.0,False
+popquorn,mistral,gender,Man,Woman,14,0.6316,0.4009,0.0,1.0,False
+popquorn,chatgpt,race,Black or African American,White,13,0.8312,0.1812,0.4348,1.0,False
+popquorn,deepseek,race,Black or African American,White,13,1.0,0.1717,0.0,1.0,False
+popquorn,gemini,race,Black or African American,White,13,1.0,0.0387,1.0,1.0,False
+popquorn,mistral,race,Black or African American,White,13,1.0,0.1773,0.0,1.0,False
+popquorn,chatgpt,age,gen x+,millenial,55,0.4776,0.1201,0.2264,0.6974,False
+popquorn,deepseek,age,gen x+,millenial,55,0.6754,0.0985,0.4681,0.8543,False
+popquorn,gemini,age,gen x+,millenial,55,0.8487,0.0747,0.6802,0.9635,False
+popquorn,mistral,age,gen x+,millenial,55,0.1302,0.1399,-0.1402,0.4037,False
+popquorn,chatgpt,education,College degree,Graduate degree,14,1.0,0.0458,1.0,1.0,False
+popquorn,chatgpt,education,College degree,High school diploma or equivalent,35,0.7348,0.1287,0.4553,0.9386,False
+popquorn,chatgpt,education,Graduate degree,High school diploma or equivalent,8,1.0,0.3453,0.0,1.0,False
+popquorn,deepseek,education,College degree,Graduate degree,14,0.7143,0.1936,0.2887,1.0,False
+popquorn,deepseek,education,College degree,High school diploma or equivalent,35,0.7977,0.1128,0.5405,1.0,False
+popquorn,deepseek,education,Graduate degree,High school diploma or equivalent,8,1.0,0.4816,0.0,1.0,False
+popquorn,gemini,education,College degree,Graduate degree,14,1.0,0.0458,1.0,1.0,False
+popquorn,gemini,education,College degree,High school diploma or equivalent,35,0.9353,0.066,0.7784,1.0,False
+popquorn,gemini,education,Graduate degree,High school diploma or equivalent,8,0.6,0.3978,0.0,1.0,False
+popquorn,mistral,education,College degree,Graduate degree,14,0.3,0.2862,-0.2526,0.8148,False
+popquorn,mistral,education,College degree,High school diploma or equivalent,35,0.65,0.1339,0.3678,0.8835,False
+popquorn,mistral,education,Graduate degree,High school diploma or equivalent,8,0.4667,0.3521,-0.2857,1.0,False
+popquorn,chatgpt,occupation,Employed,Retired,10,0.7826,0.2583,0.0,1.0,False
+popquorn,chatgpt,occupation,Employed,Self-employed,26,0.7665,0.1332,0.4667,1.0,False
+popquorn,chatgpt,occupation,Employed,Student,10,1.0,0.1216,1.0,1.0,False
+popquorn,chatgpt,occupation,Employed,Unemployed,10,0.5833,0.297,-0.125,1.0,False
+popquorn,chatgpt,occupation,Retired,Self-employed,3,1.0,0.4947,0.0,1.0,False
+popquorn,chatgpt,occupation,Retired,Student,0,,,,,False
+popquorn,chatgpt,occupation,Retired,Unemployed,0,,,,,False
+popquorn,chatgpt,occupation,Self-employed,Student,2,1.0,0.4984,0.0,1.0,False
+popquorn,chatgpt,occupation,Self-employed,Unemployed,0,,,,,False
+popquorn,chatgpt,occupation,Student,Unemployed,1,0.0,0.0,0.0,0.0,True
+popquorn,deepseek,occupation,Employed,Retired,10,0.8,0.2262,0.2,1.0,False
+popquorn,deepseek,occupation,Employed,Self-employed,26,0.9202,0.0827,0.7234,1.0,False
+popquorn,deepseek,occupation,Employed,Student,10,0.5833,0.2974,-0.1,1.0,False
+popquorn,deepseek,occupation,Employed,Unemployed,10,1.0,0.1062,1.0,1.0,False
+popquorn,deepseek,occupation,Retired,Self-employed,3,1.0,0.4947,0.0,1.0,False
+popquorn,deepseek,occupation,Retired,Student,0,,,,,False
+popquorn,deepseek,occupation,Retired,Unemployed,0,,,,,False
+popquorn,deepseek,occupation,Self-employed,Student,2,1.0,0.4984,0.0,1.0,False
+popquorn,deepseek,occupation,Self-employed,Unemployed,0,,,,,False
+popquorn,deepseek,occupation,Student,Unemployed,1,0.0,0.0,0.0,0.0,True
+popquorn,gemini,occupation,Employed,Retired,10,0.4,0.2551,0.0,1.0,False
+popquorn,gemini,occupation,Employed,Self-employed,26,0.9231,0.0793,0.7356,1.0,False
+popquorn,gemini,occupation,Employed,Student,10,1.0,0.1057,1.0,1.0,False
+popquorn,gemini,occupation,Employed,Unemployed,10,0.5833,0.2933,-0.125,1.0,False
+popquorn,gemini,occupation,Retired,Self-employed,3,0.0,0.0,0.0,0.0,True
+popquorn,gemini,occupation,Retired,Student,0,,,,,False
+popquorn,gemini,occupation,Retired,Unemployed,0,,,,,False
+popquorn,gemini,occupation,Self-employed,Student,2,1.0,0.4984,0.0,1.0,False
+popquorn,gemini,occupation,Self-employed,Unemployed,0,,,,,False
+popquorn,gemini,occupation,Student,Unemployed,1,0.0,0.0,0.0,0.0,True
+popquorn,mistral,occupation,Employed,Retired,10,0.1379,0.1602,0.0,0.5714,False
+popquorn,mistral,occupation,Employed,Self-employed,26,0.8194,0.1311,0.5161,1.0,False
+popquorn,mistral,occupation,Employed,Student,10,0.0,0.0,0.0,0.0,True
+popquorn,mistral,occupation,Employed,Unemployed,10,0.4118,0.3238,0.0,1.0,False
+popquorn,mistral,occupation,Retired,Self-employed,3,1.0,0.4947,0.0,1.0,False
+popquorn,mistral,occupation,Retired,Student,0,,,,,False
+popquorn,mistral,occupation,Retired,Unemployed,0,,,,,False
+popquorn,mistral,occupation,Self-employed,Student,2,0.0,0.0,0.0,0.0,True
+popquorn,mistral,occupation,Self-employed,Unemployed,0,,,,,False
+popquorn,mistral,occupation,Student,Unemployed,1,0.0,0.0,0.0,0.0,True
+mhs,chatgpt,gender,female,male,43,0.0,0.0,0.0,0.0,True
+mhs,deepseek,gender,female,male,43,0.7882,0.3198,0.0,1.0,False
+mhs,gemini,gender,female,male,43,1.0,0.3357,0.0,1.0,False
+mhs,mistral,gender,female,male,43,0.0,0.0,0.0,0.0,True
+mhs,chatgpt,age,gen x+,millenial,30,-0.0345,0.0262,-0.087,0.0,False
+mhs,deepseek,age,gen x+,millenial,30,-0.0345,0.026,-0.087,0.0,False
+mhs,gemini,age,gen x+,millenial,30,0.0,0.0,0.0,0.0,True
+mhs,mistral,age,gen x+,millenial,30,0.0,0.0,0.0,0.0,True
+mhs,chatgpt,ideology,conservative,liberal,19,0.0,0.0,0.0,0.0,True
+mhs,chatgpt,ideology,conservative,neutral,3,0.0,0.0,0.0,0.0,True
+mhs,chatgpt,ideology,liberal,neutral,10,0.0,0.0,0.0,0.0,True
+mhs,deepseek,ideology,conservative,liberal,19,-0.0755,0.0552,-0.1765,0.0,False
+mhs,deepseek,ideology,conservative,neutral,3,0.0,0.0,0.0,0.0,True
+mhs,deepseek,ideology,liberal,neutral,10,0.0,0.0,0.0,0.0,True
+mhs,gemini,ideology,conservative,liberal,19,-0.0755,0.0546,-0.1739,0.0,False
+mhs,gemini,ideology,conservative,neutral,3,0.0,0.0,0.0,0.0,True
+mhs,gemini,ideology,liberal,neutral,10,0.0,0.0,0.0,0.0,True
+mhs,mistral,ideology,conservative,liberal,19,-0.0755,0.0544,-0.1739,0.0,False
+mhs,mistral,ideology,conservative,neutral,3,0.0,0.0,0.0,0.0,True
+mhs,mistral,ideology,liberal,neutral,10,0.0,0.0,0.0,0.0,True
+kumar,chatgpt,gender,Female,Male,10,1.0,0.0791,1.0,1.0,False
+kumar,deepseek,gender,Female,Male,10,1.0,0.0791,1.0,1.0,False
+kumar,gemini,gender,Female,Male,10,1.0,0.1609,0.0,1.0,False
+kumar,mistral,gender,Female,Male,10,0.4,0.2418,0.0,1.0,False
+kumar,chatgpt,race,Asian,Black,5,1.0,0.3538,0.0,1.0,False
+kumar,chatgpt,race,Asian,White,5,1.0,0.3561,0.0,1.0,False
+kumar,chatgpt,race,Black,White,5,1.0,0.4795,0.0,1.0,False
+kumar,deepseek,race,Asian,Black,5,1.0,0.351,0.0,1.0,False
+kumar,deepseek,race,Asian,White,5,0.6154,0.3744,0.0,1.0,False
+kumar,deepseek,race,Black,White,5,0.0,0.0,0.0,0.0,True
+kumar,gemini,race,Asian,Black,5,1.0,0.3484,0.0,1.0,False
+kumar,gemini,race,Asian,White,5,1.0,0.4799,0.0,1.0,False
+kumar,gemini,race,Black,White,5,1.0,0.4795,0.0,1.0,False
+kumar,mistral,race,Asian,Black,5,0.0,0.0,0.0,0.0,True
+kumar,mistral,race,Asian,White,5,0.1667,0.412,-0.6,1.0,False
+kumar,mistral,race,Black,White,5,1.0,0.482,0.0,1.0,False
+kumar,chatgpt,age,gen x+,gen z,5,-0.25,0.2009,-0.6667,0.0,False
+kumar,chatgpt,age,gen x+,millenial,5,-0.4286,0.3185,-1.0,0.0,False
+kumar,chatgpt,age,gen z,millenial,5,0.0,0.0,0.0,0.0,True
+kumar,deepseek,age,gen x+,gen z,5,-0.25,0.2002,-0.6667,0.0,False
+kumar,deepseek,age,gen x+,millenial,5,-0.3636,0.2677,-0.9231,0.0,False
+kumar,deepseek,age,gen z,millenial,5,0.0,0.0,0.0,0.0,True
+kumar,gemini,age,gen x+,gen z,5,0.0,0.0,0.0,0.0,True
+kumar,gemini,age,gen x+,millenial,5,1.0,0.4798,0.0,1.0,False
+kumar,gemini,age,gen z,millenial,5,0.0,0.0,0.0,0.0,True
+kumar,mistral,age,gen x+,gen z,5,-0.25,0.2014,-0.6667,0.0,False
+kumar,mistral,age,gen x+,millenial,5,-0.25,0.1986,-0.6154,0.0,False
+kumar,mistral,age,gen z,millenial,5,0.0,0.0,0.0,0.0,True
+kumar,chatgpt,politics,conservative,independent,5,-0.25,0.198,-0.6154,0.0,False
+kumar,chatgpt,politics,conservative,liberal,5,0.1667,0.4181,-0.6667,1.0,False
+kumar,chatgpt,politics,independent,liberal,5,0.5455,0.3923,0.0,1.0,False
+kumar,deepseek,politics,conservative,independent,5,0.5455,0.3956,0.0,1.0,False
+kumar,deepseek,politics,conservative,liberal,5,0.5455,0.3982,0.0,1.0,False
+kumar,deepseek,politics,independent,liberal,5,1.0,0.3539,0.0,1.0,False
+kumar,gemini,politics,conservative,independent,5,0.6154,0.3735,0.0,1.0,False
+kumar,gemini,politics,conservative,liberal,5,1.0,0.3522,0.0,1.0,False
+kumar,gemini,politics,independent,liberal,5,1.0,0.3539,0.0,1.0,False
+kumar,mistral,politics,conservative,independent,5,0.0,0.0,0.0,0.0,True
+kumar,mistral,politics,conservative,liberal,5,1.0,0.3499,0.0,1.0,False
+kumar,mistral,politics,independent,liberal,5,0.0,0.0,0.0,0.0,True
+kumar,chatgpt,religion,high,not_high,10,0.4118,0.3218,0.0,1.0,False
+kumar,deepseek,religion,high,not_high,10,0.2,0.1993,0.0,0.6154,False
+kumar,gemini,religion,high,not_high,10,1.0,0.1749,0.0,1.0,False
+kumar,mistral,religion,high,not_high,10,0.0541,0.078,0.0,0.2857,False

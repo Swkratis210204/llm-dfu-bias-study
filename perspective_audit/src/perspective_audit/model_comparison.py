@@ -76,16 +76,18 @@ def compare_models(results_dir: Path, datasets: Sequence[str] = DATASET_ORDER, m
 
 
 def model_comparison_figure(tables: Dict[str, pd.DataFrame], models: Sequence[str] = MODELS):
-    """One heatmap per dataset (columns) and measure (rows: Spearman on top, Cohen's kappa below), the diagonal 1, a shared colorbar from -1 to 1."""
+    """One heatmap per dataset (columns) and measure (rows: Spearman on top, Cohen's kappa below), the diagonal 1, a shared colorbar (viridis, from 0 to 1, or from -1 when a value is negative)."""
     import matplotlib.pyplot as plt
-    from matplotlib.colors import LinearSegmentedColormap, Normalize
+    from matplotlib.colors import Normalize
 
     from .kappa_figures import FONT, MINUS, WIDTH, _text_color
 
     matrices, pairwise = tables["matrices"], tables["pairwise"]
     datasets = list(dict.fromkeys(matrices["dataset"]))
-    cmap = LinearSegmentedColormap.from_list("blue_white_orange", ["#2166AC", "#F7F7F7", "#E08214"])
-    norm = Normalize(-1, 1)
+    cmap = plt.get_cmap("viridis")                                       # purple - blue - green - yellow: distinct hues, colorblind-safe, readable in grey
+    values = matrices[list(models)].to_numpy(dtype=float)
+    low = -1.0 if np.nanmin(values) < 0 else 0.0                         # the scale starts at 0 unless a value is negative
+    norm = Normalize(low, 1)
     names = [MODEL_NAME[m] for m in models]
     with plt.rc_context({"font.family": "sans-serif", "font.sans-serif": ["Arial", "DejaVu Sans"], "font.size": FONT, "axes.unicode_minus": True}):
         fig, axes = plt.subplots(len(MEASURES), len(datasets), figsize=(WIDTH, 1.55 * len(MEASURES) + 0.9), squeeze=False)
@@ -118,8 +120,8 @@ def model_comparison_figure(tables: Dict[str, pd.DataFrame], models: Sequence[st
                                 fontweight="bold", fontsize=FONT)
         fig.subplots_adjust(left=0.12, right=0.9, top=0.85, bottom=0.2, wspace=0.08, hspace=0.12)
         cax = fig.add_axes([0.92, 0.2, 0.015, 0.65])
-        bar = fig.colorbar(plt.cm.ScalarMappable(norm=norm, cmap=cmap), cax=cax, ticks=[-1, 0, 1])
-        bar.ax.set_yticklabels([MINUS + "1", "0", "1"])
+        bar = fig.colorbar(plt.cm.ScalarMappable(norm=norm, cmap=cmap), cax=cax, ticks=[low, 0, 1] if low < 0 else [0, 0.5, 1])
+        bar.ax.set_yticklabels([MINUS + "1", "0", "1"] if low < 0 else ["0", "0.5", "1"])
         bar.outline.set_visible(False)
         bar.ax.tick_params(length=2, labelsize=FONT - 1)
     return fig
