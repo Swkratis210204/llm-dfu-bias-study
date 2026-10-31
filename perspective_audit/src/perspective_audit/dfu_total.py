@@ -169,22 +169,34 @@ def _percent_weights(n_values: int, n_base: int) -> np.ndarray:
     return np.full(n_values, 100 / max(n_base, 1))
 
 
-def _histogram_figure(plt, table: pd.DataFrame, polarized_only: bool):
-    """One panel per dataset: the DFU of all texts, or of the polarized texts with the AU texts among them (as a share of the polarized texts)."""
+def _histogram_all_figure(plt, table: pd.DataFrame):
+    """One panel: the DFU of all texts in bins of 0.05, one bar per dataset in its own color (as a share of the texts of the dataset)."""
+    names = _ordered(table["dataset"])
+    fig, ax = plt.subplots(figsize=(8, 4.5))
+    width = 0.8 * (BINS[1] - BINS[0]) / len(names)
+    centers = (BINS[:-1] + BINS[1:]) / 2
+    for i, name in enumerate(names):
+        part = table[table["dataset"] == name]
+        share = 100 * np.histogram(part["dfu"], bins=BINS)[0] / len(part)
+        ax.bar(centers + (i - (len(names) - 1) / 2) * width, share, width=width, color=DATASET_COLOR.get(name), label=f"{DATASET_LABEL.get(name, name)} ({len(part):,} texts)")
+    ax.set(xlabel="DFU of the text (0 = unimodal)", ylabel="% of the texts of the dataset")
+    ax.legend(loc="upper right")
+    return fig
+
+
+def _histogram_figure(plt, table: pd.DataFrame):
+    """One panel per dataset: the DFU of the polarized texts with the AU texts among them (as a share of the polarized texts)."""
     names = _ordered(table["dataset"])
     fig, axes = _panels(plt, len(names))
     for ax, name in zip(axes, names):
         part = table[table["dataset"] == name]
-        base = part[part["polarized"]] if polarized_only else part
-        ax.hist(base["dfu"], bins=BINS, weights=_percent_weights(len(base), len(base)), color=BLUE, alpha=0.85,
-                label=f"{'polarized texts' if polarized_only else 'all texts'} ({len(base):,})")
-        if polarized_only:
-            au = part[part["AU"]]
-            ax.hist(au["dfu"], bins=BINS, weights=_percent_weights(len(au), len(base)), color=ORANGE, alpha=0.9, label=f"of which AU ({len(au):,})")
+        base = part[part["polarized"]]
+        au = part[part["AU"]]
+        ax.hist(base["dfu"], bins=BINS, weights=_percent_weights(len(base), len(base)), color=BLUE, alpha=0.85, label=f"polarized texts ({len(base):,})")
+        ax.hist(au["dfu"], bins=BINS, weights=_percent_weights(len(au), len(base)), color=ORANGE, alpha=0.9, label=f"of which AU ({len(au):,})")
         ax.set(title=f"{DATASET_LABEL.get(name, name)} ({len(part):,} texts, {100 * part['polarized'].mean():.1f}% polarized)",
-               xlabel="DFU of the text (0 = unimodal)", ylabel="% of the polarized texts" if polarized_only else "% of the texts")
-        if polarized_only:                                  # the legend tells the two colors apart; for all texts the panel title already gives the count
-            ax.legend(loc="upper right", fontsize=8)
+               xlabel="DFU of the text (0 = unimodal)", ylabel="% of the polarized texts")
+        ax.legend(loc="upper right", fontsize=8)
     for ax in axes[len(names):]:
         ax.axis("off")
     return fig
@@ -261,7 +273,7 @@ groups is unimodal. All numbers use the cleaned ratings (after the preprocessing
 | `dfu_group_level.csv` | per dimension and group: how often the group's own ratings on a text are unimodal (the second condition of AU) |
 | `dfu_pairwise_ks.csv` | Kolmogorov-Smirnov distance between the DFU distributions of every two datasets |
 | `dfu_funnel.csv` | the funnel of every dimension (not polarized, too few groups, a group not unimodal, AU), merged |
-| `dfu_all_texts.png` | the DFU of all texts, one panel per dataset (the spike at 0 is the texts that are not polarized) |
+| `dfu_all_texts.png` | the DFU of all texts, one panel with a bar color per dataset (the spike at 0 is the texts that are not polarized) |
 | `dfu_polarized_texts.png` | the DFU of the polarized texts, with the AU texts among them |
 | `dfu_ecdf.png` | cumulative share of texts by DFU, all datasets in one panel (all texts, and polarized texts) |
 | `dfu_by_ratings_per_text.png` | share of polarized texts and mean DFU by the number of ratings of a text |
@@ -295,7 +307,7 @@ def save_total_dfu(results: Dict[str, DatasetResult], folder: Path) -> Dict[str,
                                ("dfu_pairwise_ks.csv", dfu_pairwise_ks(table), False), ("dfu_funnel.csv", _merged_funnel(results), False)):
         frame.to_csv(folder / file, index=index, encoding="utf-8")
         written[file] = folder / file
-    for file, fig in (("dfu_all_texts.png", _histogram_figure(plt, table, False)), ("dfu_polarized_texts.png", _histogram_figure(plt, table, True)),
+    for file, fig in (("dfu_all_texts.png", _histogram_all_figure(plt, table)), ("dfu_polarized_texts.png", _histogram_figure(plt, table)),
                       ("dfu_ecdf.png", _ecdf_figure(plt, table)), ("dfu_by_ratings_per_text.png", _by_ratings_figure(plt, by_ratings)),
                       ("dfu_boxplot_all_texts.png", _boxplot_figure(plt, table, False)), ("dfu_boxplot_au_texts.png", _boxplot_figure(plt, table, True))):
         fig.tight_layout()

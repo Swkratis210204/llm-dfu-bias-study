@@ -16,7 +16,7 @@ groups is unimodal. All numbers use the cleaned ratings (after the preprocessing
 | `dfu_group_level.csv` | per dimension and group: how often the group's own ratings on a text are unimodal (the second condition of AU) |
 | `dfu_pairwise_ks.csv` | Kolmogorov-Smirnov distance between the DFU distributions of every two datasets |
 | `dfu_funnel.csv` | the funnel of every dimension (not polarized, too few groups, a group not unimodal, AU), merged |
-| `dfu_all_texts.png` | the DFU of all texts, one panel per dataset (the spike at 0 is the texts that are not polarized) |
+| `dfu_all_texts.png` | the DFU of all texts, one panel with a bar color per dataset (the spike at 0 is the texts that are not polarized) |
 | `dfu_polarized_texts.png` | the DFU of the polarized texts, with the AU texts among them |
 | `dfu_ecdf.png` | cumulative share of texts by DFU, all datasets in one panel (all texts, and polarized texts) |
 | `dfu_by_ratings_per_text.png` | share of polarized texts and mean DFU by the number of ratings of a text |
